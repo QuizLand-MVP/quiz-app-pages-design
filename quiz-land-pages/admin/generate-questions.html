@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz Land | Generate Questions</title>
+    <link rel="stylesheet" href="../css/admin/generate-questions.css" />
+  </head>
+  <body>
+    <main class="admin-shell">
+      <aside class="sidebar" aria-label="Admin navigation">
+        <a class="brand-link" href="index.html" aria-label="Quiz Land admin home">
+          <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+        </a>
+
+        <nav class="admin-nav">
+          <a href="index.html">Dashboard</a>
+          <a href="questions.html">Questions</a>
+          <a class="active" href="generate-questions.html">Generate</a>
+          <a href="users.html">Users</a>
+          <a href="analytics.html">Analytics</a>
+        </nav>
+      </aside>
+
+      <section class="admin-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">AI question factory</p>
+            <h1>Generate questions</h1>
+            <p class="topbar-subtitle">Pick themes, model, language, difficulty, and count. New questions land in Draft for review.</p>
+          </div>
+          <a class="secondary-button" href="questions.html">Review drafts</a>
+        </header>
+
+        <section class="alert alert-warning">
+          <strong>Draft-first flow.</strong>
+          Generated questions should be reviewed before they are available in games.
+        </section>
+
+        <article class="panel neuron-usage-panel">
+          <div class="panel-header">
+            <div>
+              <h2>Neuron usage</h2>
+              <p>Daily Workers AI budget for admin generation.</p>
+            </div>
+            <span class="eyebrow">Resets in 8h 24m</span>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric-card">
+              <span class="metric-label">Used today</span>
+              <strong>18,420</strong>
+              <small>Limit 100,000 neurons</small>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label">Remaining</span>
+              <strong>81,580</strong>
+              <small>Enough for a few healthy batches</small>
+            </article>
+          </div>
+        </article>
+
+        <article class="panel">
+          <form class="setup-form">
+            <section class="field-block">
+              <div class="section-heading">
+                <h2>Themes</h2>
+                <span>Choose one or more</span>
+              </div>
+              <div class="theme-wrap">
+                <button class="chip selected" type="button">Movies</button>
+                <button class="chip selected" type="button">Geek culture</button>
+                <button class="chip" type="button">Science</button>
+                <button class="chip" type="button">Gaming</button>
+                <button class="chip" type="button">Geography</button>
+                <button class="chip" type="button">History</button>
+                <button class="chip" type="button">Art</button>
+                <button class="chip" type="button">Music</button>
+                <button class="chip" type="button">Sport</button>
+              </div>
+            </section>
+
+            <section class="field-block">
+              <div class="section-heading">
+                <h2>Subcategories for Movies</h2>
+                <span>Optional focus</span>
+              </div>
+              <div class="theme-wrap">
+                <button class="chip selected" type="button">Characters</button>
+                <button class="chip" type="button">Quotes</button>
+                <button class="chip" type="button">Directors</button>
+                <button class="chip" type="button">Franchises</button>
+              </div>
+            </section>
+
+            <section class="field-block">
+              <div class="section-heading">
+                <h2>AI model</h2>
+                <span>Generation engine</span>
+              </div>
+              <div class="segmented-control four" role="group" aria-label="AI model">
+                <button class="segment selected" type="button">Llama 3.3</button>
+                <button class="segment" type="button">Gemma 4</button>
+                <button class="segment" type="button">GPT OSS 20B</button>
+                <button class="segment" type="button">Qwen 3</button>
+              </div>
+            </section>
+
+            <section class="two-column-fields">
+              <div class="field-block">
+                <div class="section-heading"><h2>Language</h2></div>
+                <div class="segmented-control two" role="group" aria-label="Language">
+                  <button class="segment selected" type="button">English</button>
+                  <button class="segment" type="button">Русский</button>
+                </div>
+              </div>
+
+              <div class="field-block">
+                <div class="section-heading">
+                  <h2>Difficulty</h2>
+                  <span>Question level</span>
+                </div>
+                <div class="segmented-control three" role="group" aria-label="Difficulty">
+                  <button class="segment" type="button">Easy</button>
+                  <button class="segment selected" type="button">Medium</button>
+                  <button class="segment" type="button">Hard</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="field-block">
+              <div class="section-heading">
+                <h2>Question count</h2>
+                <span>Batch size</span>
+              </div>
+              <div class="segmented-control four" role="group" aria-label="Question count">
+                <button class="segment" type="button">5</button>
+                <button class="segment selected" type="button">10</button>
+                <button class="segment" type="button">15</button>
+                <button class="segment" type="button">20</button>
+              </div>
+            </section>
+
+            <button class="submit-button" type="submit">Generate draft questions</button>
+          </form>
+        </article>
+
+        <article class="panel result-panel">
+          <div class="panel-header">
+            <div>
+              <h2>10 of 10 questions generated</h2>
+              <p><a class="text-link" href="questions.html">Open Question Bank to review drafts</a></p>
+            </div>
+            <span class="status-pill draft">Draft</span>
+          </div>
+
+          <div class="alert">
+            <strong>Minor warnings</strong>
+            <ul class="warning-list">
+              <li>One duplicate-style prompt was reworded before saving.</li>
+              <li>Two explanations were shortened for family-friendly pacing.</li>
+            </ul>
+          </div>
+
+          <div class="admin-question-list">
+            <article class="generated-question-card">
+              <div class="badge-row">
+                <span class="badge blue">Movies</span>
+                <span class="badge gray">Characters</span>
+                <span class="status-pill draft">Draft</span>
+              </div>
+              <p class="question-card-text">Which movie character says “I am inevitable”?</p>
+              <div class="answers-list">
+                <p class="answer-correct">✓ Thanos</p>
+                <p class="answer-wrong">Tony Stark</p>
+                <p class="answer-wrong">Loki</p>
+                <p class="answer-wrong">Ultron</p>
+              </div>
+            </article>
+
+            <article class="generated-question-card">
+              <div class="badge-row">
+                <span class="badge blue">Geek culture</span>
+                <span class="badge gray">Superheroes</span>
+                <span class="status-pill draft">Draft</span>
+              </div>
+              <p class="question-card-text">What is the name of Batman’s city?</p>
+              <div class="answers-list">
+                <p class="answer-correct">✓ Gotham City</p>
+                <p class="answer-wrong">Metropolis</p>
+                <p class="answer-wrong">Central City</p>
+                <p class="answer-wrong">Star City</p>
+              </div>
+            </article>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
