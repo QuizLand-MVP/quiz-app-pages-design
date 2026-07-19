@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz Land | Host Setup</title>
+    <link rel="stylesheet" href="styles/host-setup.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="game-panel setup-panel" aria-label="Host setup screen">
+        <header class="setup-header">
+          <img class="logo" src="assets/quiz-land-logo.png" alt="Quiz Land" />
+          <div class="setup-title-block">
+            <h1>Host setup</h1>
+            <p>Pick a vibe, set the difficulty, generate questions, then start the quiz.</p>
+          </div>
+        </header>
+
+        <form class="setup-form">
+          <section class="field-block" aria-labelledby="game-name-label">
+            <label id="game-name-label" class="field-label" for="game-name">Game name</label>
+            <input id="game-name" class="text-input" type="text" value="Movie Night" />
+          </section>
+
+
+          <section class="field-block" aria-labelledby="players-label">
+            <div class="section-heading">
+              <h2 id="players-label">Players</h2>
+              <span>Maximum group size</span>
+            </div>
+            <div class="stepper" role="group" aria-label="Player count">
+              <button class="stepper-button" type="button" aria-label="Decrease player count">−</button>
+              <output class="stepper-value">8</output>
+              <button class="stepper-button" type="button" aria-label="Increase player count">+</button>
+            </div>
+          </section>
+
+          <section class="field-block" aria-labelledby="theme-label">
+            <div class="section-heading">
+              <h2 id="theme-label">Theme</h2>
+              <span>Choose one or more</span>
+            </div>
+            <div class="chip-grid theme-grid">
+              <button class="chip selected" type="button"><span class="status-icon check"></span>Movies</button>
+              <button class="chip selected" type="button"><span class="status-icon check"></span>Memes</button>
+              <button class="chip" type="button"><span class="status-icon plus"></span>Geek culture</button>
+              <button class="chip" type="button"><span class="status-icon plus"></span>Video games</button>
+              <button class="chip" type="button"><span class="status-icon plus"></span>Science</button>
+              <button class="chip" type="button"><span class="status-icon plus"></span>Geography</button>
+              <button class="chip" type="button"><span class="status-icon plus"></span>History</button>
+              <button class="chip" type="button"><span class="status-icon plus"></span>Random mix</button>
+            </div>
+          </section>
+
+          <section class="field-block" aria-labelledby="difficulty-label">
+            <div class="section-heading">
+              <h2 id="difficulty-label">Difficulty</h2>
+              <span>Best for mixed groups</span>
+            </div>
+            <div class="segmented-grid three-cols">
+              <button class="choice selected" type="button">Easy</button>
+              <button class="choice" type="button">Medium</button>
+              <button class="choice" type="button">Hard</button>
+            </div>
+          </section>
+
+          <section class="field-block" aria-labelledby="age-label">
+            <div class="section-heading">
+              <h2 id="age-label">Age group</h2>
+              <span>Family-safe by default</span>
+            </div>
+            <div class="segmented-grid four-cols">
+              <button class="choice selected" type="button">10+</button>
+              <button class="choice" type="button">Teens</button>
+              <button class="choice" type="button">Adults</button>
+              <button class="choice" type="button">Mixed</button>
+            </div>
+          </section>
+
+
+          <section class="field-block" aria-labelledby="questions-label">
+            <div class="section-heading">
+              <h2 id="questions-label">Questions</h2>
+              <span>Keep it snappy</span>
+            </div>
+            <div class="stepper" role="group" aria-label="Question count">
+              <button class="stepper-button" type="button" aria-label="Decrease question count">−</button>
+              <output class="stepper-value">10</output>
+              <button class="stepper-button" type="button" aria-label="Increase question count">+</button>
+            </div>
+          </section>
+
+          <section class="field-block" aria-labelledby="timer-label">
+            <div class="section-heading">
+              <h2 id="timer-label">Question timer</h2>
+              <span>Seconds per question</span>
+            </div>
+            <div class="segmented-grid timer-grid">
+              <button class="choice" type="button">15s</button>
+              <button class="choice selected" type="button">30s</button>
+              <button class="choice" type="button">45s</button>
+              <button class="choice" type="button">60s</button>
+            </div>
+          </section>
+
+          <button class="submit-button start-button" type="button">Start game</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

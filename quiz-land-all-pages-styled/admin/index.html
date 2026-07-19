@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Land Admin — Dashboard</title>
+    <link rel="stylesheet" href="styles/admin.css" />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html" aria-label="Quiz Land admin home">
+          <img src="assets/quiz-land-logo.png" alt="Quiz Land" />
+          <span>Admin</span>
+        </a>
+        <nav class="nav" aria-label="Admin navigation">
+          <a class="nav-link active" href="index.html">Dashboard</a>
+          <a class="nav-link" href="questions.html">Questions</a>
+          <a class="nav-link" href="users.html">Users</a>
+          <a class="nav-link" href="analytics.html">Analytics</a>
+        </nav>
+        <div class="sidebar-card">
+          <strong>Question pool</strong>
+          <span>742 approved questions</span>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h1>Admin overview</h1>
+          </div>
+          <a class="primary-button" href="questions.html">Manage questions</a>
+        </header>
+
+        <section class="metric-grid" aria-label="Key stats">
+          <article class="metric-card">
+            <span class="metric-label">Games created</span>
+            <strong>1,248</strong>
+            <small>+18% this week</small>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Players joined</span>
+            <strong>7,932</strong>
+            <small>Avg. 6.4 per game</small>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Completion rate</span>
+            <strong>82%</strong>
+            <small>Healthy chaos level</small>
+          </article>
+          <article class="metric-card warning">
+            <span class="metric-label">Needs review</span>
+            <strong>34</strong>
+            <small>Generated questions waiting</small>
+          </article>
+        </section>
+
+        <section class="two-column">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <h2>Recent generated questions</h2>
+                <p>Review before they enter public games.</p>
+              </div>
+              <a class="text-link" href="questions.html">Open all</a>
+            </div>
+            <div class="review-list">
+              <div class="review-item">
+                <span class="badge blue">Movies</span>
+                <strong>Which actor played Marty McFly in Back to the Future?</strong>
+                <span class="status-pill pending">Needs review</span>
+              </div>
+              <div class="review-item">
+                <span class="badge green">Science</span>
+                <strong>What planet is known as the Red Planet?</strong>
+                <span class="status-pill approved">Approved</span>
+              </div>
+              <div class="review-item">
+                <span class="badge coral">Geek culture</span>
+                <strong>What does NPC usually mean in video games?</strong>
+                <span class="status-pill draft">Draft</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <h2>Theme coverage</h2>
+                <p>Target: 100+ approved questions per theme.</p>
+              </div>
+            </div>
+            <div class="coverage-list">
+              <div class="coverage-row"><span>Movies</span><strong>156</strong><div class="bar"><i style="width:100%"></i></div></div>
+              <div class="coverage-row"><span>Science</span><strong>128</strong><div class="bar"><i style="width:100%"></i></div></div>
+              <div class="coverage-row"><span>Memes</span><strong>91</strong><div class="bar"><i style="width:91%"></i></div></div>
+              <div class="coverage-row"><span>Video games</span><strong>74</strong><div class="bar"><i style="width:74%"></i></div></div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
