@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Land Admin — Analytics</title>
+    <link rel="stylesheet" href="../css/admin/admin.css" />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"><img src="../assets/quiz-land-logo.png" alt="Quiz Land" /><span>Admin</span></a>
+        <nav class="nav" aria-label="Admin navigation">
+          <a class="nav-link" href="index.html">Dashboard</a>
+          <a class="nav-link" href="questions.html">Questions</a>
+          <a class="nav-link" href="users.html">Users</a>
+          <a class="nav-link active" href="analytics.html">Analytics</a>
+        </nav>
+        <div class="sidebar-card"><strong>Events tracked</strong><span>5 MVP events</span></div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Analytics</p>
+            <h1>Game analytics</h1>
+          </div>
+          <select class="date-select" aria-label="Date range"><option>Last 7 days</option><option>Last 30 days</option><option>Last 90 days</option></select>
+        </header>
+
+        <section class="metric-grid" aria-label="Analytics stats">
+          <article class="metric-card"><span class="metric-label">game_created</span><strong>382</strong><small>Host started setup</small></article>
+          <article class="metric-card"><span class="metric-label">players_joined</span><strong>2,318</strong><small>Joined by code or QR</small></article>
+          <article class="metric-card"><span class="metric-label">game_started</span><strong>296</strong><small>77% setup conversion</small></article>
+          <article class="metric-card"><span class="metric-label">game_completed</span><strong>244</strong><small>82% completion rate</small></article>
+        </section>
+
+        <section class="two-column">
+          <article class="panel">
+            <div class="panel-header"><div><h2>Event funnel</h2><p>Useful enough for MVP, not yet a data cathedral.</p></div></div>
+            <div class="funnel">
+              <div class="funnel-row"><span>Game created</span><strong>382</strong><div class="bar"><i style="width:100%"></i></div></div>
+              <div class="funnel-row"><span>Players joined</span><strong>318</strong><div class="bar"><i style="width:83%"></i></div></div>
+              <div class="funnel-row"><span>Game started</span><strong>296</strong><div class="bar"><i style="width:77%"></i></div></div>
+              <div class="funnel-row"><span>Game completed</span><strong>244</strong><div class="bar"><i style="width:64%"></i></div></div>
+              <div class="funnel-row"><span>Second game started</span><strong>86</strong><div class="bar"><i style="width:23%"></i></div></div>
+            </div>
+          </article>
+          <article class="panel">
+            <div class="panel-header"><div><h2>Popular themes</h2><p>Where the family debates are happening.</p></div></div>
+            <div class="theme-list">
+              <div><span class="badge blue">Movies</span><strong>41%</strong></div>
+              <div><span class="badge coral">Memes</span><strong>23%</strong></div>
+              <div><span class="badge green">Science</span><strong>18%</strong></div>
+              <div><span class="badge yellow">Video games</span><strong>12%</strong></div>
+              <div><span class="badge gray">Mixed</span><strong>6%</strong></div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
