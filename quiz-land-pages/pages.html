@@ -1,54 +1,79 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quiz Land Pages</title>
-    <link rel="stylesheet" href="css/general/status.css" />
-    <style>
-      .status-panel { min-height: auto; }
-      .links { display: grid; gap: 12px; position: relative; z-index: 1; }
-      .links a { text-decoration: none; }
-      .links-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-      @media (max-width: 640px) { .links-grid { grid-template-columns: 1fr; } }
-    </style>
-  </head>
-  <body>
-    <main class="page">
-      <section class="status-panel">
-        <header class="status-header">
-          <img class="logo" src="assets/quiz-land-logo.png" alt="Quiz Land" />
-          <p class="eyebrow">Page index</p>
-        </header>
 
-        <div class="status-content">
-          <h1 class="title">
-            <span class="title-blue">Quiz Land</span>
-            <span class="title-coral">page archive</span>
-          </h1>
-          <p class="message">Clean folder structure for admin, host, login, game, and general pages.</p>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Land Pages</title>
+  <link rel="stylesheet" href="css/general/status.css" />
+  <style>
+    .status-panel {
+      min-height: auto;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .links a {
+      text-decoration: none;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="status-panel">
+      <header class="status-header">
+        <img class="logo" src="assets/quiz-land-logo.png" alt="Quiz Land" />
+        <p class="eyebrow">Page index</p>
+      </header>
+
+      <div class="status-content">
+        <h1 class="title">
+          <span class="title-blue">Quiz Land</span>
+          <span class="title-coral">page archive</span>
+        </h1>
+        <p class="message">Clean folder structure for admin, host, login, game, and general pages.</p>
+      </div>
+
+      <nav class="links">
+        <div class="links-grid">
+          <a class="secondary-button" href="admin/index.html">Admin dashboard</a>
+          <a class="secondary-button" href="admin/questions.html">Admin questions</a>
+          <a class="secondary-button" href="admin/users.html">Admin users</a>
+          <a class="secondary-button" href="admin/analytics.html">Admin analytics</a>
+          <a class="secondary-button" href="host/setup.html">Host setup</a>
+          <a class="secondary-button" href="host/lobby.html">Host lobby</a>
+          <a class="secondary-button" href="host/final-leaderboard.html">Host final leaderboard</a>
+          <a class="secondary-button" href="login/index.html">Host login</a>
+          <a class="secondary-button" href="game/player-join.html">Player join</a>
+          <a class="secondary-button" href="game/in-game.html">In game</a>
+          <a class="secondary-button" href="game/answer-reveal.html">Answer reveal</a>
+          <a class="secondary-button" href="game/leaderboard.html">Between-question leaderboard</a>
+          <a class="secondary-button" href="game/final-leaderboard-player.html">Player final leaderboard</a>
+          <a class="secondary-button" href="maintenance.html">Maintenance</a>
+          <a class="secondary-button" href="404.html">404</a>
+          <a class="secondary-button" href="index.html">Landing Beta</a>
         </div>
+      </nav>
+    </section>
+  </main>
+</body>
 
-        <nav class="links">
-          <div class="links-grid">
-            <a class="secondary-button" href="admin/index.html">Admin dashboard</a>
-            <a class="secondary-button" href="admin/questions.html">Admin questions</a>
-            <a class="secondary-button" href="admin/users.html">Admin users</a>
-            <a class="secondary-button" href="admin/analytics.html">Admin analytics</a>
-            <a class="secondary-button" href="host/setup.html">Host setup</a>
-            <a class="secondary-button" href="host/lobby.html">Host lobby</a>
-            <a class="secondary-button" href="host/final-leaderboard.html">Host final leaderboard</a>
-            <a class="secondary-button" href="login/index.html">Host login</a>
-            <a class="secondary-button" href="game/player-join.html">Player join</a>
-            <a class="secondary-button" href="game/in-game.html">In game</a>
-            <a class="secondary-button" href="game/answer-reveal.html">Answer reveal</a>
-            <a class="secondary-button" href="game/leaderboard.html">Between-question leaderboard</a>
-            <a class="secondary-button" href="game/final-leaderboard-player.html">Player final leaderboard</a>
-            <a class="secondary-button" href="maintenance.html">Maintenance</a>
-            <a class="secondary-button" href="404.html">404</a>
-          </div>
-        </nav>
-      </section>
-    </main>
-  </body>
 </html>
