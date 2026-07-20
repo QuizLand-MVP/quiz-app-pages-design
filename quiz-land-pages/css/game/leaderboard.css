@@ -305,7 +305,7 @@ a:focus-visible {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: #ffffff;
+  background: var(--panel);
   box-shadow: var(--shadow-soft);
 }
 
@@ -328,7 +328,7 @@ a:focus-visible {
 
 .player-info strong {
   color: var(--ink);
-  font-size: 22px;
+  font-size: 28px;
   line-height: 1;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -378,7 +378,7 @@ a:focus-visible {
 
 .total-score {
   color: var(--blue);
-  font-size: 22px;
+  font-size: 28px;
   line-height: 1;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -417,7 +417,7 @@ a:focus-visible {
   .total-score {
     grid-column: 2;
     text-align: left;
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
@@ -475,7 +475,7 @@ a:focus-visible {
 }
 
 .score-pill.bonus {
-  border-color: rgba(223, 111, 79, 0.25);
+  border-color: var(--coral-dark);
   background: rgba(255, 255, 255, 0.86);
   color: var(--coral-dark);
 }
