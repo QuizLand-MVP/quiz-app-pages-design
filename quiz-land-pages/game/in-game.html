@@ -1,65 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quiz Land | In Game</title>
-    <link rel="stylesheet" href="../css/game/in-game.css" />
-  </head>
-  <body>
-    <main class="page">
-      <section class="game-panel" aria-label="Quiz question screen">
-        <header class="game-header">
-          <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
 
-          <section class="timer-block" aria-label="Question timer">
-            <div class="timer-progress">
-              <div class="timer-number">24</div>
-            </div>
-            <span class="seconds-label">seconds</span>
-          </section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Land | In Game</title>
+  <link rel="stylesheet" href="../css/game/in-game.css" />
+</head>
 
-          <div class="header-trailing">
-            <p class="eyebrow">Movies</p>
-            <span>Question 4 of 10</span>
-          </div>
-        </header>
+<body>
+  <main class="page">
+    <section class="game-panel" aria-label="Quiz question screen">
+      <header class="game-header">
+        <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
 
-        <section class="progress-section" aria-label="Game progress">
-          <div class="progress-label">
-            <span>Progress</span>
-            <strong>40%</strong>
+        <section class="timer-block" aria-label="Question timer">
+          <div class="timer-progress">
+            <div class="timer-number">24</div>
           </div>
-          <div class="progress-track">
-            <div class="progress-fill"></div>
-          </div>
+          <span class="seconds-label">seconds</span>
         </section>
 
-        <section class="question-card card card-blue">
-          <h1>Which movie features a glowing blue energy cube called the Tesseract?</h1>
-        </section>
+        <div class="header-trailing">
+          <p class="eyebrow">Movies</p>
+          <span>Question 4 of 10</span>
+        </div>
+      </header>
 
-        <section class="answers-grid" aria-label="Answer options">
-          <button class="answer-card" type="button">
-            <span class="answer-letter">A</span>
-            <strong>The Avengers</strong>
-          </button>
-          <button class="answer-card" type="button">
-            <span class="answer-letter">B</span>
-            <strong>Interstellar</strong>
-          </button>
-          <button class="answer-card" type="button">
-            <span class="answer-letter">C</span>
-            <strong>Avatar</strong>
-          </button>
-          <button class="answer-card" type="button">
-            <span class="answer-letter">D</span>
-            <strong>Tron: Legacy</strong>
-          </button>
-        </section>
-
-        <button class="submit-button" type="button">Submit answer</button>
+      <section class="progress-section" aria-label="Game progress">
+        <div class="progress-label">
+          <span>Progress</span>
+          <strong>40%</strong>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
       </section>
-    </main>
-  </body>
+
+      <section class="question-card card card-blue">
+        <h1>Which movie features a glowing blue energy cube called the Tesseract?</h1>
+      </section>
+
+      <section class="answers-grid" aria-label="Answer options">
+        <button class="answer-card" type="button">
+          <span class="answer-letter">A</span>
+          <strong>The Avengers</strong>
+        </button>
+        <button class="answer-card answer-selected" type="button">
+          <span class="answer-letter">B</span>
+          <strong>Interstellar</strong>
+        </button>
+        <button class="answer-card" type="button">
+          <span class="answer-letter">C</span>
+          <strong>Avatar</strong>
+        </button>
+        <button class="answer-card" type="button">
+          <span class="answer-letter">D</span>
+          <strong>Tron: Legacy</strong>
+        </button>
+      </section>
+
+      <button class="submit-button" type="button">Submit answer</button>
+    </section>
+  </main>
+</body>
+
 </html>

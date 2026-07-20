@@ -1,165 +1,214 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Land Admin — Question Bank</title>
-    <link rel="stylesheet" href="../css/admin/admin.css" />
-  </head>
-  <body>
-    <div class="admin-shell">
-      <aside class="sidebar">
-        <a class="brand" href="index.html"><img src="../assets/quiz-land-logo.png" alt="Quiz Land" /><span>Admin overview</span></a>
-        <nav class="nav" aria-label="Admin navigation">
-          <a class="nav-link" href="index.html">Dashboard</a>
-          <a class="nav-link active" href="questions.html">Question Bank</a>
-          <a class="nav-link" href="questions.html#generate">Generate Questions</a>
-          <a class="nav-link" href="questions.html#themes">Themes</a>
-          <a class="nav-link" href="users.html">Users</a>
-          <a class="nav-link" href="analytics.html">Analytics</a>
-        </nav>
-        <div class="sidebar-card">
-          <div class="language-switch" aria-label="Language switcher"><strong>EN</strong><span>RU</span></div>
-          <a href="#">Log out</a>
-          <a href="index.html">Back to home</a>
-        </div>
-      </aside>
 
-      <main class="content questions-page">
-        <header class="page-heading">
-          <p class="eyebrow">Question Bank</p>
-          <h1>Review questions</h1>
-          <div class="search-under-title">
-            <label>
-              <span>Search</span>
-              <input type="search" placeholder="Search question text" />
-            </label>
-            <button class="secondary-button search-action" type="button">Search</button>
-          </div>
-        </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Land Admin — Question Bank</title>
+  <link rel="stylesheet" href="../css/admin/admin.css" />
+</head>
 
-        <section class="question-filter-bar" aria-label="Question filters">
-          <div class="filter-controls">
-            <label><span>Status</span><select aria-label="Status filter"><option selected>Draft</option><option>All statuses</option><option>Approved</option><option>Rejected</option><option>Archived</option></select></label>
-            <label><span>Language</span><select><option>All languages</option><option>EN</option><option>RU</option></select></label>
-            <label><span>Theme</span><select><option>All themes</option><option>Movies</option><option>Science</option><option>Geography</option><option>History</option></select></label>
-            <label><span>Difficulty</span><select><option>Any difficulty</option><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
-            <label class="wide-filter"><span>Age group</span><select><option>Any age group</option><option>Family with kids 10+</option><option>Teens</option><option>Adults</option><option>Mixed</option></select></label>
-          </div>
-          <button class="secondary-button filter-action" type="button">Filter</button>
-        </section>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><img src="../assets/quiz-land-logo.png" alt="Quiz Land" /><span>Admin
+          overview</span></a>
+      <nav class="nav" aria-label="Admin navigation">
+        <a class="nav-link" href="index.html">Dashboard</a>
+        <a class="nav-link active" href="questions.html">Question Bank</a>
+        <a class="nav-link" href="questions.html#generate">Generate Questions</a>
+        <a class="nav-link" href="questions.html#themes">Themes</a>
+        <a class="nav-link" href="users.html">Users</a>
+        <a class="nav-link" href="analytics.html">Analytics</a>
+      </nav>
+      <div class="sidebar-card">
+        <div class="language-switch" aria-label="Language switcher"><strong>EN</strong><span>RU</span></div>
+        <a href="#">Log out</a>
+        <a href="index.html">Back to home</a>
+      </div>
+    </aside>
 
-        <section class="question-review-list" aria-label="Question review list">
-          <article class="question-card">
-            <div class="question-card-top">
-              <div class="chip-row">
-                <span class="badge blue">Science</span>
-                <span class="badge gray">Easy</span>
-                <span class="badge gray">Family with kids 10+</span>
-                <span class="badge gray">EN</span>
-              </div>
-              <span class="status-pill draft">Draft</span>
-            </div>
-            <h2 class="question-title">What is the largest part of the human brain?</h2>
-            <div class="answer-list" aria-label="Answer options">
-              <div class="answer-option correct">✓ Cerebrum</div>
-              <div class="answer-option">Cerebellum</div>
-              <div class="answer-option">Brainstem</div>
-              <div class="answer-option">Frontal lobe</div>
-            </div>
-            <p class="question-explanation">Cerebrum controls thought and action</p>
-            <div class="actions question-actions">
-              <button class="secondary-button" type="button">Edit</button>
-              <button class="primary-button" type="button">Approve</button>
-              <button class="secondary-button" type="button">Reject</button>
-              <button class="secondary-button" type="button">Archive</button>
-            </div>
-          </article>
-
-          <article class="question-card edit-mode" aria-label="Edit question">
-            <div class="question-card-top">
-              <div class="chip-row">
-                <span class="badge blue">Science</span>
-                <span class="badge gray">Easy</span>
-                <span class="badge gray">Family with kids 10+</span>
-                <span class="badge gray">EN</span>
-              </div>
-              <span class="status-pill draft">Draft</span>
-            </div>
-
-            <div class="edit-grid metadata-grid">
-              <label><span>Theme</span><select><option>Science</option><option>Movies</option><option>Memes</option><option>Geography</option><option>History</option></select></label>
-              <label><span>Difficulty</span><select><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
-              <label><span>Age group</span><select><option>Family with kids 10+</option><option>Teens</option><option>Adults</option><option>Mixed</option></select></label>
-              <label><span>Language</span><select><option>EN</option><option>RU</option></select></label>
-            </div>
-
-            <label class="field-block"><span>Question</span><textarea rows="2">What is the largest part of the human brain?</textarea></label>
-            <div class="answer-edit-grid" aria-label="Editable answer options">
-              <label class="field-block"><span>Correct answer</span><input value="Cerebrum" /></label>
-              <label class="field-block"><span>Wrong answer 1</span><input value="Cerebellum" /></label>
-              <label class="field-block"><span>Wrong answer 2</span><input value="Brainstem" /></label>
-              <label class="field-block"><span>Wrong answer 3</span><input value="Frontal lobe" /></label>
-            </div>
-            <label class="field-block"><span>Explanation</span><textarea rows="2">Cerebrum controls thought and action</textarea></label>
-
-            <div class="actions question-actions">
-              <button class="primary-button" type="button">Save</button>
-              <button class="secondary-button" type="button">Cancel</button>
-            </div>
-          </article>
-
-          <article class="question-card">
-            <div class="question-card-top">
-              <div class="chip-row">
-                <span class="badge blue">Science</span>
-                <span class="badge gray">Easy</span>
-                <span class="badge gray">Family with kids 10+</span>
-                <span class="badge gray">EN</span>
-              </div>
-              <span class="status-pill draft">Draft</span>
-            </div>
-            <h2 class="question-title">What type of rock is formed from compressed sand?</h2>
-            <div class="answer-list" aria-label="Answer options">
-              <div class="answer-option correct">✓ Sandstone</div>
-              <div class="answer-option">Shale</div>
-              <div class="answer-option">Limestone</div>
-              <div class="answer-option">Granite</div>
-            </div>
-            <p class="question-explanation">Sandstone forms when sand grains are compacted and cemented together over time</p>
-            <div class="actions question-actions">
-              <button class="secondary-button" type="button">Edit</button>
-              <button class="primary-button" type="button">Approve</button>
-              <button class="secondary-button" type="button">Reject</button>
-              <button class="secondary-button" type="button">Archive</button>
-            </div>
-          </article>
-        </section>
-
-        <nav class="pagination-bar" aria-label="Question list pagination">
-          <label class="pagination-page-size">
-            <span>Questions per page</span>
-            <select aria-label="Questions per page">
-              <option selected>10</option>
-              <option>25</option>
-              <option>50</option>
-              <option>100</option>
-            </select>
+    <main class="content questions-page">
+      <header class="page-heading">
+        <p class="eyebrow">Question Bank</p>
+        <h1>Review questions</h1>
+        <div class="search-under-title">
+          <label>
+            <span>Search</span>
+            <input type="search" placeholder="Search question text" />
           </label>
+          <button class="primary-button search-action" type="button">Search</button>
+        </div>
+      </header>
 
-          <p class="pagination-summary">Showing <strong>1–10</strong> of <strong>42</strong> draft questions</p>
+      <section class="question-filter-bar" aria-label="Question filters">
+        <div class="filter-controls">
+          <label><span>Status</span><select aria-label="Status filter">
+              <option selected>Draft</option>
+              <option>All statuses</option>
+              <option>Approved</option>
+              <option>Rejected</option>
+              <option>Archived</option>
+            </select></label>
+          <label><span>Language</span><select>
+              <option>All languages</option>
+              <option>EN</option>
+              <option>RU</option>
+            </select></label>
+          <label><span>Theme</span><select>
+              <option>All themes</option>
+              <option>Movies</option>
+              <option>Science</option>
+              <option>Geography</option>
+              <option>History</option>
+            </select></label>
+          <label><span>Difficulty</span><select>
+              <option>Any difficulty</option>
+              <option>Easy</option>
+              <option>Medium</option>
+              <option>Hard</option>
+            </select></label>
+          <label class="wide-filter"><span>Age group</span><select>
+              <option>Any age group</option>
+              <option>Family with kids 10+</option>
+              <option>Teens</option>
+              <option>Adults</option>
+              <option>Mixed</option>
+            </select></label>
+        </div>
+        <button class="primary-button filter-action" type="button">Filter</button>
+      </section>
 
-          <div class="pagination-controls">
-            <button class="secondary-button pagination-button" type="button" disabled>Previous</button>
-            <button class="pagination-page active" type="button" aria-current="page">1</button>
-            <button class="pagination-page" type="button">2</button>
-            <button class="pagination-page" type="button">3</button>
-            <span class="pagination-ellipsis">…</span>
-            <button class="pagination-page" type="button">5</button>
-            <button class="secondary-button pagination-button" type="button">Next</button>
+      <section class="question-review-list" aria-label="Question review list">
+        <article class="question-card">
+          <div class="question-card-top">
+            <div class="chip-row">
+              <span class="badge blue">Science</span>
+              <span class="badge green">Easy</span>
+              <span class="badge yellow">EN</span>
+            </div>
+            <span class="status-pill draft">Draft</span>
           </div>
-        </nav>
-      </main>
-    </div>
-  </body>
+          <h2 class="question-title">What is the largest part of the human brain?</h2>
+          <div class="answer-list" aria-label="Answer options">
+            <div class="answer-option correct">✓ Cerebrum</div>
+            <div class="answer-option">Cerebellum</div>
+            <div class="answer-option">Brainstem</div>
+            <div class="answer-option">Frontal lobe</div>
+          </div>
+          <p class="question-explanation">Cerebrum controls thought and action</p>
+          <div class="actions question-actions">
+            <button class="secondary-button" type="button">Edit</button>
+            <button class="primary-button" type="button">Approve</button>
+            <button class="secondary-button" type="button">Reject</button>
+            <button class="secondary-button" type="button">Archive</button>
+          </div>
+        </article>
+
+        <article class="question-card edit-mode" aria-label="Edit question">
+          <div class="question-card-top">
+            <div class="chip-row">
+              <span class="badge blue">Science</span>
+              <span class="badge green">Easy</span>
+              <span class="badge yellow">EN</span>
+            </div>
+            <span class="status-pill draft">Draft</span>
+          </div>
+
+          <div class="edit-grid metadata-grid">
+            <label><span>Theme</span><select>
+                <option>Science</option>
+                <option>Movies</option>
+                <option>Memes</option>
+                <option>Geography</option>
+                <option>History</option>
+              </select></label>
+            <label><span>Difficulty</span><select>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+              </select></label>
+            <label><span>Age group</span><select>
+                <option>Family with kids 10+</option>
+                <option>Teens</option>
+                <option>Adults</option>
+                <option>Mixed</option>
+              </select></label>
+            <label><span>Language</span><select>
+                <option>EN</option>
+                <option>RU</option>
+              </select></label>
+          </div>
+
+          <label class="field-block"><span>Question</span><textarea
+              rows="2">What is the largest part of the human brain?</textarea></label>
+          <div class="answer-edit-grid" aria-label="Editable answer options">
+            <label class="field-block"><span>Correct answer</span><input value="Cerebrum" /></label>
+            <label class="field-block"><span>Wrong answer 1</span><input value="Cerebellum" /></label>
+            <label class="field-block"><span>Wrong answer 2</span><input value="Brainstem" /></label>
+            <label class="field-block"><span>Wrong answer 3</span><input value="Frontal lobe" /></label>
+          </div>
+          <label class="field-block"><span>Explanation</span><textarea
+              rows="2">Cerebrum controls thought and action</textarea></label>
+
+          <div class="actions question-actions">
+            <button class="primary-button" type="button">Save</button>
+            <button class="secondary-button" type="button">Cancel</button>
+          </div>
+        </article>
+
+        <article class="question-card">
+          <div class="question-card-top">
+            <div class="chip-row">
+              <span class="badge blue">Science</span>
+              <span class="badge green">Easy</span>
+              <span class="badge yellow">EN</span>
+            </div>
+            <span class="status-pill draft">Draft</span>
+          </div>
+          <h2 class="question-title">What type of rock is formed from compressed sand?</h2>
+          <div class="answer-list" aria-label="Answer options">
+            <div class="answer-option correct">✓ Sandstone</div>
+            <div class="answer-option">Shale</div>
+            <div class="answer-option">Limestone</div>
+            <div class="answer-option">Granite</div>
+          </div>
+          <p class="question-explanation">Sandstone forms when sand grains are compacted and cemented together over time
+          </p>
+          <div class="actions question-actions">
+            <button class="secondary-button" type="button">Edit</button>
+            <button class="primary-button" type="button">Approve</button>
+            <button class="secondary-button" type="button">Reject</button>
+            <button class="secondary-button" type="button">Archive</button>
+          </div>
+        </article>
+      </section>
+
+      <nav class="pagination-bar" aria-label="Question list pagination">
+        <label class="pagination-page-size">
+          <span>Questions per page</span>
+          <select aria-label="Questions per page">
+            <option selected>10</option>
+            <option>25</option>
+            <option>50</option>
+            <option>100</option>
+          </select>
+        </label>
+
+        <p class="pagination-summary">Showing <strong>1–10</strong> of <strong>42</strong> draft questions</p>
+
+        <div class="pagination-controls">
+          <button class="primary-button pagination-button" type="button" disabled>Previous</button>
+          <button class="pagination-page active" type="button" aria-current="page">1</button>
+          <button class="pagination-page" type="button">2</button>
+          <button class="pagination-page" type="button">3</button>
+          <span class="pagination-ellipsis">…</span>
+          <button class="pagination-page" type="button">5</button>
+          <button class="primary-button pagination-button" type="button">Next</button>
+        </div>
+      </nav>
+    </main>
+  </div>
+</body>
+
 </html>

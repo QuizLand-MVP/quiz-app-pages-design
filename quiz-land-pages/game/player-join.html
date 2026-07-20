@@ -1,59 +1,64 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quiz Land | Join Game</title>
-    <link rel="stylesheet" href="../css/game/player-join.css" />
-  </head>
-  <body>
-    <main class="page">
-      <section class="join-panel" aria-label="Join quiz game">
-        <header class="join-header">
-          <img class="hero-logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
-          <div class="join-copy">
-            <h1>Join Movie Night</h1>
-            <p class="eyebrow">Game code 7429</p>
-            <p>Pick your name and color before the quiz chaos begins.</p>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Land | Join Game</title>
+  <link rel="stylesheet" href="../css/game/player-join.css" />
+</head>
+
+<body>
+  <main class="page">
+    <section class="join-panel" aria-label="Join quiz game">
+      <header class="join-header">
+        <img class="hero-logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+        <div class="join-copy">
+          <h1>Join Movie Night</h1>
+          <p class="eyebrow">Game code 7429</p>
+          <p>Pick your name and color before the quiz chaos begins.</p>
+        </div>
+      </header>
+
+      <form class="join-form" id="join-form">
+        <label class="field-label" for="player-name">Your name</label>
+        <input id="player-name" type="text" value="Alex" maxlength="18" autocomplete="name" />
+        <label class="field-label" for="color-options">Choose icon color</label>
+        <fieldset class="color-field">
+
+          <div class="color-options">
+            <label class="color-option">
+              <input type="radio" name="avatar-color" value="blue" checked />
+              <span class="color-dot blue">A</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="avatar-color" value="coral" />
+              <span class="color-dot coral">A</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="avatar-color" value="teal" />
+              <span class="color-dot teal">A</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="avatar-color" value="yellow" />
+              <span class="color-dot yellow">A</span>
+            </label>
           </div>
-        </header>
+        </fieldset>
 
-        <form class="join-form" id="join-form">
-          <label class="field-label" for="player-name">Your name</label>
-          <input id="player-name" type="text" value="Alex" maxlength="18" autocomplete="name" />
 
-          <fieldset class="color-field">
-            <legend>Choose icon color</legend>
-            <div class="color-options">
-              <label class="color-option">
-                <input type="radio" name="avatar-color" value="blue" checked />
-                <span class="color-dot blue">A</span>
-              </label>
-              <label class="color-option">
-                <input type="radio" name="avatar-color" value="coral" />
-                <span class="color-dot coral">A</span>
-              </label>
-              <label class="color-option">
-                <input type="radio" name="avatar-color" value="teal" />
-                <span class="color-dot teal">A</span>
-              </label>
-              <label class="color-option">
-                <input type="radio" name="avatar-color" value="yellow" />
-                <span class="color-dot yellow">A</span>
-              </label>
-            </div>
-          </fieldset>
+      </form>
 
-          <button id="join-button" class="primary-button" type="button">Join</button>
-        </form>
-      </section>
-    </main>
+      <button id="join-button" class="primary-button" type="button">Join</button>
+    </section>
+  </main>
 
-    <script>
-      const joinButton = document.getElementById("join-button");
-      joinButton.addEventListener("click", () => {
-        joinButton.textContent = "Update";
-      });
-    </script>
-  </body>
+  <script>
+    const joinButton = document.getElementById("join-button");
+    joinButton.addEventListener("click", () => {
+      joinButton.textContent = "Update";
+    });
+  </script>
+</body>
+
 </html>
