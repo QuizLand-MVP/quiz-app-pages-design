@@ -1,59 +1,98 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Land Admin — Users</title>
-    <link rel="stylesheet" href="../css/admin/admin.css" />
-  </head>
-  <body>
-    <div class="admin-shell">
-      <aside class="sidebar">
-        <a class="brand" href="index.html"><img src="../assets/quiz-land-logo.png" alt="Quiz Land" /><span>Admin</span></a>
-        <nav class="nav" aria-label="Admin navigation">
-          <a class="nav-link" href="index.html">Dashboard</a>
-          <a class="nav-link" href="questions.html">Questions</a>
-          <a class="nav-link active" href="users.html">Users</a>
-          <a class="nav-link" href="analytics.html">Analytics</a>
-        </nav>
-        <div class="sidebar-card"><strong>Hosts</strong><span>418 registered hosts</span></div>
-      </aside>
 
-      <main class="content">
-        <header class="topbar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Land Admin — Users</title>
+  <link rel="stylesheet" href="../css/admin/admin.css" />
+</head>
+
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><img src="../assets/quiz-land-logo.png"
+          alt="Quiz Land" /><span>Admin</span></a>
+      <nav class="nav" aria-label="Admin navigation">
+        <a class="nav-link" href="index.html">Dashboard</a>
+        <a class="nav-link" href="questions.html">Questions</a>
+        <a class="nav-link active" href="users.html">Users</a>
+        <a class="nav-link" href="analytics.html">Analytics</a>
+      </nav>
+      <div class="sidebar-card"><strong>Hosts</strong><span>418 registered hosts</span></div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Users</p>
+          <h1>User statistics</h1>
+        </div>
+        <button class="primary-button" type="button">Export CSV</button>
+      </header>
+
+      <section class="metric-grid three" aria-label="User stats">
+        <article class="metric-card"><span class="metric-label">Registered hosts</span><strong>418</strong><small>+42
+            this month</small></article>
+        <article class="metric-card"><span class="metric-label">Returning hosts</span><strong>37%</strong><small>Started
+            2+ games</small></article>
+        <article class="metric-card"><span class="metric-label">Avg.
+            players/game</span><strong>6.4</strong><small>Family-sized mayhem</small></article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header compact">
           <div>
-            <p class="eyebrow">Users</p>
-            <h1>User statistics</h1>
+            <h2>Host activity</h2>
+            <p>Simple list for support, stats, and suspicious chaos inspection.</p>
           </div>
-          <button class="secondary-button" type="button">Export CSV</button>
-        </header>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Host</th>
+                <th>Games</th>
+                <th>Players</th>
+                <th>Last active</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>alex@example.com</strong><small>Google login</small></td>
+                <td>24</td>
+                <td>148</td>
+                <td>Today</td>
+                <td><span class="status-pill approved">Active</span></td>
+              </tr>
+              <tr>
+                <td><strong>family.quiz@example.com</strong><small>Email OTP</small></td>
+                <td>12</td>
+                <td>79</td>
+                <td>Yesterday</td>
+                <td><span class="status-pill approved">Active</span></td>
+              </tr>
+              <tr>
+                <td><strong>movie.host@example.com</strong><small>Google login</small></td>
+                <td>4</td>
+                <td>21</td>
+                <td>5 days ago</td>
+                <td><span class="status-pill pending">New</span></td>
+              </tr>
+              <tr>
+                <td><strong>test.host@example.com</strong><small>Email OTP</small></td>
+                <td>1</td>
+                <td>3</td>
+                <td>2 weeks ago</td>
+                <td><span class="status-pill draft">Low activity</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
 
-        <section class="metric-grid three" aria-label="User stats">
-          <article class="metric-card"><span class="metric-label">Registered hosts</span><strong>418</strong><small>+42 this month</small></article>
-          <article class="metric-card"><span class="metric-label">Returning hosts</span><strong>37%</strong><small>Started 2+ games</small></article>
-          <article class="metric-card"><span class="metric-label">Avg. players/game</span><strong>6.4</strong><small>Family-sized mayhem</small></article>
-        </section>
-
-        <section class="panel">
-          <div class="panel-header compact">
-            <div>
-              <h2>Host activity</h2>
-              <p>Simple list for support, stats, and suspicious chaos inspection.</p>
-            </div>
-          </div>
-          <div class="table-wrap">
-            <table class="data-table">
-              <thead><tr><th>Host</th><th>Games</th><th>Players</th><th>Last active</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td><strong>alex@example.com</strong><small>Google login</small></td><td>24</td><td>148</td><td>Today</td><td><span class="status-pill approved">Active</span></td></tr>
-                <tr><td><strong>family.quiz@example.com</strong><small>Email OTP</small></td><td>12</td><td>79</td><td>Yesterday</td><td><span class="status-pill approved">Active</span></td></tr>
-                <tr><td><strong>movie.host@example.com</strong><small>Google login</small></td><td>4</td><td>21</td><td>5 days ago</td><td><span class="status-pill draft">New</span></td></tr>
-                <tr><td><strong>test.host@example.com</strong><small>Email OTP</small></td><td>1</td><td>3</td><td>2 weeks ago</td><td><span class="status-pill pending">Low activity</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </main>
-    </div>
-  </body>
 </html>
