@@ -181,6 +181,13 @@ a {
   color: var(--ink);
 }
 
+.answer-section {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 22px;
+}
+
 input,
 select {
   width: 100%;
@@ -225,8 +232,8 @@ a:focus-visible {
   background: linear-gradient(150deg, #ffffff, var(--teal-soft));
 }
 
-.card-yellow {
-  background: linear-gradient(150deg, #ffffff, var(--yellow-soft));
+.card-line {
+  background: linear-gradient(150deg, #ffffff, var(--line));
 }
 
 @media (max-width: 640px) {
@@ -288,7 +295,7 @@ a:focus-visible {
   display: flex;
   justify-content: space-between;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 900;
 }
 
@@ -312,7 +319,7 @@ a:focus-visible {
 
 .question-card h1 {
   color: var(--ink);
-  font-size: clamp(22px, 3.4vw, 30px);
+  font-size: clamp(20px, 3.4vw, 28px);
   line-height: 1.06;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -324,7 +331,6 @@ a:focus-visible {
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: var(--teal-soft);
   box-shadow: var(--shadow-soft);
 }
 
@@ -341,7 +347,7 @@ a:focus-visible {
   height: 42px;
   place-items: center;
   border-radius: 999px;
-  background: var(--blue-action);
+  background: var(--blue);
   color: #ffffff;
   font-size: 18px;
   font-weight: 950;
@@ -349,10 +355,10 @@ a:focus-visible {
 
 .correct-answer strong {
   color: var(--ink);
-  font-size: 24px;
-  line-height: 1.05;
+  font-size: 20px;
+  line-height: 1.15;
   font-weight: 800;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.01em;
 }
 
 .card-head.trailing {
@@ -361,8 +367,9 @@ a:focus-visible {
 }
 
 .explanation-card p:last-child {
-  color: var(--ink);
-  font-size: 17px;
+  color: var(--muted);
+  font-size: 18px;
   line-height: 1.35;
   font-weight: 600;
+  letter-spacing: -0.03em;
 }
