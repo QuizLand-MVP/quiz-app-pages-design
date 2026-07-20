@@ -104,7 +104,7 @@ a {
 }
 
 .final-header h1 {
-  color: var(--blue);
+  color: var(--ink);
   font-size: clamp(40px, 7vw, 64px);
   line-height: 0.9;
   font-weight: 800;
@@ -240,6 +240,15 @@ a {
   border: 1px solid var(--line);
   background: var(--bg);
   color: var(--ink);
+}
+
+.actions-single {
+  grid-template-columns: 1fr;
+}
+
+.actions-single .primary-button,
+.actions-single .secondary-button {
+  width: 100%;
 }
 
 @media (max-width: 640px) {
