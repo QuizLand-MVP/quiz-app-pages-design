@@ -128,11 +128,11 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 16px;
+  gap: 32px;
 }
 
 .topbar h1 {
-  color: var(--blue);
+  color: var(--ink);
   font-size: clamp(36px, 5vw, 58px);
   line-height: 0.94;
   font-weight: 800;
@@ -154,7 +154,8 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 12px;
+  padding: 12px;
+  margin-bottom: 12px;
   border-radius: 999px;
   border: 1px solid rgba(223, 111, 79, 0.25);
   background: rgba(255, 255, 255, 0.86);
@@ -394,21 +395,21 @@ a {
 }
 
 .status-pill.draft {
-  border: 1px solid rgba(223, 111, 79, 0.25);
-  background: var(--coral-soft);
-  color: var(--coral-dark);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
 }
 
 .badge.blue {
   border: 1px solid rgba(47, 112, 230, 0.18);
   background: var(--blue-soft);
-  color: var(--blue);
+  color: var(--ink);
 }
 
-.badge.gray {
-  border: 1px solid var(--line);
-  background: var(--bg);
-  color: var(--muted);
+.badge.yellow {
+  border: 1px solid var(--yellow);
+  background: var(--yellow-soft);
+  color: var(--ink);
 }
 
 .warning-list {
