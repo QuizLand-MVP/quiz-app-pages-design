@@ -285,7 +285,7 @@ a:focus-visible {
 }
 
 .join-copy h1 {
-  color: var(--blue);
+  color: var(--ink);
   font-size: clamp(34px, 7vw, 48px);
   line-height: .94;
   font-weight: 800;
@@ -368,12 +368,11 @@ a:focus-visible {
 
 .color-dot.yellow {
   background: var(--yellow);
-  color: var(--ink);
 }
 
 .color-option input:checked+.color-dot {
   border-color: #ffffff;
-  box-shadow: 0 0 0 4px rgba(223, 111, 79, 0.28);
+  box-shadow: 0 0 0 4px var(--muted);
 }
 
 .waiting-label {
