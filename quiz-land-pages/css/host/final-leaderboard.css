@@ -35,11 +35,7 @@ body {
   margin: 0;
   color: var(--ink);
   font-family: "Baloo 2", "Nunito Sans", "Inter", sans-serif;
-  background:
-    radial-gradient(circle at 8% 4%, rgba(244, 201, 95, 0.34), transparent 18rem),
-    radial-gradient(circle at 93% 8%, rgba(239, 141, 107, 0.26), transparent 18rem),
-    radial-gradient(circle at 18% 92%, rgba(53, 166, 162, 0.14), transparent 18rem),
-    var(--bg);
+  background: var(--bg);
   text-rendering: optimizeLegibility;
 }
 
