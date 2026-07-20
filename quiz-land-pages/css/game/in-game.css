@@ -105,10 +105,8 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(120deg, rgba(244, 201, 95, 0.12), transparent 30%),
-    radial-gradient(circle at 86% 18%, rgba(239, 141, 107, 0.12), transparent 16rem),
-    radial-gradient(circle at 78% 92%, rgba(53, 166, 162, 0.10), transparent 16rem);
+  inset: 0;
+  background: var(--panel);
   pointer-events: none;
 }
 
