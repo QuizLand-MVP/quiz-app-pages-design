@@ -142,7 +142,7 @@ a {
 .title {
   display: grid;
   color: var(--ink);
-  font-size: clamp(32px, 6vw, 54px);
+  font-size: clamp(32px, 6vw, 48px);
   line-height: 0.9;
   font-weight: 800;
   letter-spacing: -0.06em;
@@ -367,7 +367,7 @@ a {
   }
 
   .title {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .message {
@@ -377,6 +377,145 @@ a {
   .actions,
   .primary-button,
   .secondary-button {
+    width: 70%;
+  }
+}
+
+/* Maintenance page — same layout as 404 */
+
+.maintenance-panel {
+  display: grid;
+  align-content: center;
+  gap: 34px;
+  padding: 56px 34px 48px;
+}
+
+.maintenance-header {
+  position: relative;
+  z-index: 1;
+}
+
+.maintenance-eyebrow {
+  justify-self: center;
+}
+
+.maintenance-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.82fr) minmax(360px, 1.18fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 82px);
+  width: min(920px, 100%);
+  margin: 0 auto;
+}
+
+.maintenance-logo-wrap {
+  display: grid;
+  place-items: center;
+  align-self: center;
+  gap: 12px;
+}
+
+.maintenance-big-logo {
+  width: clamp(200px, 18vw, 320px);
+  height: auto;
+}
+
+.maintenance-copy {
+  display: grid;
+  gap: 28px;
+  min-width: 0;
+}
+
+.maintenance-content {
+  display: grid;
+  gap: 32px;
+  max-width: 560px;
+}
+
+.maintenance-content .title {
+  font-size: clamp(32px, 6vw, 48px);
+  gap: 8px;
+}
+
+.maintenance-content .message {
+  max-width: 520px;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.16;
+}
+
+.maintenance-actions {
+  width: 100%;
+  max-width: none;
+}
+
+.maintenance-actions .primary-button {
+  min-width: 120px;
+}
+
+@media (max-width: 760px) {
+  .maintenance-panel {
+    gap: 30px;
+    padding: 28px 18px;
+  }
+
+  .maintenance-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .maintenance-eyebrow {
+    justify-self: center;
+    order: -1;
+  }
+
+  .maintenance-actions {
+    justify-content: center;
+  }
+
+  .maintenance-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .maintenance-logo-wrap {
+    order: -1;
+    gap: 12px;
+  }
+
+  .maintenance-big-logo {
+    width: min(200px, 60vw);
+  }
+
+  .maintenance-copy {
+    justify-items: center;
+  }
+
+  .maintenance-content {
+    justify-items: center;
+    max-width: 100%;
+  }
+
+  .maintenance-content .title {
+    font-size: 32px;
+  }
+
+  .maintenance-content .message {
+    font-size: 14px;
+  }
+
+  .maintenance-actions,
+  .maintenance-actions .primary-button {
+    width: 50%;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .maintenance-actions,
+  .maintenance-actions .primary-button {
     width: 70%;
   }
 }
