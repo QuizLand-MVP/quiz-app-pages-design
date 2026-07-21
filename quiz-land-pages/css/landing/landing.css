@@ -2,6 +2,7 @@
 
 :root {
   --bg: #fbf5ef;
+  --bg-soft: rgba(255, 253, 249, 0.92);
   --panel: #fffdf9;
   --ink: #12324a;
   --muted: #667689;
@@ -92,10 +93,7 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(120deg, rgba(244, 201, 95, 0.14), transparent 26%),
-    radial-gradient(circle at 82% 16%, rgba(239, 141, 107, 0.14), transparent 16rem),
-    radial-gradient(circle at 70% 86%, rgba(53, 166, 162, 0.10), transparent 16rem);
+  background: var(--panel);
   pointer-events: none;
 }
 
@@ -152,18 +150,18 @@ button {
 }
 
 .eyebrow-label {
-  min-height: 36px;
+  min-height: 18px;
+  min-width: 120px;
   display: inline-flex;
   align-items: center;
-  padding: 0 16px;
   border-radius: 999px;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--line);
   background: var(--line);
   color: var(--ink);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
 }
 
 h1 {
@@ -183,10 +181,10 @@ h1 span {
 
 h2 {
   color: var(--ink);
-  font-size: clamp(24px, 2.8vw, 34px);
+  font-size: clamp(20px, 2.8vw, 32px);
   line-height: 1.05;
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
 }
 
 h3 {
@@ -216,17 +214,17 @@ h3 {
 .visual-caption p {
   color: var(--muted);
   font-size: 12px;
-  line-height: 1.45;
+  line-height: 1.25;
   font-weight: 500;
 }
 
 
 .hero-subtitle {
   display: grid;
-  gap: 4px;
   max-width: 560px;
   font-size: clamp(16px, 1.45vw, 20px);
   line-height: 1.32;
+  margin-left: 12px;
 }
 
 .hero-subtitle span {
@@ -334,7 +332,7 @@ a:focus-visible {
   font-size: 28px;
   line-height: 1.05;
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
 }
 
 .section {
@@ -424,30 +422,30 @@ a:focus-visible {
 }
 
 .proof-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: center;
 }
 
+.proof-list>* {
+  width: fit-content;
+}
+
 .proof-list div {
-  min-height: 60px;
+  min-height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 14px;
-  border: 1px solid var(--line);
-  border-radius: 32px;
-  background: var(--bg);
-  color: var(--ink);
 }
 
 .feature-subtitle {
   display: grid;
-  gap: 4px;
   font-size: clamp(16px, 1.45vw, 20px);
   line-height: 1.32;
+  margin-left: 12px;
   color: var(--muted);
 }
 
@@ -458,10 +456,7 @@ a:focus-visible {
   gap: 24px;
   margin-top: 18px;
   padding: 28px 22px;
-  background:
-    radial-gradient(circle at 18% 20%, rgba(244, 201, 95, 0.28), transparent 12rem),
-    radial-gradient(circle at 88% 80%, rgba(47, 112, 230, 0.10), transparent 12rem),
-    rgba(255, 255, 255, 0.82);
+  background: var(--panel);
 }
 
 .final-cta .hero-form {
@@ -543,7 +538,7 @@ a:focus-visible {
   .info-card p,
   .final-cta p,
   .visual-caption p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .email-row {
