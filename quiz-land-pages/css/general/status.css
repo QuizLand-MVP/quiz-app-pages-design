@@ -84,10 +84,6 @@ a {
   position: absolute;
   inset: 0;
   background: var(--panel)
-    /* linear-gradient(120deg, rgba(244, 201, 95, 0.14), transparent 32%),
-    radial-gradient(circle at 82% 16%, rgba(239, 141, 107, 0.15), transparent 16rem),
-    radial-gradient(circle at 76% 90%, rgba(53, 166, 162, 0.12), transparent 16rem); 
-     pointer-events: none; */
 }
 
 .status-header,
@@ -239,7 +235,7 @@ a {
 }
 
 .not-found-big-logo {
-  width: clamp(200px, 18vw, 320px);
+  width: clamp(100px, 18vw, 160px);
   height: auto;
 }
 
@@ -305,7 +301,7 @@ a {
   }
 
   .not-found-big-logo {
-    width: min(200px, 60vw);
+    width: min(100px, 60vw);
   }
 
   .not-found-copy {
@@ -414,7 +410,7 @@ a {
 }
 
 .maintenance-big-logo {
-  width: clamp(200px, 18vw, 320px);
+  width: clamp(100px, 18vw, 160px);
   height: auto;
 }
 
@@ -482,7 +478,7 @@ a {
   }
 
   .maintenance-big-logo {
-    width: min(200px, 60vw);
+    width: min(100px, 60vw);
   }
 
   .maintenance-copy {
