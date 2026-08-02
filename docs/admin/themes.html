@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Land Admin — Themes</title>
+  <link rel="stylesheet" href="../css/admin/admin.css" />
+  <link rel="stylesheet" href="../css/general/preview-navigation.css" />
+</head>
+<body>
+  <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
+  <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
+
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html" aria-label="Quiz Land admin home">
+        <img src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+        <span>Admin</span>
+      </a>
+      <nav class="nav" aria-label="Admin navigation">
+        <a class="nav-link" href="index.html">Dashboard</a>
+        <a class="nav-link" href="questions.html">Questions</a>
+        <a class="nav-link" href="generate-questions.html">Generate questions</a>
+        <a class="nav-link active" href="themes.html">Themes</a>
+        <a class="nav-link" href="users.html">Users</a>
+        <a class="nav-link" href="analytics.html">Analytics</a>
+      </nav>
+      <div class="sidebar-card">
+        <strong>Theme library</strong>
+        <span>8 active themes</span>
+      </div>
+    </aside>
+
+    <main class="content questions-page">
+      <header class="page-heading">
+        <p class="eyebrow">Theme library</p>
+        <h1>Manage quiz themes</h1>
+        <p>Control the topics hosts can choose when setting up a game.</p>
+      </header>
+
+      <section class="metric-grid" aria-label="Theme statistics">
+        <article class="metric-card card-blue"><span>Active themes</span><strong>8</strong><small>Available to hosts</small></article>
+        <article class="metric-card card-coral"><span>Draft themes</span><strong>2</strong><small>Waiting for review</small></article>
+        <article class="metric-card card-teal"><span>Questions assigned</span><strong>742</strong><small>Across all themes</small></article>
+      </section>
+
+      <section class="question-review-list" aria-label="Available themes">
+        <article class="question-card">
+          <div class="question-card-top">
+            <div class="chip-row"><span class="badge blue">Movies</span><span class="badge green">186 questions</span></div>
+            <span class="status-pill approved">Active</span>
+          </div>
+          <h2 class="question-title">Movies &amp; television</h2>
+          <p class="question-explanation">Characters, quotes, directors, franchises, and screen trivia.</p>
+          <div class="actions question-actions"><a class="secondary-button" href="questions.html">View questions</a><button class="primary-button" type="button">Edit theme</button></div>
+        </article>
+
+        <article class="question-card">
+          <div class="question-card-top">
+            <div class="chip-row"><span class="badge yellow">Science</span><span class="badge green">124 questions</span></div>
+            <span class="status-pill approved">Active</span>
+          </div>
+          <h2 class="question-title">Science &amp; nature</h2>
+          <p class="question-explanation">Space, animals, the human body, inventions, and everyday science.</p>
+          <div class="actions question-actions"><a class="secondary-button" href="questions.html">View questions</a><button class="primary-button" type="button">Edit theme</button></div>
+        </article>
+
+        <article class="question-card">
+          <div class="question-card-top">
+            <div class="chip-row"><span class="badge yellow">Music</span><span class="badge blue">Draft</span></div>
+            <span class="status-pill draft">Draft</span>
+          </div>
+          <h2 class="question-title">Music</h2>
+          <p class="question-explanation">Artists, songs, albums, instruments, and music history.</p>
+          <div class="actions question-actions"><a class="secondary-button" href="questions.html">View questions</a><button class="primary-button" type="button">Review theme</button></div>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

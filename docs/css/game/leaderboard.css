@@ -176,6 +176,19 @@ a {
   color: var(--ink);
 }
 
+.flow-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+@media (max-width: 640px) {
+  .flow-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
 input,
 select {
   width: 100%;

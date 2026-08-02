@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Quiz Land | Game Lobby</title>
     <link rel="stylesheet" href="../css/host/lobby.css" />
+    <link rel="stylesheet" href="../css/general/preview-navigation.css" />
   </head>
   <body>
+    <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
+    <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
     <main class="page">
       <section class="lobby-panel" aria-label="Game lobby">
         <header class="lobby-header">
@@ -66,7 +69,7 @@
         </section>
 
         <footer class="actions">
-          <button class="secondary-button" type="button">Return to settings</button>
+          <a class="secondary-button" href="setup.html">Return to settings</a>
           <button class="primary-button disabled" type="button" disabled>Start game</button>
         </footer>
       </section>

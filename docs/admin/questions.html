@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz Land Admin — Question Bank</title>
   <link rel="stylesheet" href="../css/admin/admin.css" />
+  <link rel="stylesheet" href="../css/general/preview-navigation.css" />
 </head>
 
 <body>
+  <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
+  <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
   <div class="admin-shell">
     <aside class="sidebar">
       <a class="brand" href="index.html"><img src="../assets/quiz-land-logo.png" alt="Quiz Land" /><span>Admin
@@ -16,14 +19,14 @@
       <nav class="nav" aria-label="Admin navigation">
         <a class="nav-link" href="index.html">Dashboard</a>
         <a class="nav-link active" href="questions.html">Question Bank</a>
-        <a class="nav-link" href="questions.html#generate">Generate Questions</a>
-        <a class="nav-link" href="questions.html#themes">Themes</a>
+        <a class="nav-link" href="generate-questions.html">Generate Questions</a>
+        <a class="nav-link" href="themes.html">Themes</a>
         <a class="nav-link" href="users.html">Users</a>
         <a class="nav-link" href="analytics.html">Analytics</a>
       </nav>
       <div class="sidebar-card">
         <div class="language-switch" aria-label="Language switcher"><strong>EN</strong><span>RU</span></div>
-        <a href="#">Log out</a>
+        <a href="../login/index.html">Log out</a>
         <a href="index.html">Back to home</a>
       </div>
     </aside>
@@ -174,7 +177,6 @@
             <div class="answer-option">Granite</div>
           </div>
           <p class="question-explanation">Sandstone forms when sand grains are compacted and cemented together over time
-          </p>
           <div class="actions question-actions">
             <button class="secondary-button" type="button">Edit</button>
             <button class="primary-button" type="button">Approve</button>

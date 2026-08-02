@@ -149,6 +149,7 @@ Use these rules when changing the designs:
 Recommended process:
 
 1. Create the HTML file inside the correct area folder:
+
    - `docs/admin/`
    - `docs/host/`
    - `docs/game/`
@@ -188,6 +189,7 @@ docs/admin/questions.html
 docs/admin/users.html
 docs/admin/analytics.html
 docs/admin/generate-questions.html
+docs/admin/themes.html
 ```
 
 ### Host
@@ -259,6 +261,7 @@ These static pages are visual references, not the final React app. When implemen
 - Preserve responsive behavior.
 - Replace static values with real data from the app state/API.
 - Keep generated questions in Draft until reviewed and approved.
+- Ignore elements marked `data-preview-only`. They provide navigation within this design archive and are not part of the product UI.
 
 ## Quick checklist before merging UI changes
 

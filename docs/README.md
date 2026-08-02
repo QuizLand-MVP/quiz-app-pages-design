@@ -31,6 +31,8 @@ docs/
 ├── admin/
 │   ├── index.html
 │   ├── questions.html
+│   ├── generate-questions.html
+│   ├── themes.html
 │   ├── users.html
 │   └── analytics.html
 ├── host/
@@ -57,6 +59,7 @@ docs/
 - `index.html` redirects to `pages.html`, the page index used as the site's entry point.
 - `landing.html` contains the Quiz Land beta landing page.
 - GitHub Pages serves this directory when the repository's Pages source is set to `main` and `/docs`.
+- Every design screen includes an archive-only link back to `pages.html`. Elements marked `data-preview-only` must be ignored when implementing the product UI.
 
 
 ## v11 fixes
