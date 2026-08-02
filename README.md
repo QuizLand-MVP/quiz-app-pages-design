@@ -1,6 +1,6 @@
 # Quiz Land UI Guidelines & Page Designs
 
-This repository contains the current Quiz Land UI brand guideline book and a static HTML/CSS page archive for the app experience.
+This repository contains the current Quiz Land UI brand guideline book and a GitHub Pages-ready static HTML/CSS archive for the app experience.
 
 Quiz Land is a cozy live browser quiz game for families and friends. The UI direction is playful, warm, rounded, colorful, and simple: soft cream backgrounds, friendly pill labels, rounded cards, coral/blue/teal/yellow accents, and short punchy copy.
 
@@ -11,9 +11,10 @@ Quiz Land is a cozy live browser quiz game for families and friends. The UI dire
 ├── assets/
 │   └── media/
 │       └── content loaded here
-├── quiz-land-pages/
+├── docs/                         # GitHub Pages publish directory
 │   ├── index.html
 │   ├── pages.html
+│   ├── landing.html
 │   ├── maintenance.html
 │   ├── 404.html
 │   ├── assets/
@@ -47,19 +48,30 @@ Use these files as the source of truth before creating or changing app screens.
 
 ### Designed pages
 
-The static pages are stored in `quiz-land-pages/`.
+The static site is stored in `docs/`. GitHub Pages can publish this folder directly from the `main` branch.
 
 | Area | Files |
 | --- | --- |
-| Landing | `quiz-land-pages/index.html` |
-| Page index | `quiz-land-pages/pages.html` |
-| General | `quiz-land-pages/maintenance.html`, `quiz-land-pages/404.html` |
-| Admin | `quiz-land-pages/admin/` |
-| Host | `quiz-land-pages/host/` |
-| Login | `quiz-land-pages/login/` |
-| Game/player flow | `quiz-land-pages/game/` |
+| Site entry point | `docs/index.html` (redirects to `pages.html`) |
+| Page index | `docs/pages.html` |
+| Landing | `docs/landing.html` |
+| General | `docs/maintenance.html`, `docs/404.html` |
+| Admin | `docs/admin/` |
+| Host | `docs/host/` |
+| Login | `docs/login/` |
+| Game/player flow | `docs/game/` |
 
-The CSS is stored separately in `quiz-land-pages/css/`, with folders matching the page areas.
+The CSS is stored separately in `docs/css/`, with folders matching the page areas.
+
+## Deploy with GitHub Pages
+
+In the GitHub repository, open **Settings → Pages** and configure:
+
+- Source: **Deploy from a branch**
+- Branch: **main**
+- Folder: **/docs**
+
+After saving, the repository URL opens `docs/index.html`, which sends visitors to `docs/pages.html`. All links are relative, so they work both locally and under the repository's GitHub Pages path.
 
 ## Preview locally
 
@@ -74,7 +86,7 @@ python3 -m http.server 8080
 Open:
 
 ```text
-http://localhost:8080/quiz-land-pages/
+http://localhost:8080/docs/
 ```
 
 ### Option 2: Node
@@ -121,7 +133,7 @@ font-family: "Baloo 2", "Nunito Sans", "Inter", sans-serif;
 
 Use these rules when changing the designs:
 
-1. Use the latest transparent Quiz Land logo from `quiz-land-pages/assets/`.
+1. Use the latest transparent Quiz Land logo from `docs/assets/`.
 2. Keep page backgrounds warm cream, not cold gray or white-only.
 3. Use rounded panels and cards with 20–24px radius.
 4. Use coral pills/eyebrows for section labels.
@@ -130,22 +142,22 @@ Use these rules when changing the designs:
 7. Keep copy short, friendly, and playful.
 8. Avoid old blue-outline card styles or sharp admin dashboards.
 9. For mobile, stack dense grids into one column.
-10. Keep shared assets in `quiz-land-pages/assets/`; do not duplicate images inside every page folder.
+10. Keep shared assets in `docs/assets/`; do not duplicate images inside every page folder.
 
 ## Adding a new page
 
 Recommended process:
 
 1. Create the HTML file inside the correct area folder:
-   - `quiz-land-pages/admin/`
-   - `quiz-land-pages/host/`
-   - `quiz-land-pages/game/`
-   - `quiz-land-pages/login/`
+   - `docs/admin/`
+   - `docs/host/`
+   - `docs/game/`
+   - `docs/login/`
 
 2. Create a matching CSS file inside:
 
 ```text
-quiz-land-pages/css/<area>/
+docs/css/<area>/
 ```
 
 3. Link CSS with a relative path from the HTML file:
@@ -160,7 +172,7 @@ quiz-land-pages/css/<area>/
 <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
 ```
 
-5. Add the page to `quiz-land-pages/pages.html` so it is easy to preview.
+5. Add the page to `docs/pages.html` so it is easy to preview.
 
 ## Current page groups
 
@@ -171,11 +183,11 @@ Admin pages use a wider layout with a sidebar, soft panels, metric cards, filter
 Expected files:
 
 ```text
-quiz-land-pages/admin/index.html
-quiz-land-pages/admin/questions.html
-quiz-land-pages/admin/users.html
-quiz-land-pages/admin/analytics.html
-quiz-land-pages/admin/generate-questions.html
+docs/admin/index.html
+docs/admin/questions.html
+docs/admin/users.html
+docs/admin/analytics.html
+docs/admin/generate-questions.html
 ```
 
 ### Host
@@ -185,9 +197,9 @@ Host pages cover quiz setup, lobby, and host final leaderboard.
 Expected files:
 
 ```text
-quiz-land-pages/host/setup.html
-quiz-land-pages/host/lobby.html
-quiz-land-pages/host/final-leaderboard.html
+docs/host/setup.html
+docs/host/lobby.html
+docs/host/final-leaderboard.html
 ```
 
 ### Login
@@ -197,7 +209,7 @@ Login pages should stay focused and simple, with a clear title, short explanatio
 Expected files:
 
 ```text
-quiz-land-pages/login/index.html
+docs/login/index.html
 ```
 
 ### Game
@@ -207,18 +219,18 @@ Game pages are mobile-first because players usually join and answer from phones.
 Expected files:
 
 ```text
-quiz-land-pages/game/player-join.html
-quiz-land-pages/game/in-game.html
-quiz-land-pages/game/answer-reveal.html
-quiz-land-pages/game/leaderboard.html
-quiz-land-pages/game/final-leaderboard-player.html
+docs/game/player-join.html
+docs/game/in-game.html
+docs/game/answer-reveal.html
+docs/game/leaderboard.html
+docs/game/final-leaderboard-player.html
 ```
 
 ## Media assets
 
 Use `assets/media/` for source images, screenshots, social visuals, or other content that is not directly referenced by the static page archive.
 
-Use `quiz-land-pages/assets/` for images required by the static HTML pages.
+Use `docs/assets/` for images required by the static HTML pages.
 
 ## Git hygiene
 
@@ -252,9 +264,9 @@ These static pages are visual references, not the final React app. When implemen
 
 - [ ] Page matches the brand guideline book.
 - [ ] Logo uses the latest transparent asset.
-- [ ] CSS lives under the matching `quiz-land-pages/css/` area folder.
+- [ ] CSS lives under the matching `docs/css/` area folder.
 - [ ] HTML links use correct relative paths.
 - [ ] Mobile layout checked at 360px width.
 - [ ] Desktop layout checked at 1280px width.
 - [ ] No old blue-outline/generated component styles were reintroduced.
-- [ ] New page is linked from `quiz-land-pages/pages.html`.
+- [ ] New page is linked from `docs/pages.html`.

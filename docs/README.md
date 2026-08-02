@@ -1,10 +1,12 @@
-# Quiz Land Pages — restructured archive
+# Quiz Land Pages — GitHub Pages site
 
 ## Folder structure
 
 ```text
-quiz-land-pages/
+docs/
 ├── index.html
+├── pages.html
+├── landing.html
 ├── maintenance.html
 ├── 404.html
 ├── assets/
@@ -52,7 +54,9 @@ quiz-land-pages/
 - CSS folder structure mirrors the HTML page groups.
 - Shared images are stored in root-level `assets/`.
 - The latest transparent Quiz Land logo is used across the archive.
-- `index.html` is a simple page index for easier browser preview.
+- `index.html` redirects to `pages.html`, the page index used as the site's entry point.
+- `landing.html` contains the Quiz Land beta landing page.
+- GitHub Pages serves this directory when the repository's Pages source is set to `main` and `/docs`.
 
 
 ## v11 fixes
@@ -78,7 +82,7 @@ quiz-land-pages/
 
 ## v13 update
 
-- Added the uploaded landing page as the root `index.html`.
-- Moved the previous page-preview index to `pages.html`.
+- Added the uploaded landing page as `landing.html`.
+- The site entry point, `index.html`, redirects to the page-preview index at `pages.html`.
 - Added landing CSS at `css/landing/landing.css`.
 - Landing page images are stored in shared root `assets/`.
