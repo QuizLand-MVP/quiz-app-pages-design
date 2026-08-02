@@ -6,29 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quiz Land | Generate Questions</title>
   <link rel="stylesheet" href="../css/admin/generate-questions.css" />
+  <link rel="stylesheet" href="../css/admin/admin.css" />
   <link rel="stylesheet" href="../css/general/preview-navigation.css" />
 </head>
 
 <body>
   <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
   <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
-  <main class="admin-shell">
-    <aside class="sidebar" aria-label="Admin navigation">
-      <a class="brand-link" href="index.html" aria-label="Quiz Land admin home">
-        <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+  <main class="admin-shell generate-page">
+    <aside class="sidebar">
+      <a class="brand" href="index.html" aria-label="Quiz Land admin home">
+        <img src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+        <span>Admin overview</span>
       </a>
-
-      <nav class="admin-nav">
-        <a href="index.html">Dashboard</a>
-        <a href="questions.html">Questions</a>
-        <a class="active" href="generate-questions.html">Generate</a>
-        <a href="themes.html">Themes</a>
-        <a href="users.html">Users</a>
-        <a href="analytics.html">Analytics</a>
+      <nav class="nav" aria-label="Admin navigation">
+        <a class="nav-link" href="index.html">Dashboard</a>
+        <a class="nav-link" href="questions.html">Question Bank</a>
+        <a class="nav-link active" href="generate-questions.html">Generate Questions</a>
+        <a class="nav-link" href="themes.html">Themes</a>
+        <a class="nav-link" href="users.html">Users</a>
+        <a class="nav-link" href="analytics.html">Analytics</a>
       </nav>
+      <div class="sidebar-card admin-account-card">
+        <div class="language-switch" aria-label="Language switcher"><strong>EN</strong><span>RU</span></div>
+        <a href="../login/index.html">Log out</a>
+        <a href="index.html">Back to home</a>
+      </div>
     </aside>
 
-    <section class="admin-content">
+    <section class="content admin-content">
       <header class="topbar">
         <div>
           <p class="eyebrow">AI question factory</p>
