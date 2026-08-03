@@ -24,26 +24,22 @@
       </header>
 
       <form class="setup-form">
-        <section class="field-block">
+        <section class="field-block field-game-name">
           <label class="field-label" for="game-name">Game name</label>
           <input id="game-name" type="text" value="Movie Night" />
         </section>
 
-        <section class="field-block">
-          <div class="section-heading">
-            <h2>Players</h2>
-            <span>Maximum group size</span>
-          </div>
-          <div class="stepper" role="group" aria-label="Player count">
-            <button class="stepper-button" type="button" aria-label="Decrease player count">−</button>
-            <output class="stepper-value">8</output>
-            <button class="stepper-button" type="button" aria-label="Increase player count">+</button>
+        <section class="field-block field-language">
+          <span class="field-label" id="language-label">Language</span>
+          <div class="segmented-control two language-control" role="group" aria-labelledby="language-label">
+            <button class="segment selected" type="button">EN</button>
+            <button class="segment" type="button">RU</button>
           </div>
         </section>
 
-        <section class="field-block">
+        <section class="field-block field-themes">
           <div class="section-heading">
-            <h2>Theme</h2>
+            <h2>Themes</h2>
             <span>Choose one or more</span>
           </div>
           <div class="theme-wrap" aria-label="Themes">
@@ -58,20 +54,19 @@
           </div>
         </section>
 
-        <section class="field-block">
+        <section class="field-block field-players">
           <div class="section-heading">
-            <h2>Questions</h2>
-            <span>Round length</span>
+            <h2>Number of players</h2>
+            <span>Maximum group size</span>
           </div>
-          <div class="segmented-control four" role="group" aria-label="Question count">
-            <button class="segment" type="button">5</button>
-            <button class="segment selected" type="button">10</button>
-            <button class="segment" type="button">15</button>
-            <button class="segment" type="button">20</button>
+          <div class="stepper" role="group" aria-label="Player count">
+            <button class="stepper-button" type="button" aria-label="Decrease player count">−</button>
+            <output class="stepper-value">8</output>
+            <button class="stepper-button" type="button" aria-label="Increase player count">+</button>
           </div>
         </section>
 
-        <section class="field-block">
+        <section class="field-block field-difficulty">
           <div class="section-heading">
             <h2>Difficulty</h2>
             <span>Best for mixed groups</span>
@@ -83,9 +78,22 @@
           </div>
         </section>
 
-        <section class="field-block">
+        <section class="field-block field-questions">
           <div class="section-heading">
-            <h2>Question timer</h2>
+            <h2>Number of questions</h2>
+            <span>Round length</span>
+          </div>
+          <div class="segmented-control four" role="group" aria-label="Question count">
+            <button class="segment" type="button">5</button>
+            <button class="segment selected" type="button">10</button>
+            <button class="segment" type="button">15</button>
+            <button class="segment" type="button">20</button>
+          </div>
+        </section>
+
+        <section class="field-block field-timer">
+          <div class="section-heading">
+            <h2>Timer</h2>
             <span>Seconds per question</span>
           </div>
           <div class="segmented-control five" role="group" aria-label="Question timer">
@@ -96,6 +104,10 @@
             <button class="segment" type="button">60</button>
           </div>
         </section>
+
+        <p class="game-duration-note">
+          Estimated game length: about 5 minutes, based on 10 questions at 30 seconds each.
+        </p>
 
         <a class="primary-button" href="lobby.html">Create game</a>
       </form>
