@@ -18,29 +18,37 @@
       <header class="setup-header">
         <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
         <div class="setup-title-block">
-          <h1>Quiz setup</h1>
+          <h1>Quiz game setup</h1>
           <p>Pick the theme, set the pace, then launch the chaos.</p>
         </div>
       </header>
 
       <form class="setup-form">
         <section class="field-block field-game-name">
-          <label class="field-label" for="game-name">Game name</label>
-          <input id="game-name" type="text" value="Movie Night" />
+          <div class="section-heading">
+            <label class="field-label" for="game-name">Game name</label>
+            <span>Be creative for naming your quiz night</span>
+            <input id="game-name" type="text" value="Movie Night" />
+          </div>
         </section>
 
         <section class="field-block field-language">
+
           <span class="field-label" id="language-label">Language</span>
+          <div class="section-heading">
+            <span>Select the language for questions</span>
+          </div>
           <div class="segmented-control two language-control" role="group" aria-labelledby="language-label">
             <button class="segment selected" type="button">EN</button>
             <button class="segment" type="button">RU</button>
           </div>
+
         </section>
 
         <section class="field-block field-themes">
           <div class="section-heading">
             <h2>Themes</h2>
-            <span>Choose one or more</span>
+            <span>Choose as many themes as you like, or use random mix to challenge everybody for random themes.</span>
           </div>
           <div class="theme-wrap" aria-label="Themes">
             <button class="chip selected" type="button">Movies</button>
@@ -57,7 +65,7 @@
         <section class="field-block field-players">
           <div class="section-heading">
             <h2>Number of players</h2>
-            <span>Maximum group size</span>
+            <span>How many players will join the game (min. 2 - max. 8)</span>
           </div>
           <div class="stepper" role="group" aria-label="Player count">
             <button class="stepper-button" type="button" aria-label="Decrease player count">−</button>
@@ -96,21 +104,21 @@
             <h2>Timer</h2>
             <span>Seconds per question</span>
           </div>
-          <div class="segmented-control five" role="group" aria-label="Question timer">
-            <button class="segment" type="button">10</button>
+          <div class="segmented-control four" role="group" aria-label="Question timer">
             <button class="segment" type="button">15</button>
             <button class="segment selected" type="button">30</button>
             <button class="segment" type="button">45</button>
             <button class="segment" type="button">60</button>
           </div>
         </section>
-
+      </form>
+      <div class="card-footer">
         <p class="game-duration-note">
           Estimated game length: about 5 minutes, based on 10 questions at 30 seconds each.
         </p>
 
         <a class="primary-button" href="lobby.html">Create game</a>
-      </form>
+      </div>
     </section>
   </main>
 </body>
