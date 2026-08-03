@@ -1,38 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quiz Land | Host Login</title>
-    <link rel="stylesheet" href="../css/login/host-login.css" />
-    <link rel="stylesheet" href="../css/general/preview-navigation.css" />
-  </head>
-  <body>
-    <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
-    <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
-    <main class="page">
-      <section class="auth-panel" aria-label="Host login">
-        <header class="login-header">
-          <img class="hero-logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
-          <div class="login-copy">
-            <h1>Host your next quiz night.</h1>
-            <p>Sign in to create a game, invite players, and keep the questions rolling.</p>
-          </div>
-        </header>
 
-        <button class="google-button" type="button">
-          <span class="google-mark">G</span>
-          Continue with Google
-        </button>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Land | Host Login</title>
+  <link rel="stylesheet" href="../css/login/host-login.css" />
+  <link rel="stylesheet" href="../css/general/preview-navigation.css" />
+  <link rel="stylesheet" href="../css/shared/page-background.css" />
+</head>
 
-        <div class="divider"><span>or</span></div>
+<body>
+  <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
+  <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
+  <main class="page">
+    <section class="auth-panel" aria-label="Host login">
+      <header class="login-header">
+        <img class="hero-logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+        <div class="login-copy">
+          <h1>Host your next quiz night.</h1>
+          <p>Sign in to create a game, invite players, and keep the questions rolling.</p>
+        </div>
+      </header>
 
-        <form class="otp-form" action="../host/setup.html">
-          <label for="email">Email address</label>
-          <input id="email" type="email" placeholder="you@example.com" autocomplete="email" />
-          <button class="primary-button" type="submit">Send OTP code</button>
-        </form>
-      </section>
-    </main>
-  </body>
+      <button class="google-button" type="button">
+        <span class="google-mark">G</span>
+        Continue with Google
+      </button>
+
+      <div class="divider"><span>or</span></div>
+
+      <form class="otp-form" action="../host/setup.html">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="email" />
+        <button class="primary-button" type="submit">Send OTP code</button>
+      </form>
+    </section>
+  </main>
+</body>
+
 </html>

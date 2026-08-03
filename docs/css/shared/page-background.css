@@ -1,0 +1,36 @@
+:root {
+    --page-bg-image: url("../../assets/page-bg.webp");
+}
+
+body {
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(rgba(251, 245, 239, 0.84), rgba(251, 245, 239, 0.84)),
+        var(--page-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Keep panels readable over image background */
+.feedback-panel,
+.game-panel,
+.auth-panel,
+.status-panel,
+.panel,
+.host-panel,
+.lobby-panel,
+.leaderboard-panel,
+.final-panel,
+.admin-panel {
+    background: rgba(255, 253, 249, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+/* Avoid background-attachment fixed issues on mobile */
+@media (max-width: 760px) {
+    body {
+        background-attachment: scroll;
+    }
+}
