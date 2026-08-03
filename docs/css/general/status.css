@@ -83,7 +83,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--panel)
+  background: var(--panel);
 }
 
 .status-header,
@@ -201,136 +201,6 @@ a {
   color: var(--ink);
 }
 
-/* Maintenance page */
-
-.maintenance-panel .actions {
-  max-width: 240px;
-}
-
-/* 404 page */
-
-.not-found-panel {
-  display: grid;
-  align-content: center;
-  gap: 34px;
-  padding: 56px 34px 48px;
-}
-
-.not-found-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(220px, 0.82fr) minmax(360px, 1.18fr);
-  align-items: center;
-  gap: clamp(36px, 6vw, 82px);
-  width: min(920px, 100%);
-  margin: 0 auto;
-}
-
-.not-found-logo-wrap {
-  display: grid;
-  place-items: center;
-  align-self: center;
-  gap: 24px;
-}
-
-.not-found-big-logo {
-  width: clamp(100px, 18vw, 160px);
-  height: auto;
-}
-
-.not-found-logo-wrap .not-found-actions {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  max-width: none;
-}
-
-.not-found-logo-wrap .primary-button {
-  min-width: 120px;
-}
-
-.not-found-copy {
-  display: grid;
-  gap: 28px;
-  min-width: 0;
-}
-
-.not-found-header {
-  display: grid;
-  justify-content: space-between;
-  grid-template-columns: 1fr 1fr;
-}
-
-.not-found-eyebrow {
-  justify-self: center;
-}
-
-.not-found-content {
-  display: grid;
-  gap: 32px;
-  max-width: 560px;
-}
-
-.not-found-content .title {
-  font-size: clamp(32px, 6vw, 48px);
-  gap: 8px;
-}
-
-.not-found-content .message {
-  max-width: 520px;
-  font-size: clamp(14px, 2vw, 18px);
-  line-height: 1.16;
-}
-
-@media (max-width: 760px) {
-  .not-found-panel {
-    gap: 30px;
-    padding: 28px 18px;
-  }
-
-  .not-found-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    text-align: center;
-  }
-
-  .not-found-logo-wrap {
-    order: -1;
-    gap: 24px;
-  }
-
-  .not-found-big-logo {
-    width: min(100px, 60vw);
-  }
-
-  .not-found-copy {
-    justify-items: center;
-  }
-
-  .not-found-eyebrow {
-    justify-self: center;
-  }
-
-  .not-found-content {
-    justify-items: center;
-    max-width: 100%;
-  }
-
-  .not-found-content .title {
-    font-size: 32px;
-  }
-
-  .not-found-content .message {
-    font-size: 14px;
-  }
-
-  .not-found-logo-wrap .not-found-actions,
-  .not-found-logo-wrap .primary-button {
-    width: 50%;
-  }
-}
-
 @media (max-width: 640px) {
   .page {
     width: min(100% - 22px, 560px);
@@ -338,7 +208,6 @@ a {
   }
 
   .status-panel {
-    /* min-height: calc(100vh - 32px); */
     padding: 18px;
     border-radius: 20px;
     gap: 28px;
@@ -373,141 +242,155 @@ a {
   }
 }
 
-/* Maintenance page — same layout as 404 */
+/* Full-screen 404 and maintenance layouts */
 
+.status-page {
+  width: min(1180px, calc(100% - 48px));
+}
+
+.not-found-panel,
 .maintenance-panel {
+  min-height: calc(100vh - 48px);
+  min-height: calc(100dvh - 48px);
   display: grid;
   align-content: center;
-  gap: 34px;
-  padding: 56px 34px 48px;
+  justify-content: stretch;
+  padding: clamp(44px, 5vw, 72px);
 }
 
-.maintenance-header {
-  position: relative;
-  z-index: 1;
-}
-
-.maintenance-eyebrow {
-  justify-self: center;
-}
-
+.not-found-grid,
 .maintenance-grid {
   position: relative;
   z-index: 1;
+  width: 100%;
   display: grid;
-  grid-template-columns: minmax(220px, 0.82fr) minmax(360px, 1.18fr);
+  grid-template-columns: minmax(250px, 0.82fr) minmax(420px, 1.18fr);
   align-items: center;
-  gap: clamp(36px, 6vw, 82px);
-  width: min(920px, 100%);
-  margin: 0 auto;
+  gap: clamp(56px, 7vw, 112px);
 }
 
+.not-found-logo-wrap,
 .maintenance-logo-wrap {
   display: grid;
   place-items: center;
-  align-self: center;
-  gap: 12px;
 }
 
+.not-found-big-logo,
 .maintenance-big-logo {
-  width: clamp(100px, 18vw, 160px);
+  width: clamp(105px, 10.5vw, 140px);
   height: auto;
 }
 
+.not-found-eyebrow,
+.maintenance-eyebrow {
+  justify-self: start;
+}
+
+.not-found-copy .primary-button,
+.maintenance-copy .primary-button {
+  min-width: 180px;
+  justify-self: start;
+}
+
+.not-found-copy,
 .maintenance-copy {
   display: grid;
-  gap: 28px;
+  align-content: center;
+  justify-items: start;
+  gap: clamp(28px, 3vw, 40px);
   min-width: 0;
 }
 
+.not-found-content,
 .maintenance-content {
-  display: grid;
-  gap: 32px;
-  max-width: 560px;
+  gap: clamp(28px, 3vw, 40px);
+  max-width: 650px;
 }
 
+.not-found-content .title,
 .maintenance-content .title {
-  font-size: clamp(32px, 6vw, 48px);
-  gap: 8px;
+  gap: 10px;
+  font-size: clamp(42px, 4.5vw, 64px);
 }
 
+.not-found-content .message,
 .maintenance-content .message {
-  max-width: 520px;
-  font-size: clamp(14px, 2vw, 18px);
-  line-height: 1.16;
+  max-width: 600px;
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.3;
 }
 
-.maintenance-actions {
-  width: 100%;
-  max-width: none;
-}
+@media (max-width: 900px) {
+  .status-page {
+    width: min(100% - 32px, 720px);
+    min-height: 100dvh;
+    padding: 16px 0;
+  }
 
-.maintenance-actions .primary-button {
-  min-width: 120px;
-}
-
-@media (max-width: 760px) {
+  .not-found-panel,
   .maintenance-panel {
-    gap: 30px;
-    padding: 28px 18px;
+    min-height: calc(100dvh - 32px);
+    padding: clamp(24px, 7vw, 36px) 20px;
   }
 
-  .maintenance-header {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .maintenance-eyebrow {
-    justify-self: center;
-    order: -1;
-  }
-
-  .maintenance-actions {
-    justify-content: center;
-  }
-
+  .not-found-grid,
   .maintenance-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: clamp(30px, 7vw, 42px);
     text-align: center;
   }
 
+  .not-found-logo-wrap,
   .maintenance-logo-wrap {
-    order: -1;
-    gap: 12px;
+    width: 100%;
   }
 
+  .not-found-big-logo,
   .maintenance-big-logo {
-    width: min(100px, 60vw);
+    width: clamp(62px, 18vw, 78px);
   }
 
-  .maintenance-copy {
-    justify-items: center;
-  }
-
+  .not-found-copy,
+  .maintenance-copy,
+  .not-found-content,
   .maintenance-content {
+    width: 100%;
     justify-items: center;
-    max-width: 100%;
   }
 
+  .not-found-copy,
+  .maintenance-copy {
+    gap: 24px;
+  }
+
+  .not-found-eyebrow,
+  .maintenance-eyebrow {
+    justify-self: center;
+  }
+
+  .not-found-content,
+  .maintenance-content {
+    gap: 22px;
+  }
+
+  .not-found-content .title,
   .maintenance-content .title {
-    font-size: 32px;
+    gap: 6px;
+    font-size: clamp(30px, 9vw, 38px);
   }
 
+  .not-found-content .message,
   .maintenance-content .message {
-    font-size: 14px;
+    max-width: 420px;
+    font-size: 15px;
+    line-height: 1.35;
   }
 
-  .maintenance-actions,
-  .maintenance-actions .primary-button {
-    width: 50%;
-  }
-}
-
-@media (max-width: 640px) {
-
-  .maintenance-actions,
-  .maintenance-actions .primary-button {
-    width: 70%;
+  .not-found-copy .primary-button,
+  .maintenance-copy .primary-button {
+    width: min(100%, 240px);
+    min-width: 0;
+    justify-self: center;
   }
 }
