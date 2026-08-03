@@ -2,7 +2,6 @@
 
 :root {
   --bg: #fbf5ef;
-  --bg-soft: rgba(255, 253, 249, 0.92);
   --panel: #fffdf9;
   --ink: #12324a;
   --muted: #667689;
@@ -102,9 +101,7 @@ button {
 }
 
 .hero-copy,
-.family-visual,
-.section-heading,
-.final-cta {
+.family-visual {
   position: relative;
   z-index: 1;
 }
@@ -177,8 +174,6 @@ h1 {
   letter-spacing: -0.06em;
 }
 
-
-
 h1 span {
   display: block;
 }
@@ -212,10 +207,8 @@ h3 {
 }
 
 .hero-subtitle,
-.info-card p,
 .form-note,
-.final-cta p,
-.visual-caption p {
+.final-cta p {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.25;
@@ -231,53 +224,44 @@ h3 {
   margin-left: 12px;
 }
 
-.hero-subtitle span {
-  display: block;
+.hero-form,
+.game-actions {
+  display: grid;
+  width: 100%;
+  padding: 18px;
+  border: 1px solid rgba(49, 91, 156, 0.15);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-soft);
 }
 
 .hero-form {
-  display: grid;
   gap: 10px;
-  width: 100%;
-  max-width: 100%;
-  padding: 18px;
-  border: 1px solid rgba(49, 91, 156, 0.15);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: var(--shadow-soft);
 }
 
 .game-actions {
-  display: grid;
   gap: 16px;
-  width: 100%;
-  padding: 18px;
-  border: 1px solid rgba(49, 91, 156, 0.15);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: var(--shadow-soft);
 }
 
-.game-actions-title {
+.game-actions-title,
+.hero-form label,
+.visual-caption strong,
+.section-heading h2 {
   color: var(--ink);
   font-size: 20px;
   line-height: 1.15;
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+.game-actions-title {
+  padding-bottom: 12px;
 }
 
 .game-action-buttons {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
-}
-
-.hero-form label {
-  color: var(--ink);
-  font-size: 20px;
-  line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: -0.02em;
 }
 
 .email-row {
@@ -337,10 +321,6 @@ a:focus-visible {
   transform: none;
 }
 
-.host-button {
-  background: linear-gradient(135deg, var(--coral), var(--coral-dark));
-}
-
 .join-button {
   background: linear-gradient(135deg, var(--blue-action), var(--blue));
   box-shadow: 0 12px 24px rgba(47, 112, 230, 0.22);
@@ -370,27 +350,25 @@ a:focus-visible {
 }
 
 .hero-flow {
-  display: flex;
-  max-width: none;
-  flex-wrap: nowrap;
-  gap: 8px;
-  margin-left: 0;
-  white-space: nowrap;
-  font-size: clamp(13px, 1.35vw, 17px);
+  display: grid;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.hero-flow strong {
+  font-weight: 500;
+}
+
+.visual-copy {
+  display: grid;
+  gap: 18px;
 }
 
 .visual-caption {
-  display: grid;
-  gap: 8px;
   padding: 0 6px;
-}
-
-.visual-caption strong {
-  color: var(--ink);
-  font-size: 28px;
-  line-height: 1.05;
-  font-weight: 600;
-  letter-spacing: -0.05em;
 }
 
 .section {
@@ -467,18 +445,6 @@ a:focus-visible {
   gap: 16px;
 }
 
-.feature-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  align-items: center;
-}
-
-.feature-section .hero-subtitle {
-  color: var(--ink);
-  font-weight: 700;
-}
-
 .proof-list {
   display: flex;
   flex-wrap: wrap;
@@ -486,11 +452,8 @@ a:focus-visible {
   align-items: center;
 }
 
-.proof-list>* {
-  width: fit-content;
-}
-
 .proof-list div {
+  width: fit-content;
   min-height: 38px;
   display: flex;
   align-items: center;
@@ -501,10 +464,15 @@ a:focus-visible {
 
 .feature-subtitle {
   display: grid;
-  font-size: clamp(16px, 1.45vw, 20px);
-  line-height: 1.32;
-  margin-left: 12px;
+  gap: 12px;
   color: var(--muted);
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.feature-subtitle strong {
+  font-weight: 500;
 }
 
 .final-cta {
@@ -519,6 +487,11 @@ a:focus-visible {
 
 .final-cta .hero-form {
   max-width: 520px;
+}
+
+.final-cta h2 {
+  font-size: clamp(22px, 3.6vw, 36px);
+  white-space: nowrap;
 }
 
 .final-cta .primary-button {
@@ -635,9 +608,6 @@ a:focus-visible {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .feature-section {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 640px) {
@@ -677,22 +647,11 @@ a:focus-visible {
     font-size: 11px;
   }
 
-  h1 {
-    font-size: 42px;
-  }
-
   h2 {
     font-size: 26px;
   }
 
-  h3 {
-    font-size: 20px;
-  }
-
-  .hero-subtitle,
-  .info-card p,
-  .final-cta p,
-  .visual-caption p {
+  .final-cta p {
     font-size: 16px;
   }
 
@@ -709,32 +668,21 @@ a:focus-visible {
     min-height: 48px;
   }
 
-  .hero-form {
-    padding: 14px;
-  }
-
+  .hero-form,
   .game-actions {
     padding: 14px;
   }
 
-  .steps-grid,
-  .proof-list {
+  .steps-grid {
     grid-template-columns: 1fr;
   }
 
-  .proof-list div:nth-child(5) {
-    grid-column: auto;
-  }
-
-  .visual-caption strong {
-    font-size: 24px;
-  }
-
   .hero-flow {
-    flex-wrap: wrap;
-    gap: 4px 7px;
-    white-space: normal;
-    font-size: 14px;
+    gap: 10px;
+  }
+
+  .visual-copy {
+    gap: 16px;
   }
 
   .site-footer {

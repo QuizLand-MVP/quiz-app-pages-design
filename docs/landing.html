@@ -21,7 +21,7 @@
         <div class="hero-intro">
           <div class="hero-meta">
             <img class="hero-logo" src="assets/quiz-land-logo.png" alt="Quiz Land" />
-            <p class="eyebrow">Ready when you are</p>
+            <p class="eyebrow">Open Beta Test</p>
           </div>
 
           <h1 id="hero-title">
@@ -34,10 +34,10 @@
         <div class="game-actions" aria-label="Choose how to play Quiz Land">
           <div>
             <p class="game-actions-title">Ready to play?</p>
-            <p class="form-note">Start the room or jump into one with a game code.</p>
+            <p class="form-note">Start a game or jump into one with a game code.</p>
           </div>
           <div class="game-action-buttons">
-            <a class="primary-button host-button" href="login/index.html">Start game as host</a>
+            <a class="primary-button" href="login/index.html">Start a game</a>
             <button class="primary-button join-button" type="button" data-open-join>Join the game</button>
           </div>
         </div>
@@ -49,15 +49,17 @@
             alt="Illustration of friends and family enjoying a quiz night together at home." />
         </div>
 
-        <div class="visual-caption">
-          <strong>Turn snacks, sofas, and spare time into quiz night. No setup headache. </strong>
-        </div>
+        <div class="visual-copy">
+          <div class="visual-caption">
+            <strong>Turn snacks, sofas, and spare time into quiz night, no setup headache.</strong>
+          </div>
 
-        <p class="hero-subtitle hero-flow">
-          <strong>One host.</strong>
-          <strong>Players answer on phones.</strong>
-          <strong>Live scores bring the drama.</strong>
-        </p>
+          <p class="hero-flow">
+            <strong>One host.</strong>
+            <strong>Players answer on phones.</strong>
+            <strong>Live scores bring the drama.</strong>
+          </p>
+        </div>
       </aside>
     </section>
 
@@ -129,7 +131,7 @@
     </section>
 
     <section class="final-cta" aria-labelledby="final-title">
-      <h1 class="title-coral" id="final-title">Keep the quiz nights coming.</h1>
+      <h2 class="title-coral" id="final-title">Keep the quiz nights coming.</h2>
 
       <form id="newsletter-form" class="hero-form newsletter-form" action="#" method="post"
         aria-label="Subscribe to the Quiz Land newsletter">
@@ -163,12 +165,12 @@
       <p class="eyebrow">Player entry</p>
       <div class="dialog-copy">
         <h2 id="join-dialog-title">Got a game code?</h2>
-        <p>Enter the four-digit code from your host.</p>
+        <p>Enter the six-digit code from your host.</p>
       </div>
       <label for="join-code">Game code</label>
-      <input id="join-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code"
-        pattern="[0-9]{4}" maxlength="4" placeholder="7429" aria-describedby="join-code-help" required />
-      <p class="form-note" id="join-code-help">Four digits and you’re in.</p>
+      <input id="join-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}"
+        maxlength="4" placeholder="7429" aria-describedby="join-code-help" required />
+      <p class="form-note" id="join-code-help">Six digits and you’re in.</p>
       <button class="primary-button join-button" type="submit">Continue</button>
     </form>
   </dialog>
