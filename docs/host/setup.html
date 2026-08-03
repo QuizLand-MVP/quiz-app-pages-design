@@ -1,102 +1,106 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quiz Land | Quiz Setup</title>
-    <link rel="stylesheet" href="../css/host/setup.css" />
-    <link rel="stylesheet" href="../css/general/preview-navigation.css" />
-  </head>
-  <body>
-    <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
-    <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
-    <main class="page">
-      <section class="setup-panel" aria-label="Quiz setup screen">
-        <header class="setup-header">
-          <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
-          <div class="setup-title-block">
-            <h1>Quiz setup</h1>
-            <p>Pick the theme, set the pace, then launch the chaos.</p>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Land | Quiz Setup</title>
+  <link rel="stylesheet" href="../css/host/setup.css" />
+  <link rel="stylesheet" href="../css/general/preview-navigation.css" />
+  <link rel="stylesheet" href="../css/shared/page-background.css" />
+</head>
+
+<body>
+  <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
+  <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
+  <main class="page">
+    <section class="setup-panel" aria-label="Quiz setup screen">
+      <header class="setup-header">
+        <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+        <div class="setup-title-block">
+          <h1>Quiz setup</h1>
+          <p>Pick the theme, set the pace, then launch the chaos.</p>
+        </div>
+      </header>
+
+      <form class="setup-form">
+        <section class="field-block">
+          <label class="field-label" for="game-name">Game name</label>
+          <input id="game-name" type="text" value="Movie Night" />
+        </section>
+
+        <section class="field-block">
+          <div class="section-heading">
+            <h2>Players</h2>
+            <span>Maximum group size</span>
           </div>
-        </header>
+          <div class="stepper" role="group" aria-label="Player count">
+            <button class="stepper-button" type="button" aria-label="Decrease player count">−</button>
+            <output class="stepper-value">8</output>
+            <button class="stepper-button" type="button" aria-label="Increase player count">+</button>
+          </div>
+        </section>
 
-        <form class="setup-form">
-          <section class="field-block">
-            <label class="field-label" for="game-name">Game name</label>
-            <input id="game-name" type="text" value="Movie Night" />
-          </section>
+        <section class="field-block">
+          <div class="section-heading">
+            <h2>Theme</h2>
+            <span>Choose one or more</span>
+          </div>
+          <div class="theme-wrap" aria-label="Themes">
+            <button class="chip selected" type="button">Movies</button>
+            <button class="chip selected" type="button">Memes</button>
+            <button class="chip" type="button">Geek culture</button>
+            <button class="chip" type="button">Video games</button>
+            <button class="chip" type="button">Science</button>
+            <button class="chip" type="button">Geography</button>
+            <button class="chip" type="button">History</button>
+            <button class="chip" type="button">Random mix</button>
+          </div>
+        </section>
 
-          <section class="field-block">
-            <div class="section-heading">
-              <h2>Players</h2>
-              <span>Maximum group size</span>
-            </div>
-            <div class="stepper" role="group" aria-label="Player count">
-              <button class="stepper-button" type="button" aria-label="Decrease player count">−</button>
-              <output class="stepper-value">8</output>
-              <button class="stepper-button" type="button" aria-label="Increase player count">+</button>
-            </div>
-          </section>
+        <section class="field-block">
+          <div class="section-heading">
+            <h2>Questions</h2>
+            <span>Round length</span>
+          </div>
+          <div class="segmented-control four" role="group" aria-label="Question count">
+            <button class="segment" type="button">5</button>
+            <button class="segment selected" type="button">10</button>
+            <button class="segment" type="button">15</button>
+            <button class="segment" type="button">20</button>
+          </div>
+        </section>
 
-          <section class="field-block">
-            <div class="section-heading">
-              <h2>Theme</h2>
-              <span>Choose one or more</span>
-            </div>
-            <div class="theme-wrap" aria-label="Themes">
-              <button class="chip selected" type="button">Movies</button>
-              <button class="chip selected" type="button">Memes</button>
-              <button class="chip" type="button">Geek culture</button>
-              <button class="chip" type="button">Video games</button>
-              <button class="chip" type="button">Science</button>
-              <button class="chip" type="button">Geography</button>
-              <button class="chip" type="button">History</button>
-              <button class="chip" type="button">Random mix</button>
-            </div>
-          </section>
+        <section class="field-block">
+          <div class="section-heading">
+            <h2>Difficulty</h2>
+            <span>Best for mixed groups</span>
+          </div>
+          <div class="segmented-control three" role="group" aria-label="Difficulty">
+            <button class="segment selected" type="button">Easy</button>
+            <button class="segment" type="button">Medium</button>
+            <button class="segment" type="button">Hard</button>
+          </div>
+        </section>
 
-          <section class="field-block">
-            <div class="section-heading">
-              <h2>Questions</h2>
-              <span>Round length</span>
-            </div>
-            <div class="segmented-control four" role="group" aria-label="Question count">
-              <button class="segment" type="button">5</button>
-              <button class="segment selected" type="button">10</button>
-              <button class="segment" type="button">15</button>
-              <button class="segment" type="button">20</button>
-            </div>
-          </section>
+        <section class="field-block">
+          <div class="section-heading">
+            <h2>Question timer</h2>
+            <span>Seconds per question</span>
+          </div>
+          <div class="segmented-control five" role="group" aria-label="Question timer">
+            <button class="segment" type="button">10</button>
+            <button class="segment" type="button">15</button>
+            <button class="segment selected" type="button">30</button>
+            <button class="segment" type="button">45</button>
+            <button class="segment" type="button">60</button>
+          </div>
+        </section>
 
-          <section class="field-block">
-            <div class="section-heading">
-              <h2>Difficulty</h2>
-              <span>Best for mixed groups</span>
-            </div>
-            <div class="segmented-control three" role="group" aria-label="Difficulty">
-              <button class="segment selected" type="button">Easy</button>
-              <button class="segment" type="button">Medium</button>
-              <button class="segment" type="button">Hard</button>
-            </div>
-          </section>
+        <a class="primary-button" href="lobby.html">Create game</a>
+      </form>
+    </section>
+  </main>
+</body>
 
-          <section class="field-block">
-            <div class="section-heading">
-              <h2>Question timer</h2>
-              <span>Seconds per question</span>
-            </div>
-            <div class="segmented-control five" role="group" aria-label="Question timer">
-              <button class="segment" type="button">10</button>
-              <button class="segment" type="button">15</button>
-              <button class="segment selected" type="button">30</button>
-              <button class="segment" type="button">45</button>
-              <button class="segment" type="button">60</button>
-            </div>
-          </section>
-
-          <a class="primary-button" href="lobby.html">Create game</a>
-        </form>
-      </section>
-    </main>
-  </body>
 </html>
