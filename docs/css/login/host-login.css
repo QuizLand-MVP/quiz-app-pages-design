@@ -72,9 +72,12 @@ a {
 }
 
 .page {
-  width: min(560px, calc(100% - 24px));
+  width: 50%;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
   margin: 0 auto;
-  padding: 24px 0 38px;
+  padding: 24px 0;
 }
 
 .game-panel,
@@ -225,7 +228,7 @@ a:focus-visible {
 @media (max-width: 640px) {
   .page {
     width: min(100% - 22px, 560px);
-    padding: 16px 0 26px;
+    padding: 16px 0;
   }
 
   .game-panel,
@@ -251,12 +254,15 @@ a:focus-visible {
   }
 }
 
-.page {
-  width: min(480px, calc(100% - 24px));
+.auth-panel {
+  min-height: calc(100svh - 48px);
+  align-content: center;
+  gap: clamp(18px, 3vh, 30px);
 }
 
-.auth-panel {
-  gap: 22px;
+.auth-panel>* {
+  width: min(100%, 480px);
+  justify-self: center;
 }
 
 .login-header {
@@ -338,7 +344,7 @@ a:focus-visible {
 
 .otp-form {
   display: grid;
-  gap: 10px;
+  gap: 24px;
 }
 
 .otp-form label {
@@ -346,4 +352,10 @@ a:focus-visible {
   font-size: 16px;
   line-height: 1;
   font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .auth-panel {
+    min-height: calc(100svh - 32px);
+  }
 }
