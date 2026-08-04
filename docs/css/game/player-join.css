@@ -253,11 +253,18 @@ a:focus-visible {
 }
 
 .page {
-  width: min(480px, calc(100% - 24px));
+  width: 50%;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px 0;
 }
 
 .join-panel {
-  gap: 54px;
+  width: 100%;
+  min-height: calc(100svh - 48px);
+  align-content: center;
+  gap: clamp(28px, 4vh, 44px);
 }
 
 .join-header {
@@ -275,11 +282,11 @@ a:focus-visible {
 .join-copy {
   display: grid;
   justify-items: center;
-  gap: 10px;
+  gap: 24px;
 }
 
 .join-copy h1 {
-  color: var(--ink);
+  color: var(--blue);
   font-size: clamp(34px, 7vw, 48px);
   line-height: .94;
   font-weight: 800;
@@ -299,8 +306,7 @@ a:focus-visible {
   gap: 14px;
 }
 
-.field-label,
-.color-field legend {
+.field-label {
   color: var(--ink);
   font-size: 18px;
   line-height: 1;
@@ -308,84 +314,19 @@ a:focus-visible {
   letter-spacing: -0.03em;
 }
 
-.color-field {
-  display: grid;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
-  border: 0;
+@media (max-width: 900px) {
+  .page {
+    width: calc(100% - 32px);
+  }
 }
 
-.color-options {
-  margin-top: 2px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
+@media (max-width: 640px) {
+  .page {
+    width: min(100% - 22px, 560px);
+    padding: 16px 0;
+  }
 
-.color-option {
-  display: grid;
-  place-items: center;
-}
-
-.color-option input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.color-dot {
-  display: grid;
-  width: 56px;
-  height: 56px;
-  place-items: center;
-  border: 3px solid transparent;
-  border-radius: 999px;
-  color: #ffffff;
-  font-size: 20px;
-  line-height: 1;
-  font-weight: 950;
-  cursor: pointer;
-}
-
-.color-dot.blue {
-  background: var(--blue-action);
-}
-
-.color-dot.coral {
-  background: var(--coral-dark);
-}
-
-.color-dot.teal {
-  background: var(--teal);
-}
-
-.color-dot.yellow {
-  background: var(--yellow);
-}
-
-.color-option input:checked+.color-dot {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 4px var(--muted);
-}
-
-.waiting-label {
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--bg);
-  color: var(--ink);
-  font-size: 15px;
-  font-weight: 700;
-  text-align: center;
-}
-
-@media (max-width: 380px) {
-  .color-options {
-    grid-template-columns: repeat(2, 1fr);
+  .join-panel {
+    min-height: calc(100svh - 32px);
   }
 }
