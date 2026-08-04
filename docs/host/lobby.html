@@ -28,23 +28,40 @@
           <span></span><span></span><span></span><span></span>
         </div>
         <div class="join-copy">
-          <p class="eyebrow">Join at quiz-land.com</p>
-          <strong>7429</strong>
+          <div class="join-meta">
+            <p class="eyebrow">Join at quiz-land.com</p>
+            <a class="shared-screen-link primary-button" href="https://quiz-land.com/game/004945/screen">
+              Open shared screen
+            </a>
+          </div>
+          <strong>004945</strong>
           <span>Scan the QR code or enter the game code on your phone.</span>
         </div>
       </section>
 
+      <div class="section-heading">
+        <h2>Quiz settings</h2>
+      </div>
       <section class="game-summary" aria-label="Game summary">
-        <div>
-          <span class="eyebrow">Theme</span>
-          <strong>Movies</strong>
+
+        <div class="summary-card">
+          <span>Quiz language</span>
+          <strong>EN</strong>
         </div>
-        <div>
-          <span class="eyebrow">Questions</span>
+        <div class="summary-card">
+          <span>Theme</span>
+          <strong>General knowledge</strong>
+        </div>
+        <div class="summary-card">
+          <span>Difficulty</span>
+          <strong>Easy</strong>
+        </div>
+        <div class="summary-card">
+          <span>Questions</span>
           <strong>10</strong>
         </div>
-        <div>
-          <span class="eyebrow">Timer</span>
+        <div class="summary-card">
+          <span>Question timer</span>
           <strong>30s</strong>
         </div>
       </section>
@@ -52,31 +69,85 @@
       <section class="players-section" aria-label="Players joined">
         <div class="section-heading">
           <h2>Players joined</h2>
-          <p class="eyebrow">3 / 8</p>
+          <p class="eyebrow player-count">3 / 8</p>
         </div>
 
         <div class="player-list">
           <article class="player-row">
             <span class="avatar avatar-blue">A</span>
             <div><strong>Alex</strong><span>Ready</span></div>
+            <button class="primary-button kick-player-button" type="button" data-player-name="Alex"
+              aria-label="Remove Alex from game">Kick</button>
           </article>
           <article class="player-row">
             <span class="avatar avatar-coral">M</span>
             <div><strong>Maya</strong><span>Ready</span></div>
+            <button class="primary-button kick-player-button" type="button" data-player-name="Maya"
+              aria-label="Remove Maya from game">Kick</button>
           </article>
           <article class="player-row">
             <span class="avatar avatar-teal">D</span>
             <div><strong>Dad</strong><span>Choosing color</span></div>
+            <button class="primary-button kick-player-button" type="button" data-player-name="Dad"
+              aria-label="Remove Dad from game">Kick</button>
           </article>
         </div>
       </section>
 
       <footer class="actions">
-        <a class="secondary-button" href="setup.html">Return to settings</a>
         <button class="primary-button disabled" type="button" disabled>Start game</button>
       </footer>
     </section>
   </main>
+
+  <dialog class="shared-screen-dialog" id="shared-screen-dialog" aria-labelledby="shared-screen-title">
+    <section class="shared-screen-modal">
+      <button class="shared-screen-close" type="button" aria-label="Close shared screen">×</button>
+      <img class="shared-screen-logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+      <div class="shared-screen-copy">
+        <h2 id="shared-screen-title">Join Movie Night</h2>
+        <p>Scan the QR code or enter the code at quiz-land.com.</p>
+      </div>
+      <div class="shared-screen-qr" role="img" aria-label="QR code for game 004945"></div>
+      <div class="shared-screen-code">
+        <span>Game code</span>
+        <strong>004945</strong>
+      </div>
+    </section>
+  </dialog>
+
+  <script>
+    const sharedScreenLink = document.querySelector(".shared-screen-link");
+    const sharedScreenDialog = document.querySelector("#shared-screen-dialog");
+    const sharedScreenClose = document.querySelector(".shared-screen-close");
+
+    sharedScreenLink.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      sharedScreenDialog.showModal();
+    });
+
+    sharedScreenClose.addEventListener("click", () => sharedScreenDialog.close());
+    sharedScreenDialog.addEventListener("click", (event) => {
+      if (event.target === sharedScreenDialog) sharedScreenDialog.close();
+    });
+
+    const playerCount = document.querySelector(".player-count");
+
+    document.querySelectorAll(".kick-player-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const playerName = button.dataset.playerName;
+        const shouldRemove = window.confirm(`Remove ${playerName} from the game?`);
+
+        if (!shouldRemove) return;
+
+        button.closest(".player-row").remove();
+
+        const [joined, capacity] = playerCount.textContent.trim().split("/").map(Number);
+        playerCount.textContent = `${Math.max(0, joined - 1)} / ${capacity}`;
+      });
+    });
+  </script>
 </body>
 
 </html>

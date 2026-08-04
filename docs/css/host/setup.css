@@ -169,7 +169,7 @@ a {
 .submit-button {
   background: linear-gradient(135deg, var(--coral), var(--coral-dark));
   color: #ffffff;
-  box-shadow: 0 12px 24px rgba(223, 103, 69, 0.22);
+  box-shadow: 0 12px 24px var(--coral-soft);
 }
 
 .secondary-button {
@@ -257,7 +257,17 @@ a:focus-visible {
 }
 
 .page {
-  width: min(620px, calc(100% - 24px));
+  width: calc(100% - 48px);
+  min-height: 100svh;
+  display: grid;
+  padding: 24px 0;
+}
+
+.setup-panel {
+  min-height: calc(100svh - 48px);
+  grid-template-rows: auto auto auto;
+  align-content: start;
+  padding-inline: clamp(32px, 4vw, 64px);
 }
 
 .setup-header {
@@ -265,6 +275,8 @@ a:focus-visible {
   grid-template-columns: 92px minmax(0, 1fr);
   align-items: center;
   gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
 }
 
 .setup-title-block {
@@ -280,7 +292,8 @@ a:focus-visible {
   letter-spacing: -0.06em;
 }
 
-.setup-title-block p {
+.setup-title-block p,
+.game-duration-note {
   color: var(--muted);
   font-size: 16px;
   line-height: 1.25;
@@ -289,12 +302,61 @@ a:focus-visible {
 
 .setup-form {
   display: grid;
-  gap: 16px;
+  align-content: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "game language players"
+    "difficulty questions timer"
+    "themes themes themes";
+  row-gap: 22px;
+  column-gap: 40px;
+}
+
+.field-game-name {
+  grid-area: game;
+}
+
+.field-language {
+  grid-area: language;
+}
+
+.field-themes {
+  grid-area: themes;
+}
+
+.field-players {
+  grid-area: players;
+}
+
+.field-difficulty {
+  grid-area: difficulty;
+}
+
+.field-questions {
+  grid-area: questions;
+}
+
+.field-timer {
+  grid-area: timer;
 }
 
 .field-block {
   display: grid;
   gap: 10px;
+  padding-bottom: 18px;
+}
+
+.card-footer {
+  display: grid;
+  gap: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.card-footer .primary-button {
+  width: 50%;
+  justify-self: center;
 }
 
 .field-label,
@@ -307,10 +369,9 @@ a:focus-visible {
 }
 
 .section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 12px;
+  display: grid;
+  justify-items: start;
+  gap: 6px;
 }
 
 .section-heading span {
@@ -318,7 +379,7 @@ a:focus-visible {
   font-size: 13px;
   line-height: 1;
   font-weight: 700;
-  text-align: right;
+  text-align: left;
 }
 
 .stepper {
@@ -331,7 +392,7 @@ a:focus-visible {
 .stepper-button {
   min-height: 52px;
   border-radius: var(--radius-sm);
-  background: var(--blue-action);
+  background: var(--blue);
   color: #ffffff;
   font-size: 24px;
   line-height: 1;
@@ -357,12 +418,13 @@ a:focus-visible {
 }
 
 .chip {
-  flex: 1 1 132px;
+  flex: 0 0 160px;
+  width: 160px;
   min-height: 46px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 14px;
+  padding: 0 20px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--bg);
@@ -374,9 +436,9 @@ a:focus-visible {
 }
 
 .chip.selected {
-  border-color: rgba(223, 111, 79, 0.30);
-  background: var(--coral-soft);
-  color: var(--coral-dark);
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  color: var(--blue);
 }
 
 .segmented-control {
@@ -386,6 +448,19 @@ a:focus-visible {
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--bg);
+}
+
+.segmented-control.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.language-control {
+  min-height: 52px;
+  padding: 4px;
+}
+
+.language-control .segment {
+  min-height: 42px;
 }
 
 .segmented-control.three {
@@ -420,17 +495,59 @@ a:focus-visible {
   box-shadow: inset 0 0 0 1px rgba(223, 111, 79, 0.10);
 }
 
+@media (max-width: 1100px) {
+  .page {
+    width: calc(100% - 32px);
+  }
+
+  .setup-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "game game"
+      "language players"
+      "difficulty difficulty"
+      "questions timer"
+      "themes themes";
+  }
+
+  .card-footer .primary-button {
+    width: 100%;
+  }
+}
+
 @media (max-width: 640px) {
+  .page {
+    width: min(100% - 22px, 560px);
+    padding: 16px 0;
+  }
+
+  .setup-panel {
+    min-height: calc(100svh - 32px);
+    padding-inline: 20px;
+  }
+
+  .setup-form {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas:
+      "game"
+      "language"
+      "players"
+      "difficulty"
+      "questions"
+      "timer"
+      "themes";
+    row-gap: 18px;
+    column-gap: 0;
+  }
+
   .setup-header {
     grid-template-columns: 72px minmax(0, 1fr);
   }
 
   .stepper {
     grid-template-columns: 48px minmax(0, 1fr) 48px;
-  }
-
-  .chip {
-    flex-basis: 100%;
   }
 
   .segmented-control.five {
@@ -445,8 +562,8 @@ a:focus-visible {
   }
 }
 
-.setup-form .primary-button {
-  background: var(--blue-action);
+.card-footer .primary-button {
+  background: var(--coral);
   color: #ffffff;
-  box-shadow: 0 12px 24px rgba(47, 112, 230, 0.20);
+  box-shadow: 0 12px 24px var(--coral-soft);
 }
