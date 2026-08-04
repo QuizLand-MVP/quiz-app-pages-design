@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Land | Host In Game</title>
+  <link rel="stylesheet" href="../css/host/in-game.css" />
+  <link rel="stylesheet" href="../css/general/preview-navigation.css" />
+  <link rel="stylesheet" href="../css/shared/page-background.css" />
+</head>
+
+<body>
+  <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
+  <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
+
+  <main class="page">
+    <section class="host-game-panel" id="host-game-panel" aria-label="Host shared quiz screen">
+      <header class="game-header">
+        <div class="game-brand">
+          <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+          <div class="game-title">
+            <h1>Movie Night</h1>
+            <p>General knowledge · Easy</p>
+          </div>
+        </div>
+
+        <section class="timer-block" aria-label="3 seconds remaining">
+          <div class="timer-progress">
+            <strong class="timer-number">3</strong>
+          </div>
+          <span class="timer-label">Seconds left</span>
+        </section>
+
+        <div class="round-meta">
+          <h2>Question 5 of 10</h2>
+        </div>
+      </header>
+
+      <section class="question-card" aria-labelledby="current-question">
+        <h2 id="current-question">Which vitamin is produced when the skin is exposed to sunlight?</h2>
+      </section>
+
+      <section class="answers-grid" aria-label="Answer choices">
+        <article class="answer-card">
+          <span class="answer-letter">A</span>
+          <strong>Vitamin A</strong>
+        </article>
+        <article class="answer-card">
+          <span class="answer-letter">B</span>
+          <strong>Vitamin B12</strong>
+        </article>
+        <article class="answer-card answer-correct">
+          <span class="answer-letter">C</span>
+          <strong>Vitamin D</strong>
+        </article>
+        <article class="answer-card">
+          <span class="answer-letter">D</span>
+          <strong>Vitamin K</strong>
+        </article>
+      </section>
+
+      <section class="reveal-banner" aria-live="polite" hidden>
+        <p>Sunlight helps the skin produce vitamin D, which supports healthy bones and immune function.</p>
+      </section>
+
+      <footer class="game-footer">
+        <div class="response-status">
+          <strong>5 of 8</strong>
+          <span>Players answered</span>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    const gamePanel = document.querySelector("#host-game-panel");
+    const revealBanner = document.querySelector(".reveal-banner");
+    const timerBlock = document.querySelector(".timer-block");
+    const timerNumber = document.querySelector(".timer-number");
+
+    const revealAnswer = () => {
+      gamePanel.classList.add("is-revealed");
+      revealBanner.hidden = false;
+      timerBlock.hidden = true;
+    };
+
+    let secondsRemaining = 3;
+    const demoCountdown = window.setInterval(() => {
+      secondsRemaining -= 1;
+
+      if (secondsRemaining === 0) {
+        window.clearInterval(demoCountdown);
+        revealAnswer();
+        return;
+      }
+
+      timerNumber.textContent = secondsRemaining;
+      timerBlock.setAttribute("aria-label", `${secondsRemaining} seconds remaining`);
+    }, 1000);
+  </script>
+</body>
+
+</html>
