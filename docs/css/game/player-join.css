@@ -267,6 +267,11 @@ a:focus-visible {
   gap: clamp(28px, 4vh, 44px);
 }
 
+.join-panel > * {
+  width: 70%;
+  justify-self: center;
+}
+
 .join-header {
   display: grid;
   justify-items: center;
@@ -286,11 +291,22 @@ a:focus-visible {
 }
 
 .join-copy h1 {
-  color: var(--blue);
   font-size: clamp(34px, 7vw, 48px);
   line-height: .94;
   font-weight: 800;
   letter-spacing: -0.06em;
+}
+
+.join-copy h1 span {
+  display: block;
+}
+
+.join-title-action {
+  color: var(--teal);
+}
+
+.join-title-game {
+  color: var(--blue);
 }
 
 .join-copy p:not(.eyebrow) {
