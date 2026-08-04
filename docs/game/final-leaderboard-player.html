@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quiz Land | Final Leaderboard</title>
+  <title>Quiz Land | Player Final Leaderboard</title>
   <link rel="stylesheet" href="../css/host/final-leaderboard.css" />
   <link rel="stylesheet" href="../css/general/preview-navigation.css" />
   <link rel="stylesheet" href="../css/shared/page-background.css" />
@@ -13,40 +13,108 @@
 <body>
   <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
   <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
+
   <main class="page">
-    <section class="final-panel" aria-label="Final leaderboard">
-      <header class="final-header">
+    <section class="leaderboard-panel final-leaderboard-panel" aria-label="Player final leaderboard">
+      <header class="leaderboard-header">
         <img class="hero-logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
-        <h1>Game complete!</h1>
-        <p>Big cheers for the winners and heroic applause for everyone who survived the quiz chaos.</p>
+        <div class="header-copy">
+          <h1>Final leaderboard</h1>
+        </div>
+        <span class="eyebrow">Game complete</span>
       </header>
 
-      <section class="winner-list" aria-label="Final ranking">
-        <article class="winner-row first-place">
+      <section class="champion-celebration" aria-label="Quiz complete celebration">
+        <img class="champion-image" src="../assets/champion-trophy.png" alt="Cheerful champion trophy" />
+        <p>Big cheers for everyone who survived the quiz chaos.</p>
+      </section>
+
+      <section class="leaderboard-list" aria-label="Final ranking">
+        <article class="leaderboard-row first-place">
           <span class="rank rank-first">1</span>
-          <div><strong>Alex</strong><span>Champion of controlled chaos</span></div>
-          <b>8,420</b>
+          <div class="player-info">
+            <div class="player-name"><strong>Alex</strong></div>
+            <div class="score-details">
+              <span class="score-pill correct-total">9 correct answers</span>
+              <span class="score-pill bonus-total">Bonus earned +1,320 points</span>
+            </div>
+            <div class="score-progress" role="progressbar" aria-label="Alex score relative to first place"
+              aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+              <span style="width: 100%"></span>
+            </div>
+          </div>
+          <b class="points-earned">8,420</b>
         </article>
-        <article class="winner-row second-place">
+
+        <article class="leaderboard-row second-place is-you">
           <span class="rank rank-second">2</span>
-          <div><strong>Maya</strong><span>Fast answers, zero mercy</span></div>
-          <b>7,930</b>
+          <div class="player-info">
+            <div class="player-name"><strong>Maya</strong></div>
+            <div class="score-details">
+              <span class="score-pill correct-total">8 correct answers</span>
+              <span class="score-pill bonus-total">Bonus earned +1,050 points</span>
+            </div>
+            <span class="you-badge">You</span>
+            <div class="score-progress" role="progressbar" aria-label="Maya score relative to first place"
+              aria-valuemin="0" aria-valuemax="100" aria-valuenow="94">
+              <span style="width: 94.2%"></span>
+            </div>
+          </div>
+          <b class="points-earned">7,930</b>
         </article>
-        <article class="winner-row third-place">
+
+        <article class="leaderboard-row third-place">
           <span class="rank rank-third">3</span>
-          <div><strong>Dad</strong><span>Surprisingly dangerous</span></div>
-          <b>6,870</b>
+          <div class="player-info">
+            <div class="player-name"><strong>Dad</strong></div>
+            <div class="score-details">
+              <span class="score-pill correct-total">7 correct answers</span>
+              <span class="score-pill bonus-total">Bonus earned +870 points</span>
+            </div>
+            <div class="score-progress" role="progressbar" aria-label="Dad score relative to first place"
+              aria-valuemin="0" aria-valuemax="100" aria-valuenow="82">
+              <span style="width: 81.6%"></span>
+            </div>
+          </div>
+          <b class="points-earned">6,870</b>
         </article>
-        <article class="winner-row">
+
+        <article class="leaderboard-row">
           <span class="rank">4</span>
-          <div><strong>Nina</strong><span>Respectable survival</span></div>
-          <b>5,280</b>
+          <div class="player-info">
+            <div class="player-name"><strong>Nina</strong></div>
+            <div class="score-details">
+              <span class="score-pill correct-total">6 correct answers</span>
+              <span class="score-pill bonus-total">Bonus earned +480 points</span>
+            </div>
+            <div class="score-progress" role="progressbar" aria-label="Nina score relative to first place"
+              aria-valuemin="0" aria-valuemax="100" aria-valuenow="63">
+              <span style="width: 62.7%"></span>
+            </div>
+          </div>
+          <b class="points-earned">5,280</b>
+        </article>
+
+        <article class="leaderboard-row">
+          <span class="rank">5</span>
+          <div class="player-info">
+            <div class="player-name"><strong>Sam</strong></div>
+            <div class="score-details">
+              <span class="score-pill correct-total">5 correct answers</span>
+              <span class="score-pill bonus-total">Bonus earned +410 points</span>
+            </div>
+            <div class="score-progress" role="progressbar" aria-label="Sam score relative to first place"
+              aria-valuemin="0" aria-valuemax="100" aria-valuenow="58">
+              <span style="width: 58.3%"></span>
+            </div>
+          </div>
+          <b class="points-earned">4,910</b>
         </article>
       </section>
 
       <footer class="actions">
-        <a class="secondary-button" href="feedback.html">Leave feedback</a>
-        <a class="primary-button" href="../login/index.html">Want to host?</a>
+        <a class="secondary-button" href="player-join.html">Join new game</a>
+        <a class="primary-button" href="../login/index.html">Host the game</a>
       </footer>
     </section>
   </main>

@@ -23,8 +23,7 @@ docs/
 │   │   └── host-login.css
 │   ├── game/
 │   │   ├── player-join.css
-│   │   ├── in-game.css
-│   │   └── leaderboard.css
+│   │   └── in-game.css
 │   └── general/
 │       └── status.css
 ├── admin/
@@ -37,6 +36,7 @@ docs/
 ├── host/
 │   ├── setup.html
 │   ├── lobby.html
+│   ├── leaderboard.html
 │   └── final-leaderboard.html
 ├── login/
 │   └── index.html

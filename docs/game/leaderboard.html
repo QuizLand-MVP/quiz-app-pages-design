@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quiz Land | Leaderboard</title>
-  <link rel="stylesheet" href="../css/game/leaderboard.css" />
+  <title>Quiz Land | Player Round Results</title>
+  <link rel="stylesheet" href="../css/host/final-leaderboard.css" />
   <link rel="stylesheet" href="../css/general/preview-navigation.css" />
   <link rel="stylesheet" href="../css/shared/page-background.css" />
 </head>
@@ -13,81 +13,62 @@
 <body>
   <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
   <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
+
   <main class="page">
-    <section class="leaderboard-panel" aria-label="Leaderboard after question">
+    <section class="leaderboard-panel between-leaderboard-panel player-between-leaderboard-panel"
+      aria-label="Player results after question">
       <header class="leaderboard-header">
-        <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+        <img class="hero-logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
         <div class="header-copy">
-          <h1>Leaderboard</h1>
-          <p>Question 4 of 10 · Movie Night</p>
+          <h1>Current leaderboard</h1>
         </div>
+        <span class="eyebrow">Question 4 of 10</span>
       </header>
 
-      <section class="score-list" aria-label="Player scores">
-        <article class="score-row">
-          <div class="rank rank-yellow">1</div>
+      <section class="leaderboard-list" aria-label="Round ranking">
+        <article class="leaderboard-row first-place">
+          <span class="rank rank-first">1</span>
           <div class="player-info">
-            <strong>Alex</strong>
-            <div class="score-capsules">
-              <span class="score-pill correct">Answer 800 points</span>
-              <span class="score-pill bonus">Time bonus +120 points</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 92%"></div>
-            </div>
+            <div class="player-name"><strong>Alex</strong></div>
           </div>
-          <div class="total-score">3,420</div>
+          <b class="points-earned">920</b>
         </article>
 
-        <article class="score-row">
-          <div class="rank rank-teal">2</div>
+        <article class="leaderboard-row second-place is-you">
+          <span class="rank rank-second">2</span>
           <div class="player-info">
-            <strong>Maya</strong>
-            <div class="score-capsules">
-              <span class="score-pill correct">Answer 800 points</span>
-              <span class="score-pill bonus">Time bonus +80 points</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 84%"></div>
-            </div>
+            <div class="player-name"><strong>Maya</strong></div>
           </div>
-          <div class="total-score">3,120</div>
+          <span class="you-badge">You</span>
+          <b class="points-earned">880</b>
         </article>
 
-        <article class="score-row">
-          <div class="rank rank-coral">3</div>
+        <article class="leaderboard-row third-place">
+          <span class="rank rank-third">3</span>
           <div class="player-info">
-            <strong>Dad</strong>
-            <div class="score-capsules">
-              <span class="score-pill correct">Answer 800 points</span>
-              <span class="score-pill bonus">Time bonus +40 points</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 77%"></div>
-            </div>
+            <div class="player-name"><strong>Dad</strong></div>
           </div>
-          <div class="total-score">2,860</div>
+          <b class="points-earned">840</b>
         </article>
 
-        <article class="score-row">
-          <div class="rank rank-regular">4</div>
+        <article class="leaderboard-row">
+          <span class="rank">4</span>
           <div class="player-info">
-            <strong>Nina</strong>
-            <div class="score-capsules">
-              <span class="score-pill wrong">Answer 0 points</span>
-              <span class="score-pill bonus muted">Time bonus +0 points</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 54%"></div>
-            </div>
+            <div class="player-name"><strong>Nina</strong></div>
           </div>
-          <div class="total-score">2,020</div>
+          <b class="points-earned">830</b>
+        </article>
+
+        <article class="leaderboard-row">
+          <span class="rank">5</span>
+          <div class="player-info">
+            <div class="player-name"><strong>Sam</strong></div>
+          </div>
+          <b class="points-earned">820</b>
         </article>
       </section>
-      <div class="flow-actions">
-        <a class="secondary-button" href="in-game.html">Next question</a>
-        <a class="primary-button" href="final-leaderboard-player.html">View final results</a>
-      </div>
+
+      <p class="result-note">Waiting for the host to start the next question…</p>
     </section>
   </main>
 </body>
