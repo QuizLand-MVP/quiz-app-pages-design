@@ -24,7 +24,6 @@ docs/
 │   ├── game/
 │   │   ├── player-join.css
 │   │   ├── in-game.css
-│   │   ├── answer-reveal.css
 │   │   └── leaderboard.css
 │   └── general/
 │       └── status.css
@@ -44,7 +43,6 @@ docs/
 └── game/
     ├── player-join.html
     ├── in-game.html
-    ├── answer-reveal.html
     ├── leaderboard.html
     └── final-leaderboard-player.html
 ```
@@ -69,7 +67,6 @@ docs/
 - Final leaderboard host/player: player rows are cards instead of divider rows.
 - Player join: title moved above game code, color spacing increased, waiting label removed.
 - In-game: question type reduced one level; answer options are 2 columns desktop and 1 column mobile.
-- Answer reveal: element sizing aligned to in-game; question/explanation eyebrows aligned right.
 - Game leaderboard: player rows are cards; scoring shown as inline capsules; rank circles use guideline colors.
 - Maintenance: message split into two lines; try-again button removed.
 
@@ -79,7 +76,6 @@ docs/
 - Host setup: questions, difficulty, and timer remain segmented controls; selected state changed to light coral.
 - Host setup: Create game button changed to blue.
 - Player join: Join Movie Night is above game code; icon color spacing increased; waiting label removed.
-- Answer reveal: question and explanation eyebrows removed.
 - In-game: mobile answer options forced to one-column layout while desktop stays two columns.
 
 

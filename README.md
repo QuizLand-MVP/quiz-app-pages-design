@@ -223,7 +223,6 @@ Expected files:
 ```text
 docs/game/player-join.html
 docs/game/in-game.html
-docs/game/answer-reveal.html
 docs/game/leaderboard.html
 docs/game/final-leaderboard-player.html
 ```
