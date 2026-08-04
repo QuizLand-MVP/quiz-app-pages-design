@@ -156,16 +156,10 @@ button:focus-visible {
   letter-spacing: -.055em;
 }
 
-.game-title p {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.2;
-  font-weight: 700;
-}
-
 .round-meta {
   grid-column: 3;
   display: grid;
+  gap: 5px;
   justify-items: end;
   text-align: right;
 }
@@ -176,6 +170,13 @@ button:focus-visible {
   line-height: 1;
   font-weight: 800;
   letter-spacing: -.03em;
+}
+
+.round-meta p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 .response-status span {
@@ -320,7 +321,7 @@ button:focus-visible {
 
 .host-game-panel.is-revealed .answer-correct {
   border-color: rgba(53, 166, 162, 0.65);
-  background: var(--teal-soft);
+  background: linear-gradient(150deg, #ffffff, var(--teal-soft));
   opacity: 1;
   box-shadow: 0 12px 28px rgba(53, 166, 162, 0.16);
 }
@@ -338,7 +339,7 @@ button:focus-visible {
   padding: 18px 22px;
   border: 1px solid rgba(53, 166, 162, 0.45);
   border-radius: 20px;
-  background: var(--teal-soft);
+  background: linear-gradient(150deg, #ffffff, var(--teal-soft));
 }
 
 .reveal-banner:not([hidden]) {
@@ -418,32 +419,46 @@ button:focus-visible {
   }
 
   .game-header {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
-    text-align: center;
   }
 
   .game-brand {
     grid-column: 1;
+    grid-row: 1;
     width: 100%;
-    grid-template-columns: 72px minmax(0, 1fr);
-    gap: 12px;
+    grid-template-columns: 56px minmax(0, 1fr);
+    justify-items: start;
+    gap: 10px;
     text-align: left;
   }
 
   .logo {
-    width: 72px;
+    width: 56px;
+  }
+
+  .game-title h1 {
+    font-size: clamp(24px, 8vw, 32px);
   }
 
   .round-meta {
-    grid-column: 1;
-    justify-items: center;
-    text-align: center;
+    grid-column: 2;
+    grid-row: 1;
+    justify-items: end;
+    text-align: right;
+  }
+
+  .round-meta h2 {
+    font-size: clamp(17px, 5vw, 21px);
+  }
+
+  .round-meta p {
+    font-size: 13px;
   }
 
   .timer-block {
-    grid-column: 1;
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
   .timer-progress {
@@ -463,6 +478,7 @@ button:focus-visible {
   }
 
   .answers-grid {
+    grid-template-columns: 1fr;
     gap: 12px;
   }
 
@@ -479,13 +495,6 @@ button:focus-visible {
   .reveal-banner {
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-
-}
-
-@media (max-width: 520px) {
-  .answers-grid {
-    grid-template-columns: 1fr;
   }
 
 }
