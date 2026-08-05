@@ -170,6 +170,12 @@ h1 {
   font-weight: 600;
 }
 
+.policy-section a {
+  color: var(--blue-action);
+  font-weight: 800;
+  text-underline-offset: 3px;
+}
+
 .contact-section {
   margin: 0;
   padding: 24px 0;
