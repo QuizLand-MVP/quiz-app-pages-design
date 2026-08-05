@@ -71,7 +71,7 @@ a {
 }
 
 .page {
-    width: min(720px, calc(100% - 24px));
+    width: calc(100% - 48px);
     margin: 0 auto;
     padding: 24px 0 38px;
 }
@@ -103,9 +103,13 @@ a {
 
 .feedback-header {
     display: grid;
-    grid-template-columns: 92px minmax(0, 1fr);
+    grid-template-columns: 92px minmax(0, 1fr) auto;
     align-items: center;
     gap: 16px;
+}
+
+.feedback-header > .eyebrow {
+    justify-self: end;
 }
 
 .logo {
@@ -135,6 +139,7 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.06em;
     text-align: center;
+    white-space: nowrap;
 }
 
 .feedback-title-block h1 {
@@ -286,12 +291,12 @@ a {
 
 .answer-summary>.answer-correct-card {
     border-color: rgba(53, 166, 162, 0.28);
-    background: var(--teal-soft);
+    background: linear-gradient(135deg, #ffffff 0%, var(--teal-soft) 100%);
 }
 
 .answer-summary>.answer-wrong-card {
     border-color: rgba(223, 111, 79, 0.28);
-    background: var(--coral-soft);
+    background: linear-gradient(135deg, #ffffff 0%, var(--coral-soft) 100%);
 }
 
 .answer-summary>.answer-skipped-card {
@@ -449,6 +454,16 @@ a:focus-visible {
     font-weight: 800;
 }
 
+@media (min-width: 1100px) {
+    .question-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .question-review-card {
+        grid-template-rows: auto 1fr auto;
+    }
+}
+
 @media (max-width: 640px) {
     .page {
         width: min(100% - 22px, 560px);
@@ -461,12 +476,30 @@ a:focus-visible {
     }
 
     .feedback-header {
-        grid-template-columns: 72px minmax(0, 1fr);
-        gap: 12px;
+        grid-template-columns: 64px minmax(0, 1fr) auto;
+        gap: 8px;
     }
 
     .logo {
-        width: 72px;
+        width: 64px;
+    }
+
+    .feedback-header > .eyebrow {
+        min-height: 28px;
+        padding: 0 8px;
+        font-size: 9px;
+    }
+
+    .feedback-title-block {
+        gap: 5px;
+    }
+
+    .feedback-title-block h1 {
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+    .feedback-title-block p {
+        font-size: 13px;
     }
 
     .overall-card,
@@ -485,12 +518,14 @@ a:focus-visible {
     }
 
     .primary-button,
-    .secondary-button,
-    .issue-button {
+    .secondary-button {
         width: 100%;
     }
 
+    .question-meta .eyebrow,
     .issue-button {
+        width: 96px;
+        flex: 0 0 96px;
         min-height: 34px;
         padding: 0 11px;
         font-size: 12px;
