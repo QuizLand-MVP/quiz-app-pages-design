@@ -13,60 +13,113 @@
 <body>
   <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
   <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
-  <main class="page">
-    <section class="game-panel" aria-label="Quiz question screen">
-      <header class="game-header">
-        <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
 
-        <section class="timer-block" aria-label="Question timer">
-          <div class="timer-progress">
-            <div class="timer-number">24</div>
+  <main class="page">
+    <section class="player-game-panel" aria-label="Quiz question screen">
+      <header class="game-header">
+        <div class="game-brand">
+          <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
+          <div class="game-title">
+            <h1>Movie Night</h1>
           </div>
-          <span class="seconds-label">seconds</span>
+        </div>
+
+        <section class="timer-block" aria-label="24 seconds remaining">
+          <div class="timer-progress">
+            <strong class="timer-number">24</strong>
+          </div>
+          <span class="timer-label">Seconds left</span>
         </section>
 
-        <div class="header-trailing">
-          <p class="eyebrow">Movies</p>
-          <span>Question 4 of 10</span>
+        <div class="round-meta">
+          <h2>Question 4 of 10</h2>
+          <p>General knowledge · Easy</p>
         </div>
       </header>
 
-      <section class="progress-section" aria-label="Game progress">
-        <div class="progress-label">
-          <span>Progress</span>
-          <strong>40%</strong>
-        </div>
-        <div class="progress-track">
-          <div class="progress-fill"></div>
-        </div>
-      </section>
-
-      <section class="question-card card card-blue">
-        <h1>Which movie features a glowing blue energy cube called the Tesseract?</h1>
+      <section class="question-card" aria-labelledby="current-question">
+        <h2 id="current-question">Which movie features a glowing blue energy cube called the Tesseract?</h2>
       </section>
 
       <section class="answers-grid" aria-label="Answer options">
-        <button class="answer-card" type="button">
+        <button class="answer-card answer-correct" type="button" aria-pressed="false" data-correct-answer>
           <span class="answer-letter">A</span>
           <strong>The Avengers</strong>
         </button>
-        <button class="answer-card answer-selected" type="button">
+        <button class="answer-card" type="button" aria-pressed="false">
           <span class="answer-letter">B</span>
           <strong>Interstellar</strong>
         </button>
-        <button class="answer-card" type="button">
+        <button class="answer-card" type="button" aria-pressed="false">
           <span class="answer-letter">C</span>
           <strong>Avatar</strong>
         </button>
-        <button class="answer-card" type="button">
+        <button class="answer-card" type="button" aria-pressed="false">
           <span class="answer-letter">D</span>
           <strong>Tron: Legacy</strong>
         </button>
       </section>
 
-      <a class="submit-button" href="answer-reveal.html">Submit answer</a>
+      <section class="reveal-banner" aria-live="polite" hidden>
+        <p>The Tesseract appears throughout The Avengers as a powerful source of cosmic energy.</p>
+      </section>
+
+      <footer class="answer-footer">
+        <button class="submit-button" type="button" disabled>Submit answer</button>
+        <p class="waiting-message" role="status" aria-live="polite" hidden>
+          Answer locked in. Waiting for all players to answer…
+        </p>
+      </footer>
     </section>
   </main>
+
+  <script>
+    const answerCards = document.querySelectorAll(".answer-card");
+    const gamePanel = document.querySelector(".player-game-panel");
+    const timerBlock = document.querySelector(".timer-block");
+    const submitButton = document.querySelector(".submit-button");
+    const answerFooter = document.querySelector(".answer-footer");
+    const waitingMessage = document.querySelector(".waiting-message");
+    const revealBanner = document.querySelector(".reveal-banner");
+
+    answerCards.forEach((answerCard) => {
+      answerCard.addEventListener("click", () => {
+        answerCards.forEach((card) => {
+          card.classList.remove("answer-selected");
+          card.setAttribute("aria-pressed", "false");
+        });
+
+        answerCard.classList.add("answer-selected");
+        answerCard.setAttribute("aria-pressed", "true");
+        submitButton.disabled = false;
+      });
+    });
+
+    submitButton.addEventListener("click", () => {
+      if (!document.querySelector(".answer-selected")) return;
+
+      answerCards.forEach((answerCard) => {
+        answerCard.disabled = true;
+      });
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Answer submitted";
+      waitingMessage.hidden = false;
+
+      window.setTimeout(() => {
+        const selectedAnswer = document.querySelector(".answer-selected");
+
+        if (!selectedAnswer.matches("[data-correct-answer]")) {
+          selectedAnswer.classList.add("answer-wrong");
+        }
+
+        gamePanel.classList.add("is-revealed");
+        timerBlock.hidden = true;
+        answerFooter.hidden = true;
+        revealBanner.hidden = false;
+      }, 3000);
+    });
+  </script>
 </body>
 
 </html>

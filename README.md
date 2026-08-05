@@ -194,13 +194,14 @@ docs/admin/themes.html
 
 ### Host
 
-Host pages cover quiz setup, lobby, and host final leaderboard.
+Host pages cover quiz setup, lobby, between-question results, and the host final leaderboard.
 
 Expected files:
 
 ```text
 docs/host/setup.html
 docs/host/lobby.html
+docs/host/leaderboard.html
 docs/host/final-leaderboard.html
 ```
 
@@ -223,7 +224,6 @@ Expected files:
 ```text
 docs/game/player-join.html
 docs/game/in-game.html
-docs/game/answer-reveal.html
 docs/game/leaderboard.html
 docs/game/final-leaderboard-player.html
 ```
