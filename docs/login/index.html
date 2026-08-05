@@ -33,6 +33,19 @@
       <form class="otp-form" action="../host/setup.html">
         <label for="email">Email address</label>
         <input id="email" type="email" placeholder="you@example.com" autocomplete="email" />
+
+        <section class="login-consent" aria-label="Privacy and newsletter preferences">
+          <p class="consent-note">
+            By continuing, you agree to our <a href="../privacy-policy.html">Privacy Policy</a>.
+          </p>
+
+          <label class="newsletter-checkbox">
+            <input type="checkbox" name="newsletter" checked />
+            <span class="checkbox-mark" aria-hidden="true"></span>
+            <span class="consent-note">Send me Quiz Land news and game updates.</span>
+          </label>
+        </section>
+
         <button class="primary-button" type="submit">Send OTP code</button>
       </form>
     </section>
