@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Land — Dark Mode Landing Draft</title>
+  <meta name="description" content="Quiz Land landing-page dark mode design draft." />
+  <link rel="stylesheet" href="css/landing/landing.css" />
+  <link rel="stylesheet" href="css/general/preview-navigation.css" />
+  <link rel="stylesheet" href="css/shared/page-background.css" />
+  <link rel="stylesheet" href="css/landing/landing-dark.css" />
+</head>
+
+<body>
+  <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
+  <a class="preview-index-link" data-preview-only href="pages.html">All design pages</a>
+
+  <main class="page">
+    <section id="top" class="hero-panel" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="hero-intro">
+          <div class="hero-meta">
+            <img class="hero-logo" src="assets/quiz-land-logo.png" alt="Quiz Land" />
+            <p class="eyebrow">Dark mode concept</p>
+          </div>
+
+          <h1 id="hero-title">
+            <span class="title-blue">Think fast!</span>
+            <span class="title-coral">Tap faster!</span>
+            <span class="title-teal">Win in Quiz Land!</span>
+          </h1>
+        </div>
+
+        <div class="game-actions" aria-label="Choose how to play Quiz Land">
+          <div>
+            <p class="game-actions-title">Ready to play?</p>
+            <p class="form-note">Start a game or jump into one with a game code.</p>
+          </div>
+          <div class="game-action-buttons">
+            <a class="primary-button" href="login/index.html">Start a game</a>
+            <button class="primary-button join-button" type="button" data-open-join>Join the game</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="family-visual" aria-label="Family quiz night preview">
+        <div class="family-image-card">
+          <img src="assets/friends-night.jpg"
+            alt="Illustration of friends and family enjoying a quiz night together at home." />
+        </div>
+
+        <div class="visual-copy">
+          <div class="visual-caption">
+            <strong>Turn snacks, sofas, and spare time into quiz night, no setup headache.</strong>
+          </div>
+          <p class="hero-flow">
+            <strong>One host.</strong>
+            <strong>Players answer on phones.</strong>
+            <strong>Live scores bring the drama.</strong>
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section compact-section" id="how-it-works">
+      <div class="section-heading">
+        <h2>Start the quiz before snacks go cold.</h2>
+        <p class="eyebrow">How it works</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="info-card card-blue">
+          <div class="feature-heading">
+            <span class="step-number">1</span>
+            <h3>Host setup</h3>
+          </div>
+          <div class="feature-note">Choose players, theme, timer, and question count.</div>
+        </article>
+
+        <article class="info-card card-coral">
+          <div class="feature-heading">
+            <span class="step-number">2</span>
+            <h3>Share the code</h3>
+          </div>
+          <div class="feature-note">Players join on their phones. No app download.</div>
+        </article>
+
+        <article class="info-card card-teal">
+          <div class="feature-heading">
+            <span class="step-number">3</span>
+            <h3>Race the timer</h3>
+          </div>
+          <div class="feature-note">Everyone answers before the timer wins.</div>
+        </article>
+
+        <article class="info-card card-yellow">
+          <div class="feature-heading">
+            <span class="step-number">4</span>
+            <h3>Leaderboard</h3>
+          </div>
+          <div class="feature-note">Tiny victories. Loud reactions.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <h2>Made for evenings that need a little spark.</h2>
+        <p class="eyebrow">Why hosts will like it</p>
+      </div>
+
+      <div class="feature-subtitle">
+        <strong>No rulebook, no complicated setup.</strong>
+        <strong>Easy for families, dangerous for overconfident friends.</strong>
+        <strong>Just quick questions, loud reactions, and one friend insisting they “almost picked that answer.”</strong>
+      </div>
+
+      <div class="proof-list" aria-label="Quiz Land benefits">
+        <div class="eyebrow-label card-teal">Quick to launch</div>
+        <div class="eyebrow-label card-blue">Easy to join</div>
+        <div class="eyebrow-label card-coral">Fast rounds</div>
+        <div class="eyebrow-label card-yellow">Fun to win</div>
+        <div class="eyebrow-label card-teal">Live leaderboard</div>
+        <div class="eyebrow-label card-blue">Family-safe by default</div>
+        <div class="eyebrow-label card-coral">Perfect for game nights</div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="final-title">
+      <h2 class="title-coral" id="final-title">Keep the quiz nights coming.</h2>
+
+      <form id="newsletter-form" class="hero-form newsletter-form" action="#" method="post"
+        aria-label="Subscribe to the Quiz Land newsletter">
+        <label for="newsletter-email">Get Quiz Land news in your inbox.</label>
+        <div class="email-row">
+          <input id="newsletter-email" name="email" type="email" placeholder="you@example.com" autocomplete="email"
+            required />
+          <button class="primary-button" type="submit">Subscribe</button>
+        </div>
+        <p class="form-note" id="newsletter-note" aria-live="polite">You may unsubscribe anytime.</p>
+      </form>
+
+      <div class="hero-subtitle">
+        <strong>Short updates. Big quiz-night energy.</strong>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img class="footer-logo" src="assets/quiz-land-logo.png" alt="Quiz Land" />
+    <p>Fast questions. Friendly chaos.</p>
+    <nav aria-label="Footer navigation">
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="mailto:support@quiz-land.com">Contact support</a>
+    </nav>
+  </footer>
+
+  <dialog class="join-dialog" id="join-dialog" aria-labelledby="join-dialog-title">
+    <form class="join-dialog-card" id="join-code-form" method="dialog">
+      <button class="dialog-close" type="button" aria-label="Close join game dialog" data-close-join>&times;</button>
+      <p class="eyebrow">Player entry</p>
+      <div class="dialog-copy">
+        <h2 id="join-dialog-title">Got a game code?</h2>
+        <p>Enter the six-digit code from your host.</p>
+      </div>
+      <label for="join-code">Game code</label>
+      <input id="join-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code"
+        pattern="[0-9]{6}" maxlength="6" placeholder="742569" aria-describedby="join-code-help" required />
+      <p class="form-note" id="join-code-help">Six digits and you’re in.</p>
+      <button class="primary-button join-button" type="submit">Continue</button>
+    </form>
+  </dialog>
+
+  <script>
+    const joinDialog = document.getElementById("join-dialog");
+    const joinCodeForm = document.getElementById("join-code-form");
+    const joinCodeInput = document.getElementById("join-code");
+    const newsletterForm = document.getElementById("newsletter-form");
+    const newsletterNote = document.getElementById("newsletter-note");
+
+    document.querySelector("[data-open-join]").addEventListener("click", () => {
+      joinDialog.showModal();
+      joinCodeInput.focus();
+    });
+
+    document.querySelector("[data-close-join]").addEventListener("click", () => joinDialog.close());
+    joinDialog.addEventListener("click", (event) => {
+      if (event.target === joinDialog) joinDialog.close();
+    });
+
+    joinCodeInput.addEventListener("input", () => {
+      joinCodeInput.value = joinCodeInput.value.replace(/\D/g, "").slice(0, 6);
+    });
+
+    joinCodeForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!joinCodeForm.reportValidity()) return;
+      window.location.href = `game/player-join.html?code=${encodeURIComponent(joinCodeInput.value)}`;
+    });
+
+    newsletterForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!newsletterForm.reportValidity()) return;
+      newsletterNote.textContent = "You’re subscribed. See you at quiz night!";
+      newsletterForm.querySelector("button").textContent = "Subscribed";
+      newsletterForm.querySelector("button").disabled = true;
+    });
+  </script>
+</body>
+
+</html>
