@@ -20,12 +20,19 @@
       <div class="hero-topbar">
         <div class="hero-meta">
           <img class="hero-logo" src="assets/quiz-land-logo.png" alt="Quiz Land" />
-          <div class="language-switcher" role="group" aria-label="Language">
-            <button class="lang-btn lang-active" type="button" data-language="en" aria-pressed="true">EN</button>
-            <button class="lang-btn" type="button" data-language="ru" aria-pressed="false">RU</button>
+          <div class="hero-controls">
+            <div class="language-switcher" role="group" aria-label="Language">
+              <button class="lang-btn lang-active" type="button" data-language="en" aria-pressed="true">EN</button>
+              <button class="lang-btn" type="button" data-language="ru" aria-pressed="false">RU</button>
+            </div>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark Theme"
+              title="Dark Theme">
+              <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+              <span class="theme-toggle-label">Dark Theme</span>
+            </button>
           </div>
         </div>
-        <p class="eyebrow hero-beta" data-copy="beta">Open Beta Test</p>
+        <h3 class="title-coral" data-copy="beta">Open Beta Test</p>
       </div>
 
       <div class="hero-copy">
@@ -44,7 +51,8 @@
           </div>
           <div class="game-action-buttons">
             <a class="primary-button" href="login/index.html" data-copy="startGame">Start a game</a>
-            <button class="primary-button join-button" type="button" data-open-join data-copy="joinGame">Join the game</button>
+            <button class="primary-button join-button" type="button" data-open-join data-copy="joinGame">Join the
+              game</button>
           </div>
         </div>
       </div>
@@ -119,7 +127,8 @@
       <div class="feature-subtitle">
         <strong data-copy="whyOne">No rulebook, no complicated setup.</strong>
         <strong data-copy="whyTwo">Easy for families, dangerous for overconfident friends.</strong>
-        <strong data-copy="whyThree">Just quick questions, loud reactions, and one friend insisting they “almost picked that answer.”</strong>
+        <strong data-copy="whyThree">Just quick questions, loud reactions, and one friend insisting they “almost picked
+          that answer.”</strong>
       </div>
 
       <div class="proof-list" aria-label="Quiz Land benefits">
@@ -135,9 +144,7 @@
     </section>
   </main>
 
-  <footer class="site-footer landing-footer">
-    <button class="theme-switch" type="button" data-theme-toggle aria-pressed="false">Dark Theme</button>
-    <span aria-hidden="true"> · </span>
+  <footer class="landing-footer">
     <a href="privacy-policy.html" data-copy="privacy">Privacy Policy</a>
     <span aria-hidden="true"> · </span>
     <a href="mailto:support@quiz-land.com">support@quiz-land.com</a>
@@ -255,11 +262,17 @@
     const joinCodeInput = document.getElementById("join-code");
     const languageButtons = document.querySelectorAll("[data-language]");
     const themeToggle = document.querySelector("[data-theme-toggle]");
+    const themeToggleIcon = themeToggle.querySelector(".theme-toggle-icon");
+    const themeToggleLabel = themeToggle.querySelector(".theme-toggle-label");
     let currentLanguage = document.documentElement.lang;
 
     function updateThemeLabel() {
       const isDark = document.documentElement.classList.contains("dark-theme");
-      themeToggle.textContent = translations[currentLanguage][isDark ? "lightTheme" : "darkTheme"];
+      const label = translations[currentLanguage][isDark ? "lightTheme" : "darkTheme"];
+      themeToggleLabel.textContent = label;
+      themeToggleIcon.textContent = isDark ? "☀" : "☾";
+      themeToggle.setAttribute("aria-label", label);
+      themeToggle.title = label;
       themeToggle.setAttribute("aria-pressed", String(isDark));
     }
 
