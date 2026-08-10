@@ -167,7 +167,7 @@ button {
   justify-self: start;
 }
 
-.landing-page .hero-topbar .language-switcher {
+.landing-page .hero-topbar .hero-controls {
   grid-column: 3;
   grid-row: 1;
   justify-self: end;
@@ -185,6 +185,13 @@ button {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 999px;
+}
+
+.hero-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 .lang-btn {
@@ -908,23 +915,64 @@ html[lang="ru"] .landing-page h1 {
 }
 
 /* ---------------------------------------------------------------------- */
-/* Landing theme switcher and dark theme                                  */
+/* Landing theme toggle and dark theme                                    */
 
-.theme-switch {
+.landing-page .hero-beta {
   min-height: 0;
   padding: 0;
   border: 0;
+  border-radius: 0;
   background: transparent;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: inherit;
-  font-weight: 400;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
-.theme-switch:hover {
+.theme-toggle {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.theme-toggle:hover {
+  border-color: var(--blue-action);
   color: var(--blue-action);
+}
+
+.theme-toggle-icon {
+  width: 14px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .hero-controls {
+    gap: 6px;
+  }
+
+  .theme-toggle {
+    width: 32px;
+    flex: 0 0 32px;
+    padding: 0;
+  }
+
+  .theme-toggle-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
 }
 
 html.dark-theme {
@@ -988,6 +1036,11 @@ html.dark-theme body {
   border-color: rgba(255, 155, 120, 0.34);
   background: #fffdf9;
   color: var(--coral-dark);
+}
+
+.dark-theme .landing-page .hero-beta {
+  border: 0;
+  background: transparent;
 }
 
 .dark-theme .hero-logo,
@@ -1127,15 +1180,33 @@ html.dark-theme body {
     var(--panel);
 }
 
-.dark-theme .site-footer a,
-.dark-theme .theme-switch {
+.dark-theme .site-footer a {
   color: var(--ink);
   text-decoration-color: rgba(169, 184, 203, 0.4);
 }
 
-.dark-theme .site-footer a:hover,
-.dark-theme .theme-switch:hover {
+.dark-theme .site-footer a:hover {
   color: var(--blue);
+}
+
+.dark-theme .theme-toggle:hover {
+  border-color: #375ea3;
+  color: #375ea3;
+}
+
+.dark-theme .theme-toggle {
+  border-color: var(--line);
+  background: var(--panel-raised);
+  color: var(--ink);
+}
+
+.dark-theme .lang-btn {
+  color: #375ea3;
+}
+
+.dark-theme .lang-btn.lang-active {
+  background: #375ea3;
+  color: #ffffff;
 }
 
 .dark-theme .landing-modal-backdrop,
