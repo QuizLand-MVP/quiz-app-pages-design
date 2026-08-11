@@ -21,294 +21,141 @@
 
                 <div class="feedback-title-block">
                     <h1 id="feedback-title">How was the quiz chaos?</h1>
-                    <p>
-                        Tell us what felt fun, confusing, unfair, or suspiciously too easy.
-                    </p>
                 </div>
 
                 <span class="eyebrow">Game feedback</span>
             </header>
 
-            <section class="overall-card">
-                <div>
-                    <h2>Share your experience</h2>
-                    <p>One quick note helps us make the next game better.</p>
-                </div>
+            <section class="overall-card" aria-labelledby="overall-title">
 
-                <button class="primary-button" type="button" data-open-feedback>
-                    Leave feedback
-                </button>
+                <h2 id="overall-title">Share feedback about your game</h2>
+                <p>Tell us what felt fun, confusing, unfair, or suspiciously too easy.</p>
+                <p>Loved it? Found a weird question? Have an idea for a new theme?</p>
+                <p>
+                    Send your feedback to
+                    <a href="mailto:support@quiz-land.com">support@quiz-land.com</a>.
+                </p>
+            </section>
+            <section class="overall-card" aria-labelledby="overall-title">
+                <h2 id="questions-title">Question review</h2>
+                <p>Tick the boxes for any questions that looked wrong or need changes.</p>
             </section>
 
-            <section class="questions-section" aria-labelledby="questions-title">
-                <div class="section-heading">
-                    <h2 id="questions-title">Question review</h2>
-                    <span>Flag anything that looked wrong</span>
-                </div>
 
-                <div class="question-list">
-                    <article class="question-review-card">
-                        <div class="question-meta">
-                            <span class="eyebrow">Question 1</span>
-                            <button class="issue-button" type="button" data-question="Question 1">
-                                Complain
-                            </button>
+
+
+            <div class="question-list">
+                <article class="question-review-card">
+                    <div class="question-meta">
+                        <span class="eyebrow">Question 1</span>
+                        <label class="issue-checkbox">
+                            <input type="checkbox" name="question-issues" value="1"
+                                aria-label="Mark Question 1 for review" />
+                            <span>Report</span>
+                            <span class="checkbox-control" aria-hidden="true"></span>
+                        </label>
+                    </div>
+
+                    <h3>Which movie features a glowing blue energy cube called the Tesseract?</h3>
+
+                    <div class="answer-summary">
+                        <div class="answer-correct-card">
+                            <span>Your answer</span>
+                            <strong>The Avengers</strong>
                         </div>
 
-                        <h3>Which movie features a glowing blue energy cube called the Tesseract?</h3>
-
-                        <div class="answer-summary">
-                            <div class="answer-correct-card">
-                                <span>Your answer</span>
-                                <strong>The Avengers</strong>
-                            </div>
-
-                            <div class="answer-correct-card">
-                                <span>Correct answer</span>
-                                <strong>The Avengers</strong>
-                            </div>
+                        <div class="answer-correct-card">
+                            <span>Correct answer</span>
+                            <strong>The Avengers</strong>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="question-review-card">
-                        <div class="question-meta">
-                            <span class="eyebrow">Question 2</span>
-                            <button class="issue-button" type="button" data-question="Question 2">
-                                Complain
-                            </button>
-                        </div>
+                <article class="question-review-card">
+                    <div class="question-meta">
+                        <span class="eyebrow">Question 2</span>
+                        <label class="issue-checkbox">
+                            <input type="checkbox" name="question-issues" value="2"
+                                aria-label="Mark Question 2 for review" />
+                            <span>Report</span>
+                            <span class="checkbox-control" aria-hidden="true"></span>
+                        </label>
+                    </div>
 
-                        <h3>What is the name of Batman’s city?</h3>
+                    <h3>What is the name of Batman’s city?</h3>
 
-                        <div class="answer-summary">
-                            <div class="answer-wrong-card">
-                                <span>Your answer</span>
-                                <strong>Metropolis</strong>
-                            </div>
-
-                            <div class="answer-correct-card">
-                                <span>Correct answer</span>
-                                <strong>Gotham City</strong>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="question-review-card">
-                        <div class="question-meta">
-                            <span class="eyebrow">Question 3</span>
-                            <button class="issue-button" type="button" data-question="Question 3">
-                                Complain
-                            </button>
+                    <div class="answer-summary">
+                        <div class="answer-wrong-card">
+                            <span>Your answer</span>
+                            <strong>Metropolis</strong>
                         </div>
 
-                        <h3>Which planet is known as the Red Planet?</h3>
-
-                        <div class="answer-summary">
-                            <div class="answer-correct-card">
-                                <span>Your answer</span>
-                                <strong>Mars</strong>
-                            </div>
-
-                            <div class="answer-correct-card">
-                                <span>Correct answer</span>
-                                <strong>Mars</strong>
-                            </div>
+                        <div class="answer-correct-card">
+                            <span>Correct answer</span>
+                            <strong>Gotham City</strong>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="question-review-card">
-                        <div class="question-meta">
-                            <span class="eyebrow">Question 4</span>
-                            <button class="issue-button" type="button" data-question="Question 4">
-                                Complain
-                            </button>
+                <article class="question-review-card">
+                    <div class="question-meta">
+                        <span class="eyebrow">Question 3</span>
+                        <label class="issue-checkbox">
+                            <input type="checkbox" name="question-issues" value="3"
+                                aria-label="Mark Question 3 for review" />
+                            <span>Report</span>
+                            <span class="checkbox-control" aria-hidden="true"></span>
+                        </label>
+                    </div>
+
+                    <h3>Which planet is known as the Red Planet?</h3>
+
+                    <div class="answer-summary">
+                        <div class="answer-correct-card">
+                            <span>Your answer</span>
+                            <strong>Mars</strong>
                         </div>
 
-                        <h3>In video games, what does NPC usually stand for?</h3>
-
-                        <div class="answer-summary">
-                            <div class="answer-skipped-card">
-                                <span>Your answer</span>
-                                <strong>No answer</strong>
-                            </div>
-
-                            <div class="answer-correct-card">
-                                <span>Correct answer</span>
-                                <strong>Non-player character</strong>
-                            </div>
+                        <div class="answer-correct-card">
+                            <span>Correct answer</span>
+                            <strong>Mars</strong>
                         </div>
-                    </article>
-                </div>
-            </section>
+                    </div>
+                </article>
+
+                <article class="question-review-card">
+                    <div class="question-meta">
+                        <span class="eyebrow">Question 4</span>
+                        <label class="issue-checkbox">
+                            <input type="checkbox" name="question-issues" value="4"
+                                aria-label="Mark Question 4 for review" />
+                            <span>Report</span>
+                            <span class="checkbox-control" aria-hidden="true"></span>
+                        </label>
+                    </div>
+
+                    <h3>In video games, what does NPC usually stand for?</h3>
+
+                    <div class="answer-summary">
+                        <div class="answer-skipped-card">
+                            <span>Your answer</span>
+                            <strong>No answer</strong>
+                        </div>
+
+                        <div class="answer-correct-card">
+                            <span>Correct answer</span>
+                            <strong>Non-player character</strong>
+                        </div>
+                    </div>
+                </article>
+            </div>
 
             <footer class="feedback-actions">
-                <a class="primary-button" href="../login/index.html">Host game</a>
-                <a class="secondary-button" href="player-join.html" data-open-join>Join new game</a>
+                <button class="primary-button" type="button">Send feedback</button>
+                <a class="secondary-button" href="../landing.html">Go to Home page</a>
             </footer>
         </section>
     </main>
-
-    <div class="feedback-modal" id="feedback-modal" hidden>
-        <div class="modal-backdrop" data-close-feedback></div>
-
-        <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <div class="modal-header">
-                <div modal-header-section>
-                    <p class="eyebrow" id="modal-context">Game feedback</p>
-                    <h2 id="modal-title">Tell us what happened</h2>
-                </div>
-
-                <button class="close-button" type="button" aria-label="Close feedback popup" data-close-feedback>
-                    ×
-                </button>
-            </div>
-
-            <textarea id="feedback-text" rows="6"
-                placeholder="Example: This answer felt wrong, the question was confusing, or the game was awesome but Dad got suspiciously lucky."></textarea>
-
-            <div class="modal-actions">
-                <button class="secondary-button" type="button" data-close-feedback>
-                    Cancel
-                </button>
-                <button class="primary-button" type="button" data-submit-feedback>
-                    Send feedback
-                </button>
-            </div>
-
-            <p class="submit-note" id="submit-note" hidden>
-                Feedback saved. The quiz goblins have been notified.
-            </p>
-        </section>
-    </div>
-
-    <div class="feedback-modal" id="join-modal" hidden>
-        <div class="modal-backdrop" data-close-join></div>
-
-        <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="join-modal-title">
-            <div class="modal-header">
-                <div class="modal-header-section">
-                    <p class="eyebrow">Join new game</p>
-                    <h2 id="join-modal-title">Enter game code</h2>
-                </div>
-
-                <button class="close-button" type="button" aria-label="Close join popup" data-close-join>
-                    ×
-                </button>
-            </div>
-
-            <input class="join-code-input" id="join-code" type="text" inputmode="text" maxlength="8"
-                placeholder="ABCD12" autocomplete="off" />
-
-            <p class="join-note" id="join-note" hidden>
-                Please enter a game code first.
-            </p>
-
-            <div class="modal-actions">
-                <button class="secondary-button" type="button" data-close-join>
-                    Cancel
-                </button>
-
-                <button class="primary-button" type="button" data-submit-join>
-                    Join game
-                </button>
-            </div>
-        </section>
-    </div>
-
-    <script>
-        const modal = document.getElementById("feedback-modal");
-        const modalContext = document.getElementById("modal-context");
-        const feedbackText = document.getElementById("feedback-text");
-        const submitNote = document.getElementById("submit-note");
-
-        const joinModal = document.getElementById("join-modal");
-        const joinCodeInput = document.getElementById("join-code");
-        const joinNote = document.getElementById("join-note");
-
-        function openFeedback(context) {
-            modal.hidden = false;
-            modalContext.textContent = context;
-            feedbackText.value = "";
-            submitNote.hidden = true;
-            feedbackText.focus();
-        }
-
-        function closeFeedback() {
-            modal.hidden = true;
-        }
-
-        function openJoinModal() {
-            joinModal.hidden = false;
-            joinCodeInput.value = "";
-            joinNote.hidden = true;
-            joinCodeInput.focus();
-        }
-
-        function closeJoinModal() {
-            joinModal.hidden = true;
-        }
-
-        function submitJoinCode() {
-            const code = joinCodeInput.value.trim().toUpperCase();
-
-            if (!code) {
-                joinNote.hidden = false;
-                joinCodeInput.focus();
-                return;
-            }
-
-            window.location.href = `player-join.html?code=${encodeURIComponent(code)}`;
-        }
-
-        document.querySelector("[data-open-feedback]").addEventListener("click", () => {
-            openFeedback("Game feedback");
-        });
-
-        document.querySelectorAll(".issue-button").forEach((button) => {
-            button.addEventListener("click", () => {
-                openFeedback(button.dataset.question + " issue");
-            });
-        });
-
-        document.querySelectorAll("[data-close-feedback]").forEach((button) => {
-            button.addEventListener("click", closeFeedback);
-        });
-
-        document.querySelector("[data-submit-feedback]").addEventListener("click", () => {
-            submitNote.hidden = false;
-        });
-
-        document.querySelector("[data-open-join]").addEventListener("click", openJoinModal);
-
-        document.querySelectorAll("[data-close-join]").forEach((button) => {
-            button.addEventListener("click", closeJoinModal);
-        });
-
-        document.querySelector("[data-submit-join]").addEventListener("click", submitJoinCode);
-
-        joinCodeInput.addEventListener("input", () => {
-            joinCodeInput.value = joinCodeInput.value.toUpperCase();
-            joinNote.hidden = true;
-        });
-
-        joinCodeInput.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") {
-                submitJoinCode();
-            }
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") {
-                if (!modal.hidden) {
-                    closeFeedback();
-                }
-
-                if (!joinModal.hidden) {
-                    closeJoinModal();
-                }
-            }
-        });
-    </script>
 </body>
 
 </html>
