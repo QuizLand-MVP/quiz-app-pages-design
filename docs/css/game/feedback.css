@@ -44,7 +44,7 @@ body {
 }
 
 button,
-textarea {
+input {
     font: inherit;
 }
 
@@ -108,7 +108,7 @@ a {
     gap: 16px;
 }
 
-.feedback-header > .eyebrow {
+.feedback-header>.eyebrow {
     justify-self: end;
 }
 
@@ -143,19 +143,11 @@ a {
 }
 
 .feedback-title-block h1 {
-    color: var(--ink);
+    color: var(--blue);
     font-size: clamp(32px, 6vw, 52px);
     line-height: 0.94;
     font-weight: 800;
     letter-spacing: -0.06em;
-}
-
-.feedback-title-block p {
-    max-width: 500px;
-    color: var(--muted);
-    font-size: 16px;
-    line-height: 1.25;
-    font-weight: 700;
 }
 
 .overall-card,
@@ -169,14 +161,8 @@ a {
     box-shadow: var(--shadow-soft);
 }
 
-.overall-card {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-}
-
 .overall-card h2,
-.section-heading h2,
-.modal-card h2 {
+.section-heading h2 {
     color: var(--ink);
     font-size: 22px;
     line-height: 1;
@@ -185,19 +171,35 @@ a {
     margin-top: 20px;
 }
 
+.overall-card h2 {
+    margin-top: 0;
+}
+
+.overall-copy {
+    display: grid;
+    gap: 2px;
+}
+
+.overall-copy p {
+    margin-top: 0;
+    line-height: 1.15;
+}
+
 .overall-card p,
-.section-heading span {
-    margin-top: 6px;
+.section-heading p {
     color: var(--muted);
     font-size: 14px;
-    line-height: 1.25;
     font-weight: 700;
 }
 
+.overall-card a {
+    color: var(--blue);
+    font-weight: 800;
+    text-underline-offset: 3px;
+}
+
 .primary-button,
-.secondary-button,
-.issue-button,
-.close-button {
+.secondary-button {
     min-height: 48px;
     display: inline-flex;
     align-items: center;
@@ -226,6 +228,11 @@ a {
 .questions-section {
     display: grid;
     gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--panel);
+    box-shadow: var(--shadow-soft);
 }
 
 .section-heading {
@@ -233,6 +240,11 @@ a {
     justify-content: space-between;
     align-items: end;
     gap: 12px;
+}
+
+.section-heading p {
+    max-width: 460px;
+    text-align: right;
 }
 
 .question-list {
@@ -247,23 +259,64 @@ a {
     gap: 10px;
 }
 
-.issue-button {
-    width: fit-content;
+.issue-checkbox {
+    position: relative;
     min-height: 36px;
-    border: 1px solid rgba(223, 111, 79, 0.24);
-    border-radius: 999px;
-    background: var(--coral);
-    color: #ffffff;
-    padding: 0 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
     font-size: 13px;
     line-height: 1;
     font-weight: 850;
     letter-spacing: -0.01em;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
-.issue-button:hover {
+.issue-checkbox input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.checkbox-control {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    flex: 0 0 30px;
+    place-items: center;
+    border: 2px solid rgba(223, 111, 79, 0.42);
+    border-radius: 9px;
+    background: #ffffff;
+    color: #ffffff;
+    transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.checkbox-control::after {
+    content: "✓";
+    font-size: 19px;
+    font-weight: 900;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.issue-checkbox input:checked~.checkbox-control {
+    border-color: var(--coral);
     background: var(--coral);
-    box-shadow: var(--shadow-soft);
+}
+
+.issue-checkbox input:checked~.checkbox-control::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.issue-checkbox:focus-within {
+    border-radius: 10px;
+    outline: 3px solid rgba(47, 112, 230, 0.20);
+    outline-offset: 3px;
 }
 
 .question-review-card h3 {
@@ -326,132 +379,10 @@ a {
     gap: 10px;
 }
 
-.feedback-modal[hidden] {
-    display: none;
-}
-
-.feedback-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 20;
-    display: grid;
-    place-items: center;
-    padding: 18px;
-}
-
-.modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(18, 50, 74, 0.38);
-}
-
-.modal-card {
-    position: relative;
-    z-index: 1;
-    width: min(520px, 100%);
-    display: grid;
-    gap: 14px;
-    padding: 18px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: var(--panel);
-    box-shadow: var(--shadow);
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 14px;
-}
-
-.modal-header-section {
-    gap: 32px;
-}
-
-.close-button {
-    width: 42px;
-    min-height: 42px;
-    padding: 0;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: var(--bg);
-    color: var(--ink);
-    font-size: 28px;
-}
-
-.feedback-label {
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1;
-    font-weight: 800;
-}
-
-.join-code-input {
-    width: 100%;
-    min-height: 56px;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    background: #ffffff;
-    color: var(--ink);
-    padding: 0 16px;
-    outline: 0;
-    font-size: 24px;
-    line-height: 1;
-    font-weight: 850;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.join-code-input:focus {
-    outline: 1px solid var(--muted);
-}
-
-.join-code-input::placeholder {
-    color: rgba(102, 118, 137, 0.55);
-}
-
-.join-note {
-    color: var(--coral-dark);
-    font-size: 14px;
-    line-height: 1.25;
-    font-weight: 800;
-}
-
-textarea {
-    width: 100%;
-    min-height: 150px;
-    resize: vertical;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    background: #ffffff;
-    color: var(--ink);
-    padding: 14px;
-    outline: 0;
-    font-size: 16px;
-    line-height: 1.3;
-    font-weight: 650;
-}
-
-textarea:focus,
 button:focus-visible,
 a:focus-visible {
     outline: 3px solid rgba(47, 112, 230, 0.20);
     outline-offset: 2px;
-}
-
-.modal-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.submit-note {
-    color: var(--teal);
-    font-size: 14px;
-    line-height: 1.25;
-    font-weight: 800;
 }
 
 @media (min-width: 1100px) {
@@ -484,7 +415,7 @@ a:focus-visible {
         width: 64px;
     }
 
-    .feedback-header > .eyebrow {
+    .feedback-header>.eyebrow {
         min-height: 28px;
         padding: 0 8px;
         font-size: 9px;
@@ -498,14 +429,8 @@ a:focus-visible {
         font-size: clamp(24px, 7vw, 32px);
     }
 
-    .feedback-title-block p {
-        font-size: 13px;
-    }
-
-    .overall-card,
     .answer-summary,
-    .feedback-actions,
-    .modal-actions {
+    .feedback-actions {
         grid-template-columns: 1fr;
     }
 
@@ -517,18 +442,25 @@ a:focus-visible {
         align-items: flex-start;
     }
 
+    .section-heading p {
+        text-align: left;
+    }
+
     .primary-button,
     .secondary-button {
         width: 100%;
     }
 
-    .question-meta .eyebrow,
-    .issue-button {
+    .question-meta .eyebrow {
         width: 96px;
         flex: 0 0 96px;
         min-height: 34px;
         padding: 0 11px;
         font-size: 12px;
+    }
+
+    .issue-checkbox {
+        flex: 0 0 auto;
     }
 
     .question-review-card h3 {
