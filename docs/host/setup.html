@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quiz Land | Quiz Setup</title>
+  <title>Quiz Land | Create a game</title>
   <link rel="stylesheet" href="../css/host/setup.css" />
   <link rel="stylesheet" href="../css/general/preview-navigation.css" />
   <link rel="stylesheet" href="../css/shared/page-background.css" />
@@ -13,114 +13,440 @@
 <body>
   <!-- PREVIEW ONLY: AI agents must ignore this archive navigation when implementing the product UI. -->
   <a class="preview-index-link" data-preview-only href="../pages.html">All design pages</a>
-  <main class="page">
-    <section class="setup-panel" aria-label="Quiz setup screen">
-      <header class="setup-header">
+
+  <main class="wizard-page">
+    <section class="wizard-shell" aria-labelledby="wizard-title">
+      <header class="wizard-header">
         <img class="logo" src="../assets/quiz-land-logo.png" alt="Quiz Land" />
-        <div class="setup-title-block">
-          <h1>Quiz game setup</h1>
-          <p>Pick the theme, set the pace, then launch the chaos.</p>
+        <div class="wizard-heading">
+          <h1 id="wizard-title">Create game</h1>
         </div>
+        <p class="player-limit" aria-label="Current game capacity is up to 8 players">
+          Up to 8 players
+        </p>
       </header>
 
-      <form class="setup-form">
-        <section class="field-block field-game-name">
-          <div class="section-heading">
-            <label class="field-label" for="game-name">Game name</label>
-            <span>Be creative for naming your quiz night</span>
-            <input id="game-name" type="text" value="Movie Night" />
-          </div>
-        </section>
-
-        <section class="field-block field-language">
-
-          <span class="field-label" id="language-label">Language</span>
-          <div class="section-heading">
-            <span>Select the language for questions</span>
-          </div>
-          <div class="segmented-control two language-control" role="group" aria-labelledby="language-label">
-            <button class="segment selected" type="button">EN</button>
-            <button class="segment" type="button">RU</button>
-          </div>
-
-        </section>
-
-        <section class="field-block field-themes">
-          <div class="section-heading">
-            <h2>Themes</h2>
-            <span>Choose as many themes as you like, or use random mix to challenge everybody for random themes.</span>
-          </div>
-          <div class="theme-wrap" aria-label="Themes">
-            <button class="chip selected" type="button">Movies</button>
-            <button class="chip selected" type="button">Memes</button>
-            <button class="chip" type="button">Geek culture</button>
-            <button class="chip" type="button">Video games</button>
-            <button class="chip" type="button">Science</button>
-            <button class="chip" type="button">Geography</button>
-            <button class="chip" type="button">History</button>
-            <button class="chip" type="button">Random mix</button>
-          </div>
-        </section>
-
-        <section class="field-block field-players">
-          <div class="section-heading">
-            <h2>Number of players</h2>
-            <span>How many players will join the game (min. 2 - max. 8)</span>
-          </div>
-          <div class="stepper" role="group" aria-label="Player count">
-            <button class="stepper-button" type="button" aria-label="Decrease player count">−</button>
-            <output class="stepper-value">8</output>
-            <button class="stepper-button" type="button" aria-label="Increase player count">+</button>
-          </div>
-        </section>
-
-        <section class="field-block field-difficulty">
-          <div class="section-heading">
-            <h2>Difficulty</h2>
-            <span>Best for mixed groups</span>
-          </div>
-          <div class="segmented-control three" role="group" aria-label="Difficulty">
-            <button class="segment selected" type="button">Easy</button>
-            <button class="segment" type="button">Medium</button>
-            <button class="segment" type="button">Hard</button>
-          </div>
-        </section>
-
-        <section class="field-block field-questions">
-          <div class="section-heading">
-            <h2>Number of questions</h2>
-            <span>Round length</span>
-          </div>
-          <div class="segmented-control four" role="group" aria-label="Question count">
-            <button class="segment" type="button">5</button>
-            <button class="segment selected" type="button">10</button>
-            <button class="segment" type="button">15</button>
-            <button class="segment" type="button">20</button>
-          </div>
-        </section>
-
-        <section class="field-block field-timer">
-          <div class="section-heading">
-            <h2>Timer</h2>
-            <span>Seconds per question</span>
-          </div>
-          <div class="segmented-control four" role="group" aria-label="Question timer">
-            <button class="segment" type="button">15</button>
-            <button class="segment selected" type="button">30</button>
-            <button class="segment" type="button">45</button>
-            <button class="segment" type="button">60</button>
-          </div>
-        </section>
-      </form>
-      <div class="card-footer">
-        <p class="game-duration-note">
-          Estimated game length: about 5 minutes, based on 10 questions at 30 seconds each.
-        </p>
-
-        <a class="primary-button" href="lobby.html">Create game</a>
+      <div class="wizard-progress" aria-label="Game setup progress">
+        <div class="progress-copy">
+          <span class="progress-step">Step 1 of 5</span>
+          <span class="progress-name visually-hidden">Game title</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1"
+          aria-label="Step 1 of 5">
+          <span class="progress-value"></span>
+        </div>
       </div>
+
+      <form class="wizard-form" id="quiz-setup-form" novalidate>
+        <div class="wizard-status" aria-live="polite" aria-atomic="true"></div>
+
+        <section class="wizard-step is-active" data-step="0" aria-labelledby="step-name-title">
+          <div class="step-heading">
+            <h2 id="step-name-title" tabindex="-1">Game title</h2>
+            <p>Players see this when they join.</p>
+          </div>
+
+          <div class="field-group">
+            <label class="visually-hidden" for="game-name">Game title</label>
+            <input id="game-name" name="game-name" type="text" value="Movie Night" maxlength="60"
+              aria-describedby="game-name-hint game-name-error" autocomplete="off" />
+            <div class="field-meta">
+              <span id="game-name-hint">For example, Friday Family Showdown</span>
+              <span class="character-count">11 / 60</span>
+            </div>
+            <p class="field-error" id="game-name-error" hidden>Please enter a game title.</p>
+          </div>
+        </section>
+
+        <section class="wizard-step" data-step="1" aria-labelledby="step-theme-title" hidden>
+          <div class="step-heading">
+            <h2 id="step-theme-title" tabindex="-1">Themes</h2>
+            <p>Choose one or more, or let Random Mix surprise everyone.</p>
+          </div>
+
+          <fieldset class="choice-fieldset theme-fieldset" aria-describedby="theme-help theme-error">
+            <legend class="visually-hidden">Quiz themes</legend>
+            <p class="selection-status" id="theme-help">No themes selected yet</p>
+            <div class="theme-grid">
+              <button class="theme-card random-theme-card" type="button" data-theme="Random Mix"
+                aria-pressed="false">
+                <span class="theme-icon theme-icon-coral" aria-hidden="true">R</span>
+                <span><strong>Random Mix</strong><small>We choose a playful mix for you</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+              <button class="theme-card" type="button" data-theme="Movies" aria-pressed="false">
+                <span class="theme-icon theme-icon-blue" aria-hidden="true">M</span>
+                <span><strong>Movies</strong><small>Characters, scenes, and cinema</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+              <button class="theme-card" type="button" data-theme="Memes" aria-pressed="false">
+                <span class="theme-icon theme-icon-yellow" aria-hidden="true">M</span>
+                <span><strong>Memes</strong><small>Internet culture and viral moments</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+              <button class="theme-card" type="button" data-theme="Geek culture" aria-pressed="false">
+                <span class="theme-icon theme-icon-teal" aria-hidden="true">G</span>
+                <span><strong>Geek culture</strong><small>Fandoms, heroes, and worlds</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+              <button class="theme-card" type="button" data-theme="Video games" aria-pressed="false">
+                <span class="theme-icon theme-icon-coral" aria-hidden="true">V</span>
+                <span><strong>Video games</strong><small>Consoles, quests, and bosses</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+              <button class="theme-card" type="button" data-theme="Science" aria-pressed="false">
+                <span class="theme-icon theme-icon-blue" aria-hidden="true">S</span>
+                <span><strong>Science</strong><small>Space, nature, and inventions</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+              <button class="theme-card" type="button" data-theme="Geography" aria-pressed="false">
+                <span class="theme-icon theme-icon-yellow" aria-hidden="true">G</span>
+                <span><strong>Geography</strong><small>Places, flags, and landmarks</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+              <button class="theme-card" type="button" data-theme="History" aria-pressed="false">
+                <span class="theme-icon theme-icon-teal" aria-hidden="true">H</span>
+                <span><strong>History</strong><small>People, eras, and big moments</small></span>
+                <span class="selection-mark" aria-hidden="true">✓</span>
+              </button>
+            </div>
+            <p class="field-error" id="theme-error" hidden>Select at least one theme or choose Random Mix.</p>
+          </fieldset>
+        </section>
+
+        <section class="wizard-step" data-step="2" aria-labelledby="step-difficulty-title" hidden>
+          <div class="step-heading">
+            <h2 id="step-difficulty-title" tabindex="-1">Difficulty</h2>
+          </div>
+
+          <fieldset class="choice-fieldset">
+            <legend class="visually-hidden">Difficulty</legend>
+            <div class="option-card-grid three-options" data-choice-group="difficulty">
+              <button class="option-card option-easy" type="button" data-value="Easy" aria-pressed="false">
+                <span class="option-badge option-badge-teal" aria-hidden="true">1</span>
+                <strong>Easy</strong>
+                <small>Best for families and a relaxed warm-up</small>
+                <span class="option-check" aria-hidden="true">✓</span>
+              </button>
+              <button class="option-card option-medium is-selected" type="button" data-value="Medium" aria-pressed="true">
+                <span class="option-badge option-badge-blue" aria-hidden="true">2</span>
+                <strong>Medium</strong>
+                <small>Balanced questions for mixed groups</small>
+                <span class="option-check" aria-hidden="true">✓</span>
+              </button>
+              <button class="option-card option-hard" type="button" data-value="Hard" aria-pressed="false">
+                <span class="option-badge option-badge-coral" aria-hidden="true">3</span>
+                <strong>Hard</strong>
+                <small>For confident players who want a fight</small>
+                <span class="option-check" aria-hidden="true">✓</span>
+              </button>
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="wizard-step" data-step="3" aria-labelledby="step-questions-title" hidden>
+          <div class="step-heading">
+            <h2 id="step-questions-title" tabindex="-1">Questions</h2>
+            <p>Choose the length of your game.</p>
+          </div>
+
+          <fieldset class="choice-fieldset">
+            <legend class="visually-hidden">Number of questions</legend>
+            <div class="number-options" data-choice-group="questions">
+              <button class="number-option is-selected" type="button" data-value="10" aria-pressed="true">
+                <strong>10</strong><span>Quick game</span>
+              </button>
+              <button class="number-option" type="button" data-value="15" aria-pressed="false">
+                <strong>15</strong><span>Short round</span>
+              </button>
+              <button class="number-option" type="button" data-value="20" aria-pressed="false">
+                <strong>20</strong><span>Game night</span>
+              </button>
+              <button class="number-option" type="button" data-value="30" aria-pressed="false">
+                <strong>30</strong><span>Full battle</span>
+              </button>
+            </div>
+          </fieldset>
+
+          <p class="duration-preview" aria-live="polite">
+            Estimated game time: <strong class="duration-value">About 7 minutes</strong>
+          </p>
+        </section>
+
+        <section class="wizard-step" data-step="4" aria-labelledby="step-timer-title" hidden>
+          <div class="step-heading">
+            <h2 id="step-timer-title" tabindex="-1">Question timer</h2>
+            <p>Seconds allowed for each answer.</p>
+          </div>
+
+          <fieldset class="choice-fieldset">
+            <legend class="visually-hidden">Seconds per question</legend>
+            <div class="number-options" data-choice-group="timer">
+              <button class="number-option" type="button" data-value="15" aria-pressed="false">
+                <strong>15s</strong><span>Fast</span>
+              </button>
+              <button class="number-option is-selected" type="button" data-value="30" aria-pressed="true">
+                <strong>30s</strong><span>Balanced</span>
+              </button>
+              <button class="number-option" type="button" data-value="45" aria-pressed="false">
+                <strong>45s</strong><span>Relaxed</span>
+              </button>
+              <button class="number-option" type="button" data-value="60" aria-pressed="false">
+                <strong>60s</strong><span>Think it over</span>
+              </button>
+            </div>
+          </fieldset>
+
+          <p class="duration-preview" aria-live="polite">
+            Estimated game time: <strong class="duration-value">About 7 minutes</strong>
+          </p>
+        </section>
+
+        <section class="wizard-step review-step" data-step="5" aria-labelledby="step-review-title" hidden>
+          <div class="step-heading">
+            <h2 class="visually-hidden" id="step-review-title" tabindex="-1">Review game settings</h2>
+            <p>Check your choices before creating the game.</p>
+          </div>
+
+          <div class="review-list" aria-label="Game setup summary">
+            <article class="review-row">
+              <span class="review-label">Game title</span>
+              <i class="summary-divider" aria-hidden="true"></i>
+              <strong data-summary="name">Movie Night</strong>
+              <button class="change-button" type="button" data-change-step="0" aria-label="Change game title">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.6-10.6a2.1 2.1 0 0 0-4-3L4 17v3Zm9.2-12.2 3 3" /></svg>
+                Change
+              </button>
+            </article>
+            <article class="review-row">
+              <span class="review-label">Themes</span>
+              <i class="summary-divider" aria-hidden="true"></i>
+              <strong data-summary="themes">Not selected</strong>
+              <button class="change-button" type="button" data-change-step="1" aria-label="Change themes">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.6-10.6a2.1 2.1 0 0 0-4-3L4 17v3Zm9.2-12.2 3 3" /></svg>
+                Change
+              </button>
+            </article>
+            <article class="review-row">
+              <span class="review-label">Difficulty</span>
+              <i class="summary-divider" aria-hidden="true"></i>
+              <strong data-summary="difficulty">Medium</strong>
+              <button class="change-button" type="button" data-change-step="2" aria-label="Change difficulty">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.6-10.6a2.1 2.1 0 0 0-4-3L4 17v3Zm9.2-12.2 3 3" /></svg>
+                Change
+              </button>
+            </article>
+            <article class="review-row">
+              <span class="review-label">Questions</span>
+              <i class="summary-divider" aria-hidden="true"></i>
+              <strong data-summary="questions">10 questions</strong>
+              <button class="change-button" type="button" data-change-step="3" aria-label="Change number of questions">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.6-10.6a2.1 2.1 0 0 0-4-3L4 17v3Zm9.2-12.2 3 3" /></svg>
+                Change
+              </button>
+            </article>
+            <article class="review-row">
+              <span class="review-label">Question timer</span>
+              <i class="summary-divider" aria-hidden="true"></i>
+              <strong data-summary="timer">30 seconds</strong>
+              <button class="change-button" type="button" data-change-step="4" aria-label="Change question timer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10.6-10.6a2.1 2.1 0 0 0-4-3L4 17v3Zm9.2-12.2 3 3" /></svg>
+                Change
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <footer class="wizard-actions">
+          <button class="back-button" type="button" hidden><span aria-hidden="true">←</span>Back</button>
+          <button class="continue-button" type="button">Continue<span aria-hidden="true">→</span></button>
+          <button class="create-button" type="submit" hidden>Create game<span aria-hidden="true">→</span></button>
+        </footer>
+      </form>
     </section>
   </main>
+
+  <script>
+    const steps = [...document.querySelectorAll('.wizard-step')];
+    const stepNames = ['Name your game', 'Choose themes', 'Set difficulty', 'Choose questions', 'Set the timer', 'Review and create'];
+    const setupStepCount = steps.length - 1;
+    const form = document.querySelector('#quiz-setup-form');
+    const backButton = document.querySelector('.back-button');
+    const continueButton = document.querySelector('.continue-button');
+    const createButton = document.querySelector('.create-button');
+    const progressStep = document.querySelector('.progress-step');
+    const progressName = document.querySelector('.progress-name');
+    const progressTrack = document.querySelector('.progress-track');
+    const progressValue = document.querySelector('.progress-value');
+    const status = document.querySelector('.wizard-status');
+    const gameName = document.querySelector('#game-name');
+    const gameNameError = document.querySelector('#game-name-error');
+    const characterCount = document.querySelector('.character-count');
+    const themeError = document.querySelector('#theme-error');
+    const selectionStatus = document.querySelector('.selection-status');
+    const themeButtons = [...document.querySelectorAll('.theme-card')];
+    let currentStep = 0;
+    let selectedThemes = [];
+    let difficulty = 'Medium';
+    let questionCount = 10;
+    let timerSeconds = 30;
+
+    function estimatedMinutes() {
+      return Math.max(1, Math.round((questionCount * (timerSeconds + 10)) / 60));
+    }
+
+    function updateDuration() {
+      const minutes = estimatedMinutes();
+      document.querySelectorAll('.duration-value').forEach((element) => {
+        element.textContent = `About ${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`;
+      });
+    }
+
+    function updateSummary() {
+      document.querySelector('[data-summary="name"]').textContent = gameName.value.trim();
+      document.querySelector('[data-summary="themes"]').textContent = selectedThemes.join(', ');
+      document.querySelector('[data-summary="difficulty"]').textContent = difficulty;
+      document.querySelector('[data-summary="questions"]').textContent = `${questionCount} questions`;
+      document.querySelector('[data-summary="timer"]').textContent = `${timerSeconds} seconds`;
+    }
+
+    function announceStep() {
+      status.textContent = currentStep === setupStepCount
+        ? 'Review and create. All 5 setup steps complete.'
+        : `${stepNames[currentStep]}, step ${currentStep + 1} of ${setupStepCount}`;
+    }
+
+    function showStep(nextStep, { focus = true } = {}) {
+      currentStep = Math.max(0, Math.min(nextStep, steps.length - 1));
+      steps.forEach((step, index) => {
+        const active = index === currentStep;
+        step.hidden = !active;
+        step.classList.toggle('is-active', active);
+      });
+
+      const isReviewStep = currentStep === setupStepCount;
+      const stepNumber = Math.min(currentStep + 1, setupStepCount);
+      progressStep.textContent = isReviewStep ? 'Setup complete' : `Step ${stepNumber} of ${setupStepCount}`;
+      progressName.textContent = stepNames[currentStep];
+      progressTrack.setAttribute('aria-valuenow', String(stepNumber));
+      progressTrack.setAttribute('aria-label', isReviewStep
+        ? `All ${setupStepCount} setup steps complete`
+        : `Step ${stepNumber} of ${setupStepCount}`);
+      progressValue.style.width = `${(stepNumber / setupStepCount) * 100}%`;
+
+      backButton.hidden = currentStep === 0;
+      continueButton.hidden = currentStep === steps.length - 1;
+      createButton.hidden = currentStep !== steps.length - 1;
+      document.querySelector('.wizard-shell').classList.toggle('is-reviewing', isReviewStep);
+
+      if (currentStep === steps.length - 1) updateSummary();
+      announceStep();
+
+      if (focus) {
+        steps[currentStep].querySelector('h2').focus({ preventScroll: true });
+        (isReviewStep ? steps[currentStep] : document.querySelector('.wizard-progress'))
+          .scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function validateCurrentStep() {
+      if (currentStep === 0) {
+        const valid = gameName.value.trim().length > 0;
+        gameNameError.hidden = valid;
+        gameName.setAttribute('aria-invalid', String(!valid));
+        if (!valid) gameName.focus();
+        return valid;
+      }
+
+      if (currentStep === 1) {
+        const valid = selectedThemes.length > 0;
+        themeError.hidden = valid;
+        if (!valid) themeButtons[0].focus();
+        return valid;
+      }
+
+      return true;
+    }
+
+    gameName.addEventListener('input', () => {
+      characterCount.textContent = `${gameName.value.length} / 60`;
+      if (gameName.value.trim()) {
+        gameNameError.hidden = true;
+        gameName.setAttribute('aria-invalid', 'false');
+      }
+    });
+
+    themeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const theme = button.dataset.theme;
+        const isRandomMix = theme === 'Random Mix';
+        const wasSelected = button.getAttribute('aria-pressed') === 'true';
+
+        if (isRandomMix) {
+          selectedThemes = wasSelected ? [] : ['Random Mix'];
+        } else {
+          selectedThemes = selectedThemes.filter((item) => item !== 'Random Mix');
+          selectedThemes = selectedThemes.includes(theme)
+            ? selectedThemes.filter((item) => item !== theme)
+            : [...selectedThemes, theme];
+        }
+
+        themeButtons.forEach((themeButton) => {
+          const selected = selectedThemes.includes(themeButton.dataset.theme);
+          themeButton.classList.toggle('is-selected', selected);
+          themeButton.setAttribute('aria-pressed', String(selected));
+        });
+
+        themeError.hidden = true;
+        selectionStatus.textContent = selectedThemes.length === 0
+          ? 'No themes selected yet'
+          : selectedThemes[0] === 'Random Mix'
+            ? 'Random Mix selected'
+            : `${selectedThemes.length} ${selectedThemes.length === 1 ? 'theme' : 'themes'} selected`;
+      });
+    });
+
+    document.querySelectorAll('[data-choice-group]').forEach((group) => {
+      group.querySelectorAll('button').forEach((button) => {
+        button.addEventListener('click', () => {
+          group.querySelectorAll('button').forEach((option) => {
+            const selected = option === button;
+            option.classList.toggle('is-selected', selected);
+            option.setAttribute('aria-pressed', String(selected));
+          });
+
+          const value = button.dataset.value;
+          if (group.dataset.choiceGroup === 'difficulty') difficulty = value;
+          if (group.dataset.choiceGroup === 'questions') questionCount = Number(value);
+          if (group.dataset.choiceGroup === 'timer') timerSeconds = Number(value);
+          updateDuration();
+        });
+      });
+    });
+
+    continueButton.addEventListener('click', () => {
+      if (!validateCurrentStep()) return;
+      showStep(currentStep + 1);
+    });
+
+    backButton.addEventListener('click', () => showStep(currentStep - 1));
+
+    document.querySelectorAll('[data-change-step]').forEach((button) => {
+      button.addEventListener('click', () => showStep(Number(button.dataset.changeStep)));
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      createButton.disabled = true;
+      createButton.textContent = 'Creating game…';
+      window.setTimeout(() => {
+        window.location.href = 'lobby.html';
+      }, 450);
+    });
+
+    updateDuration();
+    showStep(0, { focus: false });
+  </script>
 </body>
 
 </html>
